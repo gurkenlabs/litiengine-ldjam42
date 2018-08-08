@@ -1,0 +1,2 @@
+include ":litiengine"
+project(":litiengine").projectDir = file("litiengine")

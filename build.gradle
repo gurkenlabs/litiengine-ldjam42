@@ -1,0 +1,98 @@
+plugins {
+  id 'edu.sc.seis.launch4j' version '2.4.4'
+}
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+archivesBaseName = "litiengine-ldjam42"
+version = "v0.0.1"
+targetCompatibility = "1.8.0"
+mainClassName = "de.gurkenlabs.ldjam42.Program"
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile project(':litiengine')
+}
+
+sourceSets {
+  main.java.srcDir "src"
+  main.resources.srcDirs = ["sprites", "audio", "maps", "misc"]
+
+  // main.resources.includes = ["game.litidata"]
+}
+
+jar {
+  from {
+    configurations.runtime.collect {
+      it.isDirectory() ? it : zipTree(it)
+    }
+    configurations.compile.collect {
+      it.isDirectory() ? it : zipTree(it)
+    }
+  }  {
+    exclude 'META-INF/services/**'
+  }
+  
+  // make sure to only include service providers from the litiengine when directly referencing the project
+  from ("${project(':litiengine').projectDir}/resources/") {
+    include 'META-INF/services/**'
+  }
+  
+  from(sourceSets.main.allSource) 
+  { 
+    include '**/*' 
+  }
+
+  exclude '**/*.dll'
+  exclude '**/*.jnilib'
+  exclude '**/*.dylib'
+  exclude '**/*.so'
+  exclude 'junit**/**'
+  
+  from 'game.litidata'
+  
+  manifest {
+    attributes 'Class-Path': ".",
+               'Main-Class': mainClassName
+  }
+}
+
+launch4j {
+  mainClassName = project.mainClassName
+  icon = 'game.ico'
+  outputDir = 'libs'
+  outfile = archivesBaseName +'.exe'
+  companyName = 'gurkenlabs.de'
+  version = '0.0.1'
+  textVersion = 'v0.0.1'
+  copyright = '2018 gurkenlabs.de'
+  bundledJrePath = 'jre'
+  jvmOptions = ['-Xms256m', '-Xmx1024m']
+  cmdLine = '-release'
+}
+
+task copyDistributionFiles(type: Copy) { 
+  def buildFolder = new File(buildDir, 'libs')
+  
+  from('litiengine/build/libs') { 
+   include '**/*'
+   exclude '**/*.jar'
+   exclude '**/*.zip'
+   exclude 'LICENSE'
+   exclude 'lib/**'
+  }
+  
+  from('dist'){
+    include 'game.ico'
+    include 'config.properties'
+    include 'jre/**'
+  }
+  
+  into buildFolder
+}
+
+jar.dependsOn copyDistributionFiles
