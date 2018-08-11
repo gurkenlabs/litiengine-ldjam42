@@ -198,6 +198,9 @@
   <sprite width="16" height="16" name="test-tiles">
    <image>iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAbUlEQVR42u3QQQ3AIBAAwbPSB9aQUAcNQnCCEpxcRdyjSZlJ1sDG1VpW2n2X6pmlVs5SYYABBhhggAEGGGCAAQYYYIABBw7I+WSle4xS8TUDDDDAAAMMMMAAAwwwwAADDDhwAAAAAAAAAADwey/pS/7xfTOzYQAAAABJRU5ErkJggg==</image>
   </sprite>
+  <sprite width="10" height="10" name="coin">
+   <image>iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAWklEQVR42mNgQAKTavT+w/CiTqP/DNgASPLWHo//ry8VwzGGYpiiV6f8UTCKYpCicxvcUCRB+O31VlTF6AphmGiFIAVEKSTKncgYJIfhc5BiZIyhCFuAoysCAOVG0tKJt75hAAAAAElFTkSuQmCC</image>
+  </sprite>
  </spriteSheets>
  <tilesets>
   <tileset firstgid="0" name="test-tileset" tilewidth="16" tileheight="16" tilecount="16" columns="4">
