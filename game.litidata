@@ -75,7 +75,7 @@
      </properties>
      <polyline/>
     </object>
-    <object id="163" name="" type="SPAWNPOINT" x="176" y="272" width="32" height="32">
+    <object id="163" name="party-spawn" type="SPAWNPOINT" x="176" y="272" width="32" height="32">
      <properties>
       <property name="spawnDirection" value="UNDEFINED"/>
       <property name="spawnType" value=""/>
@@ -138,6 +138,9 @@
  <spriteSheets>
   <sprite width="16" height="16" name="test-tiles">
    <image>iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAbUlEQVR42u3QQQ3AIBAAwbPSB9aQUAcNQnCCEpxcRdyjSZlJ1sDG1VpW2n2X6pmlVs5SYYABBhhggAEGGGCAAQYYYIABBw7I+WSle4xS8TUDDDDAAAMMMMAAAwwwwAADDDhwAAAAAAAAAADwey/pS/7xfTOzYQAAAABJRU5ErkJggg==</image>
+  </sprite>
+  <sprite width="20" height="22" name="dummy">
+   <image>iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAA4UlEQVR42mNgoAsIDWVjTk0NY01NXcaclnafJS3tJxB/BuLrULFQkBqizAIaFAjUcBuo+T8+DFLDnJ4ehM9VzECFnYQMwoI7QXoxzCPTMIShKN5MTw+hwDBIEADNgEcAUOAxpQYC8RNwRAEjIZoKhsFcGcPAkpq6mloGAvEaBta0tAfUMhBkFih2f1DRhT9BBn6itoE3qetlakcK1ZMNVRN2bi47JOsBiyOKXQcq0tAKhy4KDOzCWnwBbZlMhsumYC2+kArYYBIK2BBSqgBQ7K+BVgG/QBjKXgOSI7oKoBQAACSXTdFTN+OHAAAAAElFTkSuQmCC</image>
   </sprite>
  </spriteSheets>
  <tilesets>
