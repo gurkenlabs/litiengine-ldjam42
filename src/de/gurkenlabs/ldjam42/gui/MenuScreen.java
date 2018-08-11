@@ -1,6 +1,7 @@
 package de.gurkenlabs.ldjam42.gui;
 
 import java.awt.Graphics2D;
+
 import de.gurkenlabs.ldjam42.GameManager;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.graphics.FreeFlightCamera;

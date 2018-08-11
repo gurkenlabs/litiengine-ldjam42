@@ -3,7 +3,6 @@ package de.gurkenlabs.ldjam42;
 import java.awt.Font;
 import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
-import java.text.SimpleDateFormat;
 
 import de.gurkenlabs.ldjam42.gui.IngameScreen;
 import de.gurkenlabs.ldjam42.gui.MenuScreen;
