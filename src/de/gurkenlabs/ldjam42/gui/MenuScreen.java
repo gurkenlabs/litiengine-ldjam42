@@ -30,8 +30,8 @@ public class MenuScreen extends Screen {
     super.initializeComponents();
     double x = Game.getScreenManager().getCenter().getX();
     double y = Game.getScreenManager().getCenter().getX();
-    double width = Game.getScreenManager().getResolution().getWidth();
-    double height = Game.getScreenManager().getResolution().getHeight();
+    double width = Game.getScreenManager().getResolution().getWidth() / 5;
+    double height = Game.getScreenManager().getResolution().getHeight() / 7;
     this.playButton = new ImageComponent(x - width / 2.0, y - height / 2.0, width, height);
     this.playButton.setImage(null);
     this.playButton.setText("PLAY GAME");
