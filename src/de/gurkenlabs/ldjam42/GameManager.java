@@ -3,6 +3,7 @@ package de.gurkenlabs.ldjam42;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.EnumMap;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -29,10 +30,7 @@ public final class GameManager {
   private static long startedTicks;
   private static EntitySpawner<PartyGuest> spawner;
 
-  private static Collection<MapArea> areaDance;
-  private static Collection<MapArea> areaDrink;
-  private static Collection<MapArea> areaChill;
-  private static Collection<MapArea> areaFood;
+  private static EnumMap<ClubArea, Collection<MapArea>> areas = new EnumMap<>(ClubArea.class);
 
   private static List<PartyGuest> kickedPartyGuests = new CopyOnWriteArrayList<>();
 
@@ -49,24 +47,29 @@ public final class GameManager {
           spawner.setInterval(15000);
         });
 
-        areaChill = environment.getByTag(MapArea.class, "area_chill");
-        if (areaChill.isEmpty()) {
+        areas.put(ClubArea.CHILLAREA, environment.getByTag(MapArea.class, "area_chill"));
+        if (areas.get(ClubArea.CHILLAREA).isEmpty()) {
           throw new IllegalArgumentException("No area_chill.");
         }
 
-        areaDance = environment.getByTag(MapArea.class, "area_dance");
-        if (areaDance.isEmpty()) {
+        areas.put(ClubArea.DANCEFLOOR, environment.getByTag(MapArea.class, "area_dance"));
+        if (areas.get(ClubArea.DANCEFLOOR).isEmpty()) {
           throw new IllegalArgumentException("No area_dance.");
         }
 
-        areaFood = environment.getByTag(MapArea.class, "area_food");
-        if (areaFood.isEmpty()) {
+        areas.put(ClubArea.PIZZASTAND, environment.getByTag(MapArea.class, "area_food"));
+        if (areas.get(ClubArea.PIZZASTAND).isEmpty()) {
           throw new IllegalArgumentException("No area_food.");
         }
 
-        areaDrink = environment.getByTag(MapArea.class, "area_drink");
-        if (areaDrink.isEmpty()) {
+        areas.put(ClubArea.BAR, environment.getByTag(MapArea.class, "area_drink"));
+        if (areas.get(ClubArea.BAR).isEmpty()) {
           throw new IllegalArgumentException("No area_drink.");
+        }
+
+        areas.put(ClubArea.LOBBY, environment.getByTag(MapArea.class, "area_entry"));
+        if (areas.get(ClubArea.LOBBY).isEmpty()) {
+          throw new IllegalArgumentException("No area_entry.");
         }
       }
     });
@@ -103,24 +106,16 @@ public final class GameManager {
     return new Time(START_TIME + Game.getLoop().getDeltaTime(startedTicks) * 60);
   }
 
-  public static int getGuestsInDanceAreas() {
-    return getGuestsInAreas(areaDance);
+  public static int getGuests(ClubArea area) {
+    return getGuestsInAreas(area);
   }
 
-  public static int getGuestsInChillAreas() {
-    return getGuestsInAreas(areaChill);
+  public static int getTotalGuestsInMainAreas() {
+    return (int) Game.getEnvironment().getByType(PartyGuest.class).stream().filter(x -> areas.get(ClubArea.LOBBY).stream().noneMatch(a -> a.getBoundingBox().intersects(x.getCollisionBox()))).count();
   }
 
-  public static int getGuestsInFoodAreas() {
-    return getGuestsInAreas(areaFood);
-  }
-
-  public static int getGuestsInDrinkAreas() {
-    return getGuestsInAreas(areaDrink);
-  }
-
-  private static int getGuestsInAreas(Collection<MapArea> areas) {
-    return areas.stream().mapToInt(GameManager::countGuestsInArea).sum();
+  private static int getGuestsInAreas(ClubArea area) {
+    return areas.get(area).stream().mapToInt(GameManager::countGuestsInArea).sum();
   }
 
   private static int countGuestsInArea(MapArea area) {

@@ -14,7 +14,6 @@ public class PartyGuestSpawner extends EntitySpawner<PartyGuest> {
 
   @Override
   public PartyGuest createNew() {
-    System.out.println("new party guest spawned");
     return new PartyGuest(this.getSpawnPoints().get(0).getLocation());
   }
 }
