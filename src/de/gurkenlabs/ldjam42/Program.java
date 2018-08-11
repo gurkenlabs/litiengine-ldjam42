@@ -1,6 +1,7 @@
 package de.gurkenlabs.ldjam42;
 
 import java.awt.Font;
+import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
 
 import de.gurkenlabs.ldjam42.gui.IngameScreen;
@@ -32,6 +33,9 @@ public class Program {
   private static void initGoin() {
     // init default UI settings
     GuiProperties.setDefaultFont(GUI_FONT);
+    GuiProperties.getDefaultAppearance().setTextAntialiasing(RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+    GuiProperties.getDefaultAppearanceDisabled().setTextAntialiasing(RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+    GuiProperties.getDefaultAppearanceHovered().setTextAntialiasing(RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 
     Game.getScreenManager().addScreen(new MenuScreen());
     Game.getScreenManager().addScreen(new IngameScreen());
