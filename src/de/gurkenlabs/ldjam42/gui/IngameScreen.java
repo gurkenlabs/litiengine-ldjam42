@@ -38,6 +38,11 @@ public class IngameScreen extends Screen {
     TextRenderer.render(g, "food: " + pizza + " " + MathUtilities.getFullPercent(total, pizza), 200, 300);
     TextRenderer.render(g, "drink: " + bar + " " + MathUtilities.getFullPercent(total, bar), 200, 350);
     TextRenderer.render(g, "chill: " + chill + " " + MathUtilities.getFullPercent(total, chill), 200, 400);
+
+    String money = GameManager.getCurrentMoney() + "$";
+    double width = g.getFontMetrics().stringWidth(money);
+    double height = g.getFontMetrics().getHeight();
+    TextRenderer.render(g, money, Game.getScreenManager().getResolution().getWidth() / 2.0 - width / 2, Game.getScreenManager().getResolution().getHeight() - height * 2);
     super.render(g);
   }
 }

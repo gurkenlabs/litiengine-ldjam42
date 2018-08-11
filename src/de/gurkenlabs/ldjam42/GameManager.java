@@ -33,6 +33,7 @@ public final class GameManager {
   private static EnumMap<ClubArea, Collection<MapArea>> areas = new EnumMap<>(ClubArea.class);
 
   private static List<PartyGuest> kickedPartyGuests = new CopyOnWriteArrayList<>();
+  private static volatile int currentMoney;
 
   private GameManager() {
   }
@@ -89,12 +90,20 @@ public final class GameManager {
     startedTicks = Game.getLoop().getTicks();
   }
 
+  public static int getCurrentMoney() {
+    return currentMoney;
+  }
+
   public static IEnvironment getGoin() {
     return goin;
   }
 
   public static Time getStartTime() {
     return new Time(START_TIME);
+  }
+
+  public static void spendMoney(int money) {
+    currentMoney += money;
   }
 
   public static Time getEndTime() {

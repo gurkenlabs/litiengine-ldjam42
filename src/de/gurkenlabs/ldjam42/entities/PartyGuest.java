@@ -6,6 +6,7 @@ import java.awt.geom.Point2D;
 import java.util.EnumMap;
 import java.util.Map;
 
+import de.gurkenlabs.ldjam42.BadBehavior;
 import de.gurkenlabs.ldjam42.Needs;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.annotation.CollisionInfo;
@@ -31,6 +32,11 @@ public class PartyGuest extends Creature {
 
   private int group;
   private final EnumMap<Needs, Integer> needs;
+  private BadBehavior badBehavior;
+  private final Gender gender;
+  private State state;
+  private int wealth;
+  private double satisfaction;
 
   static {
     DebugRenderer.addEntityDebugListener((g, e) -> {
@@ -47,6 +53,8 @@ public class PartyGuest extends Creature {
 
   public PartyGuest(Point2D location) {
     this.needs = new EnumMap<>(Needs.class);
+    this.gender = MathUtilities.randomBoolean() ? Gender.FEMALE : Gender.MALE;
+    this.satisfaction = 1;
 
     this.setLocation(location);
     // TODO: evaluate random apperance
@@ -73,15 +81,60 @@ public class PartyGuest extends Creature {
     return this.needs;
   }
 
+  public BadBehavior getBadBehavior() {
+    return this.badBehavior;
+  }
+
+  public double getSatisfaction() {
+    return this.satisfaction;
+  }
+
+  public Gender getGender() {
+    return this.gender;
+  }
+
+  public int getWealth() {
+    return this.wealth;
+  }
+
+  public void setBadBehavior(BadBehavior behavior) {
+    this.badBehavior = behavior;
+  }
+
+  public State getState() {
+    return this.state;
+  }
+
+  public void setState(State state) {
+    this.state = state;
+  }
+
+  public void updateSatisfaction() {
+
+  }
+
   private void initialize() {
-    final int HIGHEST_NEED_VALUE = 3;
-    final int AVG_NEED_VALUE = 2;
-    final int LOW_NEED_VALUE = 1;
 
     // init group
     this.group = getGroupId();
 
-    // init needs
+    this.initializeNeeds();
+
+    this.initializeWealth();
+  }
+
+  private void initializeWealth() {
+    final int DEFAULT_WEALTH_MIN = 1;
+    final int DEFAULT_WEALTH_MAX = 5;
+    this.wealth = MathUtilities.randomInRange(DEFAULT_WEALTH_MIN, DEFAULT_WEALTH_MAX);
+    // TODO: implement VIP
+  }
+
+  private void initializeNeeds() {
+    final int HIGHEST_NEED_VALUE = 3;
+    final int AVG_NEED_VALUE = 2;
+    final int LOW_NEED_VALUE = 1;
+
     Needs[] n = Needs.values();
     Needs highestNeed = ArrayUtilities.getRandom(n);
     this.needs.put(highestNeed, HIGHEST_NEED_VALUE);
