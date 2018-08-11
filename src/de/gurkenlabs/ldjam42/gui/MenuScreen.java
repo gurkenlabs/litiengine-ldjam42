@@ -1,9 +1,11 @@
 package de.gurkenlabs.ldjam42.gui;
 
 import java.awt.Graphics2D;
+import java.awt.geom.Point2D;
 
 import de.gurkenlabs.ldjam42.GameManager;
 import de.gurkenlabs.litiengine.Game;
+import de.gurkenlabs.litiengine.graphics.FreeFlightCamera;
 import de.gurkenlabs.litiengine.gui.ImageComponent;
 import de.gurkenlabs.litiengine.gui.screens.Screen;
 
@@ -46,8 +48,7 @@ public class MenuScreen extends Screen {
       this.playButton.setEnabled(false);
       Game.getScreenManager().getRenderComponent().fadeOut(1000);
       Game.getLoop().execute(1500, () -> {
-        Game.loadEnvironment(GameManager.getGoin());
-        Game.getScreenManager().displayScreen(IngameScreen.NAME);
+        displayIngameScreen();
         Game.getScreenManager().getRenderComponent().fadeIn(1000);
         this.locked = false;
         this.playButton.setEnabled(true);
@@ -55,5 +56,12 @@ public class MenuScreen extends Screen {
     });
 
     this.getComponents().add(this.playButton);
+  }
+
+  private static void displayIngameScreen() {
+    Game.loadEnvironment(GameManager.getGoin());
+    Game.getScreenManager().displayScreen(IngameScreen.NAME);
+    FreeFlightCamera camera = new FreeFlightCamera(Game.getEnvironment().getCenter());
+    Game.setCamera(camera);
   }
 }

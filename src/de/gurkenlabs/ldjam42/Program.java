@@ -47,6 +47,7 @@ public class Program {
       System.exit(0);
     });
 
+    Game.getRenderEngine().setBaseRenderScale(4);
     GameManager.init();
   }
 }
