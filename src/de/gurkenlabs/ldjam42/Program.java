@@ -25,12 +25,15 @@ public class Program {
     Game.getInfo().setSubTitle("Behave or GET LOST!");
 
     Game.init(args);
-
     initGoin();
+
     Game.start();
   }
 
   private static void initGoin() {
+    // load all game assets
+    Game.load("game.litidata");
+
     // init default UI settings
     GuiProperties.setDefaultFont(GUI_FONT);
     GuiProperties.getDefaultAppearance().setTextAntialiasing(RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
@@ -43,5 +46,7 @@ public class Program {
     Input.keyboard().onKeyPressed(KeyEvent.VK_ESCAPE, e -> {
       System.exit(0);
     });
+
+    GameManager.init();
   }
 }

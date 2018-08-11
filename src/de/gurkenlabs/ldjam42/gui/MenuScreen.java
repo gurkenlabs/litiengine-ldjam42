@@ -2,6 +2,7 @@ package de.gurkenlabs.ldjam42.gui;
 
 import java.awt.Graphics2D;
 
+import de.gurkenlabs.ldjam42.GameManager;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.gui.ImageComponent;
 import de.gurkenlabs.litiengine.gui.screens.Screen;
@@ -43,10 +44,11 @@ public class MenuScreen extends Screen {
 
       this.locked = true;
       this.playButton.setEnabled(false);
-      Game.getScreenManager().getRenderComponent().fadeOut(1500);
+      Game.getScreenManager().getRenderComponent().fadeOut(1000);
       Game.getLoop().execute(1500, () -> {
+        Game.loadEnvironment(GameManager.getGoin());
         Game.getScreenManager().displayScreen(IngameScreen.NAME);
-        Game.getScreenManager().getRenderComponent().fadeIn(1500);
+        Game.getScreenManager().getRenderComponent().fadeIn(1000);
         this.locked = false;
         this.playButton.setEnabled(true);
       });
