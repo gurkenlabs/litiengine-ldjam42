@@ -1,8 +1,6 @@
 package de.gurkenlabs.ldjam42.gui;
 
 import java.awt.Graphics2D;
-import java.awt.geom.Point2D;
-
 import de.gurkenlabs.ldjam42.GameManager;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.graphics.FreeFlightCamera;
@@ -63,5 +61,6 @@ public class MenuScreen extends Screen {
     Game.getScreenManager().displayScreen(IngameScreen.NAME);
     FreeFlightCamera camera = new FreeFlightCamera(Game.getEnvironment().getCenter());
     Game.setCamera(camera);
+    GameManager.start();
   }
 }
