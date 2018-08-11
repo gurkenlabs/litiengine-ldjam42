@@ -44,7 +44,8 @@ public class Program {
     Game.getScreenManager().addScreen(new IngameScreen());
 
     Input.keyboard().onKeyPressed(KeyEvent.VK_ESCAPE, e -> {
-      System.exit(0);
+      // TODO: implement confirmation; for now, we use alt+f4
+      // System.exit(0);
     });
 
     Game.getRenderEngine().setBaseRenderScale(4);

@@ -43,7 +43,7 @@
     </object>
     <object id="75" type="AREA" x="112" y="96" width="192" height="160">
      <properties>
-      <property name="tags" value="area_dancefloor"/>
+      <property name="tags" value="area_dance"/>
      </properties>
      <polyline points=""/>
     </object>

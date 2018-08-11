@@ -27,6 +27,10 @@ public class IngameScreen extends Screen {
 
     g.setFont(Program.GUI_FONT);
     TextRenderer.render(g, time, 200, 200);
+    TextRenderer.render(g, "dance: " + GameManager.getGuestsInDanceAreas(), 200, 250);
+    TextRenderer.render(g, "food: " + GameManager.getGuestsInFoodAreas(), 200, 300);
+    TextRenderer.render(g, "drink: " + GameManager.getGuestsInDrinkAreas(), 200, 350);
+    TextRenderer.render(g, "chill: " + GameManager.getGuestsInChillAreas(), 200, 400);
     super.render(g);
   }
 }
