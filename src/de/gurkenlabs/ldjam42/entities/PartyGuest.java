@@ -2,10 +2,11 @@ package de.gurkenlabs.ldjam42.entities;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Graphics2D;
 import java.awt.geom.Point2D;
+import java.util.EnumMap;
+import java.util.Map;
 
-import de.gurkenlabs.ldjam42.Program;
+import de.gurkenlabs.ldjam42.Needs;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.annotation.CollisionInfo;
 import de.gurkenlabs.litiengine.annotation.EntityInfo;
@@ -13,12 +14,10 @@ import de.gurkenlabs.litiengine.annotation.MovementInfo;
 import de.gurkenlabs.litiengine.entities.Creature;
 import de.gurkenlabs.litiengine.entities.ICollisionEntity;
 import de.gurkenlabs.litiengine.graphics.DebugRenderer;
-import de.gurkenlabs.litiengine.graphics.IRenderable;
-import de.gurkenlabs.litiengine.graphics.RenderEngine;
-import de.gurkenlabs.litiengine.graphics.RenderType;
 import de.gurkenlabs.litiengine.graphics.TextRenderer;
 import de.gurkenlabs.litiengine.graphics.animation.EntityAnimationController;
 import de.gurkenlabs.litiengine.physics.MovementController;
+import de.gurkenlabs.litiengine.util.ArrayUtilities;
 import de.gurkenlabs.litiengine.util.MathUtilities;
 
 @MovementInfo(velocity = 50)
@@ -31,9 +30,10 @@ public class PartyGuest extends Creature {
   private static int currentGroupSize;
 
   private int group;
+  private final EnumMap<Needs, Integer> needs;
+
   static {
     DebugRenderer.addEntityDebugListener((g, e) -> {
-
       if (e instanceof PartyGuest) {
         PartyGuest guest = (PartyGuest) e;
         g.setColor(Color.BLACK);
@@ -46,6 +46,8 @@ public class PartyGuest extends Creature {
   }
 
   public PartyGuest(Point2D location) {
+    this.needs = new EnumMap<>(Needs.class);
+
     this.setLocation(location);
     // TODO: evaluate random apperance
     this.setController(EntityAnimationController.class, new PartyGuestAnimationController(this));
@@ -67,8 +69,35 @@ public class PartyGuest extends Creature {
     return this.group;
   }
 
+  public Map<Needs, Integer> getNeeds() {
+    return this.needs;
+  }
+
   private void initialize() {
+    final int HIGHEST_NEED_VALUE = 3;
+    final int AVG_NEED_VALUE = 2;
+    final int LOW_NEED_VALUE = 1;
+
+    // init group
     this.group = getGroupId();
+
+    // init needs
+    Needs[] n = Needs.values();
+    Needs highestNeed = ArrayUtilities.getRandom(n);
+    this.needs.put(highestNeed, HIGHEST_NEED_VALUE);
+    n = ArrayUtilities.remove(n, highestNeed);
+
+    Needs avgNeed1 = ArrayUtilities.getRandom(n);
+    this.needs.put(avgNeed1, AVG_NEED_VALUE);
+    n = ArrayUtilities.remove(n, avgNeed1);
+
+    Needs avgNeed2 = ArrayUtilities.getRandom(n);
+    this.needs.put(avgNeed2, AVG_NEED_VALUE);
+    n = ArrayUtilities.remove(n, avgNeed2);
+
+    Needs lowNeed = ArrayUtilities.getRandom(n);
+    this.needs.put(lowNeed, LOW_NEED_VALUE);
+    ArrayUtilities.remove(n, lowNeed);
   }
 
   private static int getGroupId() {

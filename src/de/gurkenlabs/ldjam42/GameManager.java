@@ -17,7 +17,6 @@ import de.gurkenlabs.litiengine.environment.Environment;
 import de.gurkenlabs.litiengine.environment.EnvironmentAdapter;
 import de.gurkenlabs.litiengine.environment.EnvironmentEntityAdapter;
 import de.gurkenlabs.litiengine.environment.IEnvironment;
-import de.gurkenlabs.litiengine.graphics.DebugRenderer;
 
 public final class GameManager {
   // 09:00 pm
