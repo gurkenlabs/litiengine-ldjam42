@@ -193,7 +193,8 @@ public class PartyGuest extends Creature {
   }
 
   private void initialize() {
-
+    this.initializeWealth();
+    
     // init group
     this.group = getGroupId();
     int featureNumber = 0;
@@ -205,8 +206,8 @@ public class PartyGuest extends Creature {
         this.features[i] = MathUtilities.randomInRange(0, 4);
       }
     }
+    
     this.setSpritePrefix(String.format("%s-%d_%d_%d_%d", this.getGender().toString().toLowerCase(), this.getFeatures()[0], this.getFeatures()[1], this.getFeatures()[2], this.getFeatures()[3]));
-    this.initializeWealth();
     this.setController(EntityAnimationController.class, new PartyGuestAnimationController(this));
 
   }

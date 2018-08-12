@@ -230,7 +230,7 @@ public final class GameManager {
             if (baseSpritesheet == null) {
               continue;
             }
-//            System.out.println("base Sprite Path: " + baseSpritePath);
+            //            System.out.println("base Sprite Path: " + baseSpritePath);
             BufferedImage baseSprite = baseSpritesheet.getImage();
             BufferedImage combinedSprite = ImageProcessing.getCompatibleImage(baseSprite.getWidth(), baseSprite.getHeight());
             Graphics2D g = combinedSprite.createGraphics();
@@ -238,17 +238,16 @@ public final class GameManager {
             for (Feature feature : Feature.values()) {
               String feat = feature.toString().toLowerCase();
               int featIndex = feature.ordinal();
-              String featureSpritePath = String.format("%s-%s%d-%s-%s", gend, feat, featIndex, state, dir);
+              String featureSpritePath = String.format("%s-%s%d-%s-%s", gend, feat, permutation[featIndex], state, dir);
               BufferedImage featureSprite = Spritesheet.find(featureSpritePath).getImage();
               g.drawImage(featureSprite, 0, 0, featureSprite.getWidth(), featureSprite.getHeight(), null);
             }
             g.dispose();
             String combinedSpritePath = String.format("%s-%d_%d_%d_%d-%s-%s", gend, permutation[0], permutation[1], permutation[2], permutation[3], state, dir);
-//            System.out.println("combined Sprite Path: " + combinedSpritePath);
-//            System.out.println("----");
+            //            System.out.println("combined Sprite Path: " + combinedSpritePath);
+            //            System.out.println("----");
             Spritesheet combinedSpritesheet = Spritesheet.load(combinedSprite, combinedSpritePath, spriteWidth, spriteHeight);
             foundSpritesheets++;
-
           }
         }
 
