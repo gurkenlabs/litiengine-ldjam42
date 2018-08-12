@@ -201,6 +201,74 @@
   <sprite width="10" height="10" name="coin">
    <image>iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAWklEQVR42mNgQAKTavT+w/CiTqP/DNgASPLWHo//ry8VwzGGYpiiV6f8UTCKYpCicxvcUCRB+O31VlTF6AphmGiFIAVEKSTKncgYJIfhc5BiZIyhCFuAoysCAOVG0tKJt75hAAAAAElFTkSuQmCC</image>
   </sprite>
+  <sprite width="20" height="22" name="male-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAtUlEQVR42u2V3Q2AIAyEGZTJHMAhXMAdXAafSE5DS1tb0QQS4h/5cke5mtIcgeNYl0LNT4gr+0ZOi0hXw1VgBbTuhxlGWM75AsJnDdTVcMst9W6I4V45JED8ZjHcFYsAPMxScbhGa1hcdgosKQUnkjOsOpN3CMItweAMqwPj1Rak5VVx0QkF0YqU7qC6Z/Wu1ub/hOO+gx6h+5dAKsGWJIcJjACGCTT1qRd45N/AQ6AHbwqU8E6gHJS2CIk+UgAAAABJRU5ErkJggg==</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="male-pants0-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAOUlEQVR42mNgGAWjYBSMglEwCkbBKBgFo2AU0BjcWjbr///ju/6D6MFoHtxQanoa5MBBHyvDInkBAD5EHRTZg+jvAAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="male-top0-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAGklEQVR42u3BAQ0AAADCoPdPbQ43oAAAAPg1DdYAASddwiQAAAAASUVORK5CYII=</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="male-hair0-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAGklEQVR42u3BAQ0AAADCoPdPbQ43oAAAAPg1DdYAASddwiQAAAAASUVORK5CYII=</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="male-face0-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAGklEQVR42u3BAQ0AAADCoPdPbQ43oAAAAPg1DdYAASddwiQAAAAASUVORK5CYII=</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="male-pants1-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAYElEQVR42mNgGAWjYBSMglEwCkbBKBgFo2CoAg8t2f+pbpZgXFNTA2eDxAeDeQzCtgX/VRJWYWCQ+GAwD24giIZhajiQWuYxoBtATQdSwzwGaWnp/wYGBv9BNDY+PcwDAA2ceIdpR7xaAAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="20" name="male-top1-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAW0lEQVR42mNgGAWjYBSMglEwssGGbXv/00w9LsXEGgJS9/br//8gmpAemBqYeqINx4XJcSQh80h2HC5DSTIMKXTwmUdMKBMdiiQbRCPzRh04/B04CkbBKGBgAABS/ZLkXjdQkQAAAABJRU5ErkJggg==</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="male-hair1-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAV0lEQVR42mNgGMrgxrEN/5HxoHPc90cnUTCljqWqh7E5EN2xA+ZhZMNgYuhsUh1JVQ/DDMOnhhRDqe5hWjmQWubRLMMNWgeOglEwCkbBKBgFo2AU0AwAAIQQ+snoKw9RAAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="male-face1-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAQ0lEQVR42mNgGAWjYBSMgoEF3x+d/I+OB4XDbhzbgNVBMDGQ/IB7GNmRyJgcx9HKwzSLFUo9PApGwSgYBaNgFAwTAACcI4AF8/Va6QAAAABJRU5ErkJggg==</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="male-pants2-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAASUlEQVR42u3PYQoAEAxA4d1jl9gBd3cilvirTL2vFMprRAAAAICPFVXty91j3+5T9NpjMzvWiD7vRXD+dD1n6MkeuDngjV6KASs8JV0NQSrpFAAAAABJRU5ErkJggg==</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="male-top2-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAhUlEQVR42mNgGAWjYBSMglFAM9CkpfWfnvpItmSnldV/Ui0jSR9IEbpCbGL49M/Kz/9PjB6YGph6kg1HxkQbghYihMwjKeRgikE0yABkmtToQ3YMLvNIiRmU0APR6JjUUEQ3F5t5ZCdwaoQgurnYzCM7J1LFxzQyj+o+pnoIjoJRMAoYGACqSgy25TTwbgAAAABJRU5ErkJggg==</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="male-hair2-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAV0lEQVR42u3PwQkAIQxE0TSURtJ/P+4pi4gsrkzQw3+QkzLMmC1w95ZnN8lSEfGeoqhk8FhsvJ1w2eA+ZPa+U1I6OMO+/vwJrRhsKwVPDS6hHAwAAACZB/NVarGTIiwKAAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="male-face2-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAALUlEQVR42mNgGAWjYBSMgoEHXl5e/2F41MOUGDriks1o5hkFo2AUjIJRMAoYAH2oDunzbFK+AAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="male-pants3-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAOUlEQVR42mNgGAWjYBSMglEwCkbBKBgFo2CoAtmA7P+OrSswMEh8MJg3dBwIomGYGg6klnmjgBgAAG+sW1fi2gFgAAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="male-top3-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAcklEQVR42mNgGAWjYBSMglEwCmgGvCqF/pMiTo5ZZJsJ0pCwjOc/iL61bNb//8d3gWlkcVLNwmceSWYiOwJEgwyCYWRxYg0EqYNhXObBMEWhSE7o0dI8jKghOSpobB6KgciYGg6khnmD34GjYBSMAgYGAM2d14ewRulWAAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="male-hair3-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAXElEQVR42mNgIAK42Jj8h2GGwQRgjooPsIdjajiUah5Gdxy6QwfUw8gacTmUVIOp6mF0DdgMJ8VQWniY6CgaCA/TJZFT4uEBKS0GpeNGwSgYBaNgFIyCUTAKKAIAtdObp3E+b/4AAAAASUVORK5CYII=</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="male-face3-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAASElEQVR42mNgGAWjYBSMgoEH8QH2/2F40DnOxcbkPz7+gHsY5CBkAyl1IC08DHckNQyjtoep61MaeJhuaXsUjIJRMApGwRAFAHqeMsGWtFyCAAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
  </spriteSheets>
  <tilesets>
   <tileset firstgid="0" name="test-tileset" tilewidth="16" tileheight="16" tilecount="16" columns="4">
