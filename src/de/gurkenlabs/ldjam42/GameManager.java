@@ -19,6 +19,7 @@ import de.gurkenlabs.litiengine.environment.Environment;
 import de.gurkenlabs.litiengine.environment.EnvironmentAdapter;
 import de.gurkenlabs.litiengine.environment.EnvironmentEntityAdapter;
 import de.gurkenlabs.litiengine.environment.IEnvironment;
+import de.gurkenlabs.litiengine.pathfinding.astar.AStarGrid;
 
 public final class GameManager {
   // 09:00 pm
@@ -36,6 +37,8 @@ public final class GameManager {
   private static EnumMap<ClubArea, Double> remaining = new EnumMap<>(ClubArea.class);
   private static EnumMap<ClubArea, Integer> guestsInArea = new EnumMap<>(ClubArea.class);
   private static int totalGuestsInMainAreas;
+
+  private static AStarGrid grid;
 
   private static List<PartyGuest> kickedPartyGuests = new CopyOnWriteArrayList<>();
   private static volatile int currentMoney;
@@ -71,7 +74,8 @@ public final class GameManager {
 
           space.put(ar, s);
         }
-        
+
+        grid = new AStarGrid(Game.getEnvironment().getMap().getSizeInPixels(), 8);
         Game.getLoop().attach(GameManager::update);
       }
     });
@@ -104,6 +108,10 @@ public final class GameManager {
 
   public static void start() {
     startedTicks = Game.getLoop().getTicks();
+  }
+
+  public static AStarGrid getGrid() {
+    return grid;
   }
 
   public static int getCurrentMoney() {
