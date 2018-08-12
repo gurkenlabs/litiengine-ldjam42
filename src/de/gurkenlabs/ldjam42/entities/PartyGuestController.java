@@ -1,6 +1,7 @@
 package de.gurkenlabs.ldjam42.entities;
 
 import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -12,6 +13,7 @@ import de.gurkenlabs.ldjam42.TileUtilities;
 import de.gurkenlabs.ldjam42.graphics.CoinEmitter;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.entities.MapArea;
+import de.gurkenlabs.litiengine.environment.tilemap.MapUtilities;
 import de.gurkenlabs.litiengine.pathfinding.EntityNavigator;
 import de.gurkenlabs.litiengine.pathfinding.astar.AStarPathFinder;
 import de.gurkenlabs.litiengine.physics.MovementController;
@@ -65,7 +67,7 @@ public class PartyGuestController extends MovementController<PartyGuest> {
 
   public static boolean isTargeted(Point2D target) {
     for (Point2D point : currentTargets.values()) {
-      if (target.equals(point)) {
+      if (MathUtilities.equals(target.getX(), point.getX(), 1) && MathUtilities.equals(target.getY(), point.getY(), 1)) {
         return true;
       }
     }
@@ -112,9 +114,14 @@ public class PartyGuestController extends MovementController<PartyGuest> {
       this.nav.setAcceptableError(1);
       this.nav.addNavigationListener(() -> {
         TileUtilities.centerEntityInCurrentTile(this.getEntity());
+
+        // update target after snapping
+        Rectangle2D tileBounds = MapUtilities.getTileBoundingBox(MapUtilities.getTile(this.getEntity().getCollisionBoxCenter()));
+        Point2D target = new Point2D.Double(tileBounds.getCenterX(), tileBounds.getCenterY());
+        currentTargets.put(this.getEntity(), target);
+
         this.lastChangeArea = Game.getLoop().getTicks();
         this.nextChangeInterval = MathUtilities.randomInRange(CHANGE_AREA_MIN, CHANGE_AREA_MAX);
-        currentTargets.remove(this.getEntity());
       });
     }
   }
@@ -137,12 +144,31 @@ public class PartyGuestController extends MovementController<PartyGuest> {
 
     if (!this.getEntity().getCurrentArea().isMainArea()
         || Game.getLoop().getDeltaTime(this.lastChangeArea) > this.nextChangeInterval
-        || this.nav != null && this.nav.isNavigating()) {
+        || this.nav != null && this.nav.isNavigating() || this.hasOtherTarget()) {
       this.getEntity().setState(State.CHANGE_AREA);
       return;
     }
 
     this.getEntity().setState(State.PARTY);
+  }
+
+  private boolean hasOtherTarget() {
+    if (!currentTargets.containsKey(this.getEntity())) {
+      return false;
+    }
+
+    Point2D current = currentTargets.get(this.getEntity());
+    for (PartyGuest guest : currentTargets.keySet()) {
+      if (guest.equals(this.getEntity())) {
+        continue;
+      }
+
+      if (MathUtilities.equals(currentTargets.get(guest).getX(), current.getX(), 1) && MathUtilities.equals(currentTargets.get(guest).getY(), current.getY(), 1)) {
+        return true;
+      }
+    }
+
+    return false;
   }
 
   private void spendMoney() {
