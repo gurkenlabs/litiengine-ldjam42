@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EnumMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import de.gurkenlabs.ldjam42.entities.PartyGuest;
@@ -31,6 +32,10 @@ public final class GameManager {
   private static EntitySpawner<PartyGuest> spawner;
 
   private static EnumMap<ClubArea, Collection<MapArea>> areas = new EnumMap<>(ClubArea.class);
+  private static EnumMap<ClubArea, Double> space = new EnumMap<>(ClubArea.class);
+  private static EnumMap<ClubArea, Double> remaining = new EnumMap<>(ClubArea.class);
+  private static EnumMap<ClubArea, Integer> guestsInArea = new EnumMap<>(ClubArea.class);
+  private static int totalGuestsInMainAreas;
 
   private static List<PartyGuest> kickedPartyGuests = new CopyOnWriteArrayList<>();
   private static volatile int currentMoney;
@@ -54,6 +59,20 @@ public final class GameManager {
             throw new IllegalArgumentException("No " + area.getTag());
           }
         }
+
+        // calculate surfaces
+        for (Map.Entry<ClubArea, Collection<MapArea>> entry : areas.entrySet()) {
+          ClubArea ar = entry.getKey();
+
+          double s = 0;
+          for (MapArea mapArea : entry.getValue()) {
+            s += mapArea.getBoundingBox().getWidth() * mapArea.getBoundingBox().getHeight();
+          }
+
+          space.put(ar, s);
+        }
+        
+        Game.getLoop().attach(GameManager::update);
       }
     });
 
@@ -66,6 +85,21 @@ public final class GameManager {
         }
       }
     });
+  }
+
+  public static void update() {
+    for (ClubArea area : ClubArea.values()) {
+      final int GUEST_SPACE = 16 * 16;
+      double totalSpace = space.get(area);
+
+      double guestsCount = getGuestsInAreas(area);
+      double guestSpace = guestsCount * GUEST_SPACE;
+
+      remaining.put(area, Math.max((totalSpace - guestSpace) / totalSpace, 0));
+      guestsInArea.put(area, getGuestsInAreas(area));
+    }
+
+    totalGuestsInMainAreas = (int) Game.getEnvironment().getByType(PartyGuest.class).stream().filter(x -> areas.get(ClubArea.LOBBY).stream().noneMatch(a -> a.getBoundingBox().intersects(x.getCollisionBox()))).count();
   }
 
   public static void start() {
@@ -98,12 +132,12 @@ public final class GameManager {
   }
 
   public static int getGuests(ClubArea area) {
-    return getGuestsInAreas(area);
+    return guestsInArea.get(area);
   }
 
   public static double getGuestsRelative(ClubArea area) {
-    double total = GameManager.getTotalGuestsInMainAreas();
-    double count = getGuestsInAreas(area);
+    double total = getTotalGuestsInMainAreas();
+    double count = guestsInArea.get(area);
     if (total == 0) {
       return 0;
     }
@@ -111,8 +145,12 @@ public final class GameManager {
     return count / total;
   }
 
+  public static double getRemainingSpace(ClubArea area) {
+    return remaining.get(area);
+  }
+
   public static int getTotalGuestsInMainAreas() {
-    return (int) Game.getEnvironment().getByType(PartyGuest.class).stream().filter(x -> areas.get(ClubArea.LOBBY).stream().noneMatch(a -> a.getBoundingBox().intersects(x.getCollisionBox()))).count();
+    return totalGuestsInMainAreas;
   }
 
   private static int getGuestsInAreas(ClubArea area) {
