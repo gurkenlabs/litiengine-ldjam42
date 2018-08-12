@@ -10,7 +10,9 @@ import java.util.stream.IntStream;
 import de.gurkenlabs.ldjam42.BadBehavior;
 import de.gurkenlabs.ldjam42.ClubArea;
 import de.gurkenlabs.ldjam42.GameManager;
+import de.gurkenlabs.litiengine.Align;
 import de.gurkenlabs.litiengine.Game;
+import de.gurkenlabs.litiengine.Valign;
 import de.gurkenlabs.litiengine.annotation.CollisionInfo;
 import de.gurkenlabs.litiengine.annotation.EntityInfo;
 import de.gurkenlabs.litiengine.annotation.MovementInfo;
@@ -26,7 +28,7 @@ import de.gurkenlabs.litiengine.util.MathUtilities;
 
 @MovementInfo(velocity = 50)
 @EntityInfo(width = 11, height = 22)
-@CollisionInfo(collision = true, collisionBoxWidth = 11, collisionBoxHeight = 11)
+@CollisionInfo(collision = true, collisionBoxWidth = 11, collisionBoxHeight = 11, align = Align.CENTER, valign = Valign.MIDDLE)
 public class PartyGuest extends Creature {
   private static final int MAX_GROUP_SIZE = 9;
 
@@ -53,6 +55,7 @@ public class PartyGuest extends Creature {
         final int x = (int) Game.getCamera().getViewPortDimensionCenter(e).getX();
         final int y = (int) Game.getCamera().getViewPortDimensionCenter(e).getY() - 10;
         TextRenderer.render(g, (int) (guest.getSatisfaction() * 100) + "%", x, y);
+        TextRenderer.render(g, guest.getState() != null ? guest.getState().toString() : "", x, y + 10);
       }
     });
   }

@@ -43,6 +43,10 @@ public class IngameScreen extends Screen {
     double width = g.getFontMetrics().stringWidth(money);
     double height = g.getFontMetrics().getHeight();
     TextRenderer.render(g, money, Game.getScreenManager().getResolution().getWidth() / 2.0 - width / 2, Game.getScreenManager().getResolution().getHeight() - height * 2);
+
+    if (GameManager.getGrid() != null) {
+      GameManager.getGrid().render(g);
+    }
     super.render(g);
   }
 }
