@@ -94,45 +94,45 @@
   <object id="188" type="COLLISIONBOX" x="400" y="16" width="16" height="320">
    <polyline/>
   </object>
-  <object id="190" type="AREA" x="256" y="288" width="16" height="32">
-   <properties>
-    <property name="tags" type="tags" value="area_food"/>
-   </properties>
-   <polyline/>
-  </object>
   <object id="200" type="AREA" x="304" y="192" width="16" height="32">
    <properties>
-    <property name="tags" type="tags" value="area_food"/>
+    <property name="tags" type="tags" value="area_food,transition"/>
    </properties>
    <polyline/>
   </object>
   <object id="204" type="AREA" x="144" y="288" width="16" height="32">
    <properties>
-    <property name="tags" type="tags" value="area_drink"/>
+    <property name="tags" type="tags" value="area_entry"/>
    </properties>
    <polyline/>
   </object>
-  <object id="210" type="AREA" x="96" y="192" width="16" height="32">
+  <object id="210" name="" type="AREA" x="96" y="192" width="16" height="32">
    <properties>
-    <property name="tags" type="tags" value="area_drink"/>
+    <property name="tags" type="tags" value="area_drink,transition"/>
    </properties>
    <polyline/>
   </object>
   <object id="214" type="AREA" x="144" y="80" width="128" height="16">
    <properties>
-    <property name="tags" type="tags" value="area_chill"/>
+    <property name="tags" type="tags" value="area_chill,transition"/>
    </properties>
    <polyline/>
   </object>
   <object id="224" type="AREA" x="352" y="80" width="32" height="16">
    <properties>
-    <property name="tags" type="tags" value="area_food"/>
+    <property name="tags" type="tags" value="area_food,transition"/>
    </properties>
    <polyline/>
   </object>
   <object id="232" type="AREA" x="32" y="80" width="32" height="16">
    <properties>
-    <property name="tags" type="tags" value="area_drink"/>
+    <property name="tags" type="tags" value="area_drink,transition"/>
+   </properties>
+   <polyline/>
+  </object>
+  <object id="240" type="AREA" x="256" y="288" width="16" height="32">
+   <properties>
+    <property name="tags" type="tags" value="area_entry"/>
    </properties>
    <polyline/>
   </object>

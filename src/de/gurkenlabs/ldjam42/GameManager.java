@@ -53,7 +53,7 @@ public final class GameManager {
       public void environmentLoaded(IEnvironment environment) {
         spawner = new PartyGuestSpawner(getSpawnPoints(), 1000, 5);
         Game.getLoop().execute(10500, () -> {
-          spawner.setInterval(15000);
+          spawner.setInterval(7500);
         });
 
         for (ClubArea area : ClubArea.values()) {
@@ -75,7 +75,7 @@ public final class GameManager {
           space.put(ar, s);
         }
 
-        grid = new AStarGrid(Game.getEnvironment().getMap().getSizeInPixels(), 8);
+        grid = new AStarGrid(Game.getEnvironment().getMap().getSizeInPixels(), 16);
         Game.getLoop().attach(GameManager::update);
       }
     });
@@ -140,7 +140,7 @@ public final class GameManager {
   }
 
   public static int getGuests(ClubArea area) {
-    return guestsInArea.get(area);
+    return guestsInArea != null ? guestsInArea.get(area) : 0;
   }
 
   public static double getGuestsRelative(ClubArea area) {
@@ -153,8 +153,16 @@ public final class GameManager {
     return count / total;
   }
 
+  public static double getTotalSpace(ClubArea area) {
+    return space.get(area);
+  }
+
   public static double getRemainingSpace(ClubArea area) {
     return remaining.get(area);
+  }
+
+  public static Collection<MapArea> getMapAreas(ClubArea area) {
+    return areas.get(area);
   }
 
   public static int getTotalGuestsInMainAreas() {

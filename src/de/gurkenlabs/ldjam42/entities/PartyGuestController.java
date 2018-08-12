@@ -1,32 +1,42 @@
 package de.gurkenlabs.ldjam42.entities;
 
+import java.awt.geom.Point2D;
+import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
+import de.gurkenlabs.ldjam42.ClubArea;
 import de.gurkenlabs.ldjam42.GameManager;
+import de.gurkenlabs.ldjam42.TileUtilities;
 import de.gurkenlabs.litiengine.Game;
+import de.gurkenlabs.litiengine.entities.MapArea;
+import de.gurkenlabs.litiengine.pathfinding.EntityNavigator;
+import de.gurkenlabs.litiengine.pathfinding.astar.AStarPathFinder;
 import de.gurkenlabs.litiengine.physics.MovementController;
+import de.gurkenlabs.litiengine.util.ArrayUtilities;
 import de.gurkenlabs.litiengine.util.MathUtilities;
 
 public class PartyGuestController extends MovementController<PartyGuest> {
 
   private static final Random RANDOM = new Random();
 
-  // State.WALK
-  private static final int ANGLE_CHANGE_MIN_DELAY = 2000;
-  private static final int ANGLE_CHANGE_RANDOM_DELAY = 3000;
-
-  private int angle;
-  private long lastAngleChange;
-  private long nextAngleChange;
-
   // STATE MONEY
   private static final int PAY_MIN_SPEND = 5;
-  private static final int PAY_MIN_INTERVAL = 5000;
-  private static final int PAY_MAX_INTERVAL = 10000;
+  private static final int PAY_MIN_INTERVAL = 6000;
+  private static final int PAY_MAX_INTERVAL = 11000;
   private int paymentInterval;
   private long lastPayment;
 
-  // STATE IDLE
+  // STATE PARTY
+  private long partyStart;
+
+  // STATE CHANGE_AREA
+  private static final int CHANGE_AREA_MIN = 10000;
+  private static final int CHANGE_AREA_MAX = 60000;
+  private long lastChangeArea;
+  private long nextChangeInterval;
+
+  private EntityNavigator nav;
 
   public PartyGuestController(PartyGuest mobileEntity) {
     super(mobileEntity);
@@ -39,31 +49,89 @@ public class PartyGuestController extends MovementController<PartyGuest> {
     this.updateState();
 
     switch (this.getEntity().getState()) {
-    case IDLE:
+    case PARTY:
+      this.party();
       break;
     case BAD_BEHAVIOR:
       break;
     case CHANGE_AREA:
+      this.changeArea();
       break;
     case SPEND_MONEY:
       this.spendMoney();
       break;
-    case WALK:
     default:
-      this.walkAround();
       break;
     }
+  }
+
+  private void changeArea() {
+    if (this.nav != null && this.nav.isNavigating()) {
+      // still navigating
+      return;
+    }
+
+    this.initEntityNavigator();
+    if (this.nav == null) {
+      return;
+    }
+
+    ClubArea[] areas = ClubArea.values();
+    areas = ArrayUtilities.remove(areas, ClubArea.LOBBY);
+    ClubArea targetArea = ArrayUtilities.getRandom(areas);
+    List<MapArea> mapAreas = GameManager.getMapAreas(targetArea).stream().collect(Collectors.toList());
+    double[] probabilities = new double[mapAreas.size()];
+
+    // select a maparea with a probability relative to their size
+    double total = GameManager.getTotalSpace(targetArea);
+    for (int i = 0; i < probabilities.length; i++) {
+      double space = mapAreas.get(i).getBoundingBox().getWidth() * mapAreas.get(i).getBoundingBox().getHeight();
+      double probability = space / total;
+      probabilities[i] = probability;
+    }
+
+    int index = MathUtilities.getRandomIndex(probabilities);
+
+    MapArea targetMapArea = mapAreas.get(index);
+    Point2D target = TileUtilities.getRandomTileCenterLocation(targetMapArea.getBoundingBox());
+    this.nav.navigate(target);
+  }
+
+  private void initEntityNavigator() {
+    if (this.nav == null && Game.getEnvironment() != null && Game.getEnvironment().isLoaded()) {
+      this.nav = new EntityNavigator(this.getEntity(), new AStarPathFinder(GameManager.getGrid()));
+      this.nav.addNavigationListener(() -> {
+        TileUtilities.centerEntityInCurrentTile(this.getEntity());
+        this.lastChangeArea = Game.getLoop().getTicks();
+        this.nextChangeInterval = MathUtilities.randomInRange(CHANGE_AREA_MIN, CHANGE_AREA_MAX);
+      });
+    }
+  }
+
+  private void party() {
   }
 
   private void updateState() {
 
     this.getEntity().updateSatisfaction();
+
     if (Game.getLoop().getDeltaTime(this.lastPayment) > paymentInterval) {
       this.getEntity().setState(State.SPEND_MONEY);
       return;
     }
 
-    this.getEntity().setState(State.WALK);
+    if (Game.getLoop().getDeltaTime(this.lastChangeArea) > this.nextChangeInterval) {
+
+    }
+
+    if (!this.getEntity().getCurrentArea().isMainArea()
+        || Game.getLoop().getDeltaTime(this.lastChangeArea) > this.nextChangeInterval
+        || this.nav != null && this.nav.isNavigating()) {
+      this.getEntity().setState(State.CHANGE_AREA);
+      return;
+    }
+
+    this.getEntity().setState(State.PARTY);
   }
 
   private void spendMoney() {
@@ -77,23 +145,5 @@ public class PartyGuestController extends MovementController<PartyGuest> {
     GameManager.spendMoney(money);
     this.paymentInterval = MathUtilities.randomInRange(PAY_MIN_INTERVAL, PAY_MAX_INTERVAL);
     this.lastPayment = Game.getLoop().getTicks();
-  }
-
-  protected void walkAround() {
-    float pixelsPerTick = this.getEntity().getTickVelocity();
-    final long currentTick = Game.getLoop().getTicks();
-    final long timeSinceLastAngleChange = Game.getLoop().getDeltaTime(this.lastAngleChange);
-    if (this.angle == 0 || timeSinceLastAngleChange > this.nextAngleChange) {
-      final Random rand = new Random();
-      this.angle = rand.nextInt(360);
-      this.lastAngleChange = currentTick;
-      this.calculateNextAngleChange();
-    }
-    this.getEntity().setAngle(this.angle);
-    Game.getPhysicsEngine().move(this.getEntity(), this.getEntity().getAngle(), pixelsPerTick);
-  }
-
-  private void calculateNextAngleChange() {
-    this.nextAngleChange = RANDOM.nextInt(ANGLE_CHANGE_RANDOM_DELAY) + ANGLE_CHANGE_MIN_DELAY;
   }
 }

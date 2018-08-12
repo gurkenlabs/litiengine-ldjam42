@@ -17,6 +17,10 @@ public enum ClubArea {
     return this.tag;
   }
 
+  public boolean isMainArea() {
+    return this != LOBBY;
+  }
+
   public static ClubArea getAreaByTag(String tag) {
     if (tag == null || tag.isEmpty()) {
       return ClubArea.LOBBY;
