@@ -1,6 +1,8 @@
 package de.gurkenlabs.ldjam42;
 
+import java.awt.Cursor;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
 
@@ -10,10 +12,15 @@ import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.Resources;
 import de.gurkenlabs.litiengine.gui.GuiProperties;
 import de.gurkenlabs.litiengine.input.Input;
+import de.gurkenlabs.litiengine.util.ImageProcessing;
 
 public class Program {
   public static final Font GUI_FONT = Resources.getFont("marquee moon.ttf").deriveFont(48f);
   public static final Font GUI_FONT_SMALL = GUI_FONT.deriveFont(30f);
+  public static float HUD_SCALE = 2.0f;
+
+  public static final Image CURSOR_STANDARD = ImageProcessing.scaleImage(Resources.getImage("cursor-standard.png"), HUD_SCALE);
+  public static final Image CURSOR_CLICK = ImageProcessing.scaleImage(Resources.getImage("cursor-click.png"), HUD_SCALE);
 
   /**
    * The main entry point for the GOIN club.
@@ -24,9 +31,10 @@ public class Program {
     Game.getInfo().setVersion("v0.0.1");
     Game.getInfo().setName("GO IN");
     Game.getInfo().setSubTitle("Behave or GET LOST!");
-
     Game.init(args);
     initGoin();
+    Game.getScreenManager().getRenderComponent().setCursor(CURSOR_STANDARD);
+    Game.getScreenManager().getRenderComponent().setCursorOffset(0, 0);
 
     Game.start();
   }
