@@ -41,6 +41,12 @@
       <property name="tags" value="area_entry"/>
      </properties>
     </object>
+    <object id="75" type="AREA" x="112" y="96" width="192" height="160">
+     <properties>
+      <property name="tags" value="area_dance"/>
+     </properties>
+     <polyline points=""/>
+    </object>
     <object id="102" type="AREA" x="16" y="16" width="384" height="64">
      <properties>
       <property name="tags" value="area_chill"/>
