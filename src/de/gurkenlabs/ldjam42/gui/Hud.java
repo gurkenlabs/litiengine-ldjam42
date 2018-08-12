@@ -3,6 +3,7 @@ package de.gurkenlabs.ldjam42.gui;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
@@ -13,6 +14,7 @@ import de.gurkenlabs.ldjam42.Program;
 import de.gurkenlabs.ldjam42.entities.PartyGuest;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.graphics.ImageRenderer;
+import de.gurkenlabs.litiengine.graphics.ShapeRenderer;
 import de.gurkenlabs.litiengine.graphics.TextRenderer;
 import de.gurkenlabs.litiengine.gui.GuiComponent;
 import de.gurkenlabs.litiengine.gui.ImageComponent;
@@ -78,23 +80,35 @@ public final class Hud extends GuiComponent {
 
     PartyGuest guest = GameManager.getCurrentFocus();
 
+    BufferedImage image = guest.getAnimationController().getCurrentSprite();
+    double factor = 150 / image.getWidth();
+    double imgWidth = factor * image.getWidth();
+    double imgHeight = factor * image.getHeight();
+    double imgX = Game.getScreenManager().getResolution().getWidth() / 2.0 - imgWidth / 2.0;
+    double imgY = this.kickButton.getY() + this.kickButton.getHeight() + imgHeight * 0.1;
+    ImageRenderer.renderScaled(g, guest.getAnimationController().getCurrentSprite(), imgX, imgY, factor);
+
     g.setFont(Program.GUI_FONT_SMALL);
     Time clubbingSince = new Time(GameManager.getStartTime().getTime() + Game.getLoop().convertToMs(guest.getClubbingSince()) * 60);
     // render info/ image of currently focused guest
     SimpleDateFormat form = new SimpleDateFormat("HH:mm");
     String time = "Clubbing since " + form.format(clubbingSince);
     double width = g.getFontMetrics().stringWidth(time);
-    double y = Game.getScreenManager().getResolution().getHeight() - g.getFontMetrics().getHeight();
+    double y = Game.getScreenManager().getResolution().getHeight() - g.getFontMetrics().getHeight() * 0.8;
     TextRenderer.render(g, time, Game.getScreenManager().getResolution().getWidth() / 2.0 - width / 2, y);
 
-    BufferedImage image = guest.getAnimationController().getCurrentSprite();
-    double factor = 150 / image.getWidth();
-    double imgWidth = factor * image.getWidth();
-    double imgHeight = factor * image.getHeight();
-    double imgX = Game.getScreenManager().getResolution().getWidth() / 2.0 - imgWidth / 2.0;
-    double imgY = this.kickButton.getY() + this.kickButton.getHeight() + imgHeight * 0.25;
-    ImageRenderer.renderScaled(g, guest.getAnimationController().getCurrentSprite(), imgX, imgY, factor);
+    // name bg
+    g.setFont(Program.GUI_FONT_SMALL.deriveFont(36f));
+    double nameWidth = g.getFontMetrics().stringWidth(guest.getName());
+    double nameX = Game.getScreenManager().getResolution().getWidth() / 2.0 - nameWidth / 2;
+    double nameY = y - g.getFontMetrics().getHeight();
+    final int PADDING = 10;
+    Rectangle2D nameBg = new Rectangle2D.Double(nameX - PADDING, nameY - g.getFontMetrics().getHeight(), nameWidth + 2 * PADDING, g.getFontMetrics().getHeight() + PADDING);
+    g.setColor(new Color(0, 0, 0, 150));
+    ShapeRenderer.render(g, nameBg);
 
+    g.setColor(Color.WHITE);
+    TextRenderer.render(g, guest.getName(), nameX, nameY);
   }
 
   private void renderAreaInfo(Graphics2D g) {

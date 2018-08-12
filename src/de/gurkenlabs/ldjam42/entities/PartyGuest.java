@@ -11,6 +11,7 @@ import de.gurkenlabs.ldjam42.ClubArea;
 import de.gurkenlabs.ldjam42.GameManager;
 import de.gurkenlabs.litiengine.Align;
 import de.gurkenlabs.litiengine.Game;
+import de.gurkenlabs.litiengine.Resources;
 import de.gurkenlabs.litiengine.Valign;
 import de.gurkenlabs.litiengine.annotation.CollisionInfo;
 import de.gurkenlabs.litiengine.annotation.EntityInfo;
@@ -37,6 +38,9 @@ public class PartyGuest extends Creature {
   private static final double REMAINING_SPACE_WEIGHT = 1;
   private static final double BAD_BEHAVIOR_PENALTY = 2;
 
+  private static final String[] femaleNames;
+  private static final String[] maleNames;
+
   private static Group currentGroup;
 
   private Group group;
@@ -61,10 +65,15 @@ public class PartyGuest extends Creature {
         TextRenderer.render(g, (int) (guest.getSatisfaction() * 100) + "%", x, y);
       }
     });
+
+    femaleNames = Resources.getStringList("names-female.txt");
+    maleNames = Resources.getStringList("names-male.txt");
   }
 
   public PartyGuest(Point2D location) {
     this.gender = MathUtilities.randomBoolean() ? Gender.FEMALE : Gender.MALE;
+
+    this.setName(ArrayUtilities.getRandom(this.getGender() == Gender.FEMALE ? femaleNames : maleNames));
     this.satisfaction = 1;
     this.features = new int[4];
     this.setLocation(location);
@@ -126,7 +135,11 @@ public class PartyGuest extends Creature {
   }
 
   public boolean isNaked() {
-    return this.getFeatures()[Feature.PANTS.ordinal()] == 0;
+    return this.getFeatures()[Feature.PANTS.ordinal()] == 0 || this.getFeatures()[Feature.TOP.ordinal()] == 0;
+  }
+
+  public boolean isCompletelyNaked() {
+    return this.getFeatures()[Feature.PANTS.ordinal()] == 0 && this.getFeatures()[Feature.TOP.ordinal()] == 0;
   }
 
   public void setBadBehavior(BadBehavior behavior) {
@@ -181,7 +194,9 @@ public class PartyGuest extends Creature {
       }
 
       if (GeometricUtilities.intersects(g.getComfortZone(), this.getComfortZone())) {
-        if (g.isNaked()) {
+        if (g.isCompletelyNaked()) {
+          cnt += 3;
+        } else if (g.isNaked()) {
           cnt++;
         }
       }

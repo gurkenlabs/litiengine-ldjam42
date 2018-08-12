@@ -92,6 +92,8 @@ public final class GameManager {
 
         grid = new AStarGrid(Game.getEnvironment().getMap().getSizeInPixels(), 16);
         Game.getLoop().attach(GameManager::update);
+
+        IngameScreen.instance().getHud().hideDismissButton();
       }
     });
 
