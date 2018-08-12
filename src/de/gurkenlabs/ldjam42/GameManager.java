@@ -27,6 +27,7 @@ import de.gurkenlabs.litiengine.environment.EnvironmentAdapter;
 import de.gurkenlabs.litiengine.environment.EnvironmentEntityAdapter;
 import de.gurkenlabs.litiengine.environment.IEnvironment;
 import de.gurkenlabs.litiengine.graphics.Spritesheet;
+import de.gurkenlabs.litiengine.input.Input;
 import de.gurkenlabs.litiengine.pathfinding.astar.AStarGrid;
 import de.gurkenlabs.litiengine.util.ImageProcessing;
 
@@ -62,6 +63,17 @@ public final class GameManager {
   public static void init() {
     featurePermutations = new IntCombinator(4);
     generateGuestSpritesheets();
+
+    Input.mouse().onPressed(p -> {
+      Game.getScreenManager().getRenderComponent().setCursor(Program.CURSOR_CLICK);
+      Game.getScreenManager().getRenderComponent().setCursorOffset(0, 0);
+    });
+
+    Input.mouse().onReleased(p -> {
+      Game.getScreenManager().getRenderComponent().setCursor(Program.CURSOR_STANDARD);
+      Game.getScreenManager().getRenderComponent().setCursorOffset(0, 0);
+    });
+
     goin = new Environment(Game.getMap("test"));
     goin.addListener(new EnvironmentAdapter() {
       @Override
