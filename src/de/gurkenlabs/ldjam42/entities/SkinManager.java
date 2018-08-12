@@ -3,42 +3,31 @@ package de.gurkenlabs.ldjam42.entities;
 public class SkinManager {
   private int pants, top, face, hair;
   private Gender gender;
-  
+
   public SkinManager(PartyGuest guest) {
-    //guest.setSkinManager(this);
-    this.gender=guest.getGender();
-    
+    // guest.setSkinManager(this);
+    this.gender = guest.getGender();
+//  this.pants=guest.getFeatures().get(0);
+//  this.top=guest.getFeatures().get(1);
+//  this.face=guest.getFeatures().get(2);
+//  this.hair=guest.getFeatures().get(3);
+
   }
-  
-  public int getPants() {
-    return pants;
+
+  public String getPantsString() {
+    return "";
   }
-  public void setPants(int pants) {
-    this.pants = pants;
+
+  public String getHairString() {
+    return "";
   }
-  public Gender getGender() {
-    return gender;
+
+  public String getTopString() {
+    return "";
   }
-  public void setGender(Gender gender) {
-    this.gender = gender;
+
+  public String getFaceString() {
+    return "";
   }
-  public int getHair() {
-    return hair;
-  }
-  public void setHair(int hair) {
-    this.hair = hair;
-  }
-  public int getTop() {
-    return top;
-  }
-  public void setTop(int top) {
-    this.top = top;
-  }
-  public int getFace() {
-    return face;
-  }
-  public void setFace(int face) {
-    this.face = face;
-  }
-  
+
 }
