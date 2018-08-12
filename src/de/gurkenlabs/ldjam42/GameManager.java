@@ -14,6 +14,7 @@ import de.gurkenlabs.ldjam42.entities.Feature;
 import de.gurkenlabs.ldjam42.entities.Gender;
 import de.gurkenlabs.ldjam42.entities.PartyGuest;
 import de.gurkenlabs.ldjam42.entities.PartyGuestSpawner;
+import de.gurkenlabs.ldjam42.gui.IngameScreen;
 import de.gurkenlabs.ldjam42.util.IntCombinator;
 import de.gurkenlabs.litiengine.Direction;
 import de.gurkenlabs.litiengine.Game;
