@@ -36,6 +36,7 @@ public class PartyGuest extends Creature {
   private static final int WEALTH_VIP = 10;
   private static final double COMFORT_ZONE_WEIGHT = 4;
   private static final double REMAINING_SPACE_WEIGHT = 1;
+  private static final double BAD_BEHAVIOR_PENALTY = 0.5;
 
   private static int currentGroupId;
   private static double currentGroupProbability = 1;
@@ -130,6 +131,10 @@ public class PartyGuest extends Creature {
     return this.clubbingSince;
   }
 
+  public boolean isNaked() {
+    return this.getFeatures()[Feature.PANTS.ordinal()] == 0;
+  }
+
   public void setBadBehavior(BadBehavior behavior) {
     this.badBehavior = behavior;
   }
@@ -154,16 +159,11 @@ public class PartyGuest extends Creature {
     double comfort = 1 / Math.sqrt(guestsInComfortZone == 0 ? 1.0 : (double) guestsInComfortZone);
 
     this.satisfaction = (remainingSpace * REMAINING_SPACE_WEIGHT + comfort * COMFORT_ZONE_WEIGHT) / (COMFORT_ZONE_WEIGHT + REMAINING_SPACE_WEIGHT);
+    
+    if (this.nakedGuestsInComfortZone()) {
+      this.satisfaction /= BAD_BEHAVIOR_PENALTY;
+    }
   }
-
-//  @Override
-//  public String getSpritePrefix() {
-//    if (this.getFeatures() == null) {
-//      return super.getSpritePrefix();
-//    }
-//    String prefix = 
-//    return prefix;
-//  }
 
   private int getGuestsInComfortZone() {
     int cnt = 0;
@@ -177,6 +177,21 @@ public class PartyGuest extends Creature {
       }
     }
     return cnt;
+  }
+
+  private boolean nakedGuestsInComfortZone() {
+    for (PartyGuest g : Game.getEnvironment().getByType(PartyGuest.class)) {
+      if (g == null || g.equals(this)) {
+        continue;
+      }
+
+      if (GeometricUtilities.intersects(g.getComfortZone(), this.getComfortZone())) {
+        if (g.isNaked()) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   private void updateCurrentArea() {
@@ -194,7 +209,7 @@ public class PartyGuest extends Creature {
 
   private void initialize() {
     this.initializeWealth();
-    
+
     // init group
     this.group = getGroupId();
     int featureNumber = 0;
@@ -206,7 +221,7 @@ public class PartyGuest extends Creature {
         this.features[i] = MathUtilities.randomInRange(0, 4);
       }
     }
-    
+
     this.setSpritePrefix(String.format("%s-%d_%d_%d_%d", this.getGender().toString().toLowerCase(), this.getFeatures()[0], this.getFeatures()[1], this.getFeatures()[2], this.getFeatures()[3]));
     this.setController(EntityAnimationController.class, new PartyGuestAnimationController(this));
 
