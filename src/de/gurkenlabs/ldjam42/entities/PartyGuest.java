@@ -31,19 +31,15 @@ import de.gurkenlabs.litiengine.util.geom.GeometricUtilities;
 @CollisionInfo(collision = true, collisionBoxWidth = 11, collisionBoxHeight = 11, align = Align.CENTER, valign = Valign.MIDDLE)
 public class PartyGuest extends Creature {
   public static final double OCCUPATION = 16;
-  private static final int MAX_GROUP_SIZE = 9;
   private static final int WEALTH_DEFAULT = 1;
   private static final int WEALTH_VIP = 10;
   private static final double COMFORT_ZONE_WEIGHT = 4;
   private static final double REMAINING_SPACE_WEIGHT = 1;
-  private static final double BAD_BEHAVIOR_PENALTY = 0.5;
+  private static final double BAD_BEHAVIOR_PENALTY = 2;
 
-  private static int currentGroupId;
-  private static double currentGroupProbability = 1;
-  private static int currentGroupSize;
-  private static int[] currentGroupFeatures = new int[2], currentGroupFeatureIndices = new int[2];
+  private static Group currentGroup;
 
-  private int group;
+  private Group group;
   private int[] features;
   private BadBehavior badBehavior;
   private final Gender gender;
@@ -63,8 +59,6 @@ public class PartyGuest extends Creature {
         final int x = (int) Game.getCamera().getViewPortDimensionCenter(e).getX();
         final int y = (int) Game.getCamera().getViewPortDimensionCenter(e).getY() - 10;
         TextRenderer.render(g, (int) (guest.getSatisfaction() * 100) + "%", x, y);
-        TextRenderer.render(g, guest.getState() != null ? guest.getState().toString() : "", x, y + 10);
-        Game.getRenderEngine().renderOutline(g, guest.getComfortZone());
       }
     });
   }
@@ -99,7 +93,7 @@ public class PartyGuest extends Creature {
     return new Ellipse2D.Double(this.getCenter().getX() - 20, this.getCenter().getY() - 20, 40, 40);
   }
 
-  public int getGroup() {
+  public Group getGroup() {
     return this.group;
   }
 
@@ -159,9 +153,9 @@ public class PartyGuest extends Creature {
     double comfort = 1 / Math.sqrt(guestsInComfortZone == 0 ? 1.0 : (double) guestsInComfortZone);
 
     this.satisfaction = (remainingSpace * REMAINING_SPACE_WEIGHT + comfort * COMFORT_ZONE_WEIGHT) / (COMFORT_ZONE_WEIGHT + REMAINING_SPACE_WEIGHT);
-    
-    if (this.nakedGuestsInComfortZone()) {
-      this.satisfaction /= BAD_BEHAVIOR_PENALTY;
+
+    if (!this.isNaked() && this.nakedGuestsInComfortZone() > 0) {
+      this.satisfaction /= BAD_BEHAVIOR_PENALTY * this.nakedGuestsInComfortZone();
     }
   }
 
@@ -179,7 +173,8 @@ public class PartyGuest extends Creature {
     return cnt;
   }
 
-  private boolean nakedGuestsInComfortZone() {
+  private int nakedGuestsInComfortZone() {
+    int cnt = 0;
     for (PartyGuest g : Game.getEnvironment().getByType(PartyGuest.class)) {
       if (g == null || g.equals(this)) {
         continue;
@@ -187,11 +182,11 @@ public class PartyGuest extends Creature {
 
       if (GeometricUtilities.intersects(g.getComfortZone(), this.getComfortZone())) {
         if (g.isNaked()) {
-          return true;
+          cnt++;
         }
       }
     }
-    return false;
+    return cnt;
   }
 
   private void updateCurrentArea() {
@@ -210,21 +205,27 @@ public class PartyGuest extends Creature {
   private void initialize() {
     this.initializeWealth();
 
+    this.group = this.assignGroup();
+    this.initializeFeatures();
+
+    this.setSpritePrefix(String.format("%s-%d_%d_%d_%d", this.getGender().toString().toLowerCase(), this.getFeatures()[0], this.getFeatures()[1], this.getFeatures()[2], this.getFeatures()[3]));
+    this.setController(EntityAnimationController.class, new PartyGuestAnimationController(this));
+  }
+
+  private void initializeFeatures() {
     // init group
-    this.group = getGroupId();
+
     int featureNumber = 0;
     for (int i = 0; i <= 3; i++) {
       final int tmp = i;
-      if (IntStream.of(currentGroupFeatureIndices).anyMatch(x -> x == tmp)) {
-        this.features[tmp] = currentGroupFeatures[featureNumber];
+
+      // group features
+      if (IntStream.of(this.getGroup().getFeatureIndices()).anyMatch(x -> x == tmp)) {
+        this.features[tmp] = this.getGroup().getFeatures()[featureNumber];
       } else {
         this.features[i] = MathUtilities.randomInRange(0, 4);
       }
     }
-
-    this.setSpritePrefix(String.format("%s-%d_%d_%d_%d", this.getGender().toString().toLowerCase(), this.getFeatures()[0], this.getFeatures()[1], this.getFeatures()[2], this.getFeatures()[3]));
-    this.setController(EntityAnimationController.class, new PartyGuestAnimationController(this));
-
   }
 
   private void initializeWealth() {
@@ -232,35 +233,19 @@ public class PartyGuest extends Creature {
     // TODO: implement VIP WEALTH_VIP
   }
 
-  private static int getGroupId() {
+  private Group assignGroup() {
     // if a group is full, open up the next one
-    if (currentGroupSize >= MAX_GROUP_SIZE) {
+    if (currentGroup == null || currentGroup.getSize() >= Group.MAX_GROUP_SIZE) {
 
-      return createNewGroup();
+      return new Group();
     }
 
-    if (MathUtilities.probabilityIsTrue(currentGroupProbability)) {
-      currentGroupSize++;
-      currentGroupProbability /= Math.sqrt(2);
-      return currentGroupId;
+    if (MathUtilities.probabilityIsTrue(currentGroup.getProbability())) {
+      currentGroup.setProbability(currentGroup.getProbability() / Math.sqrt(2));
+      currentGroup.add(this);
+      return currentGroup;
     }
 
-    return createNewGroup();
-  }
-
-  private static int createNewGroup() {
-    currentGroupId++;
-    currentGroupSize = 0;
-    currentGroupProbability = 1;
-    currentGroupFeatureIndices[0] = MathUtilities.randomInRange(0, 4);
-    currentGroupFeatureIndices[1] = MathUtilities.randomInRange(0, 4);
-    while (currentGroupFeatureIndices[0] == currentGroupFeatureIndices[1]) {
-      currentGroupFeatureIndices[1] = MathUtilities.randomInRange(0, 4);
-    }
-
-    currentGroupFeatures[0] = MathUtilities.randomInRange(0, 4);
-    currentGroupFeatures[1] = MathUtilities.randomInRange(0, 4);
-
-    return currentGroupId;
+    return new Group();
   }
 }

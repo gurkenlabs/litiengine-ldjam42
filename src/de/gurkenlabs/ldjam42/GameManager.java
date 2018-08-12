@@ -230,7 +230,7 @@ public final class GameManager {
             if (baseSpritesheet == null) {
               continue;
             }
-            //            System.out.println("base Sprite Path: " + baseSpritePath);
+
             BufferedImage baseSprite = baseSpritesheet.getImage();
             BufferedImage combinedSprite = ImageProcessing.getCompatibleImage(baseSprite.getWidth(), baseSprite.getHeight());
             Graphics2D g = combinedSprite.createGraphics();
@@ -244,9 +244,8 @@ public final class GameManager {
             }
             g.dispose();
             String combinedSpritePath = String.format("%s-%d_%d_%d_%d-%s-%s", gend, permutation[0], permutation[1], permutation[2], permutation[3], state, dir);
-            //            System.out.println("combined Sprite Path: " + combinedSpritePath);
-            //            System.out.println("----");
-            Spritesheet combinedSpritesheet = Spritesheet.load(combinedSprite, combinedSpritePath, spriteWidth, spriteHeight);
+
+            Spritesheet.load(combinedSprite, combinedSpritePath, spriteWidth, spriteHeight);
             foundSpritesheets++;
           }
         }
@@ -254,7 +253,6 @@ public final class GameManager {
       }
     }
     System.out.println("total number of spritesheets: " + foundSpritesheets);
-
   }
 
   private static int countGuestsInArea(MapArea area) {
