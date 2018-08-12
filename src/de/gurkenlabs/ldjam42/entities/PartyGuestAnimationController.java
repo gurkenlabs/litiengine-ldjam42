@@ -19,7 +19,7 @@ public class PartyGuestAnimationController extends CreatureAnimationController<P
         if (sprite == null) {
           continue;
         }
-        this.add(new Animation(sprite, true, 200));
+        this.add(new Animation(sprite, true, 200, 200));
       }
     }
   }
