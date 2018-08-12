@@ -1,5 +1,6 @@
 package de.gurkenlabs.ldjam42.entities;
 
+import de.gurkenlabs.ldjam42.graphics.FocusImageEffect;
 import de.gurkenlabs.litiengine.Direction;
 import de.gurkenlabs.litiengine.graphics.Spritesheet;
 import de.gurkenlabs.litiengine.graphics.animation.Animation;
@@ -22,6 +23,8 @@ public class PartyGuestAnimationController extends CreatureAnimationController<P
         this.add(new Animation(sprite, true, 200, 200));
       }
     }
+    
+    this.add(new FocusImageEffect(entity));
   }
 
   @Override
