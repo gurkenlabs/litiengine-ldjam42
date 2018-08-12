@@ -23,7 +23,6 @@ import de.gurkenlabs.litiengine.graphics.DebugRenderer;
 import de.gurkenlabs.litiengine.graphics.TextRenderer;
 import de.gurkenlabs.litiengine.graphics.animation.EntityAnimationController;
 import de.gurkenlabs.litiengine.physics.MovementController;
-import de.gurkenlabs.litiengine.util.ArrayUtilities;
 import de.gurkenlabs.litiengine.util.MathUtilities;
 
 @MovementInfo(velocity = 50)
@@ -35,7 +34,7 @@ public class PartyGuest extends Creature {
   private static int currentGroupId;
   private static double currentGroupProbability = 1;
   private static int currentGroupSize;
-  private static int[] currentGroupFeatures, currentGroupFeatureIndices;
+  private static int[] currentGroupFeatures = new int[2], currentGroupFeatureIndices = new int[2];
 
   private int group;
   private int[] features;
@@ -92,6 +91,10 @@ public class PartyGuest extends Creature {
 
   public int getGroup() {
     return this.group;
+  }
+
+  public int[] getFeatures() {
+    return this.features;
   }
 
   public ClubArea getCurrentArea() {
@@ -159,15 +162,13 @@ public class PartyGuest extends Creature {
 
     // init group
     this.group = getGroupId();
-    int groupFeature = 0;
+    int featureNumber = 0;
     for (int i = 0; i <= 3; i++) {
       final int tmp = i;
-      if (currentGroupFeatureIndices != null && groupFeature <= 1 && IntStream.of(currentGroupFeatureIndices).anyMatch(x -> x == tmp)) {
-        System.out.println(String.format("group feature = %d, i =  %d", groupFeature, tmp));
-        this.features[groupFeature] = currentGroupFeatures[i];
-        groupFeature++;
+      if (IntStream.of(currentGroupFeatureIndices).anyMatch(x -> x == tmp)) {
+        this.features[tmp] = currentGroupFeatures[featureNumber];
       } else {
-        this.features[i] = MathUtilities.randomInRange(0, 3);
+        this.features[i] = MathUtilities.randomInRange(0, 4);
       }
     }
     this.initializeWealth();
@@ -200,16 +201,14 @@ public class PartyGuest extends Creature {
     currentGroupId++;
     currentGroupSize = 0;
     currentGroupProbability = 1;
-    currentGroupFeatureIndices = new int[2];
-    currentGroupFeatureIndices[0] = MathUtilities.randomInRange(0, 3);
-    currentGroupFeatureIndices[1] = MathUtilities.randomInRange(0, 3);
+    currentGroupFeatureIndices[0] = MathUtilities.randomInRange(0, 4);
+    currentGroupFeatureIndices[1] = MathUtilities.randomInRange(0, 4);
     while (currentGroupFeatureIndices[0] == currentGroupFeatureIndices[1]) {
-      currentGroupFeatureIndices[1] = MathUtilities.randomInRange(0, 3);
+      currentGroupFeatureIndices[1] = MathUtilities.randomInRange(0, 4);
     }
 
-    currentGroupFeatures = new int[2];
-    currentGroupFeatures[0] = MathUtilities.randomInRange(0, 3);
-    currentGroupFeatures[1] = MathUtilities.randomInRange(0, 3);
+    currentGroupFeatures[0] = MathUtilities.randomInRange(0, 4);
+    currentGroupFeatures[1] = MathUtilities.randomInRange(0, 4);
 
     return currentGroupId;
   }

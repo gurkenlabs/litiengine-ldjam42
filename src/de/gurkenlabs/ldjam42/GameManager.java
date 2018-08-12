@@ -148,7 +148,7 @@ public final class GameManager {
   }
 
   public static int getGuests(ClubArea area) {
-    return guestsInArea != null ? guestsInArea.get(area) : 0;
+    return (guestsInArea != null && guestsInArea.get(area) != null) ? guestsInArea.get(area) : 0;
   }
 
   public static double getGuestsRelative(ClubArea area) {
