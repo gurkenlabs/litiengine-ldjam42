@@ -1,5 +1,7 @@
 package de.gurkenlabs.ldjam42;
 
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -8,9 +10,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import de.gurkenlabs.ldjam42.entities.Feature;
+import de.gurkenlabs.ldjam42.entities.Gender;
 import de.gurkenlabs.ldjam42.entities.PartyGuest;
 import de.gurkenlabs.ldjam42.entities.PartyGuestSpawner;
-import de.gurkenlabs.ldjam42.util.IntPermutator;
+import de.gurkenlabs.ldjam42.util.IntCombinator;
+import de.gurkenlabs.litiengine.Direction;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.entities.IEntity;
 import de.gurkenlabs.litiengine.entities.MapArea;
@@ -20,7 +25,9 @@ import de.gurkenlabs.litiengine.environment.Environment;
 import de.gurkenlabs.litiengine.environment.EnvironmentAdapter;
 import de.gurkenlabs.litiengine.environment.EnvironmentEntityAdapter;
 import de.gurkenlabs.litiengine.environment.IEnvironment;
+import de.gurkenlabs.litiengine.graphics.Spritesheet;
 import de.gurkenlabs.litiengine.pathfinding.astar.AStarGrid;
+import de.gurkenlabs.litiengine.util.ImageProcessing;
 
 public final class GameManager {
   // 09:00 pm
@@ -29,7 +36,7 @@ public final class GameManager {
   // 06:00 am the next day
   public static long END_TIME = 104400000;
 
-  private static IntPermutator featurePermutations;
+  private static IntCombinator featurePermutations;
 
   private static IEnvironment goin;
   private static long startedTicks;
@@ -52,7 +59,8 @@ public final class GameManager {
   }
 
   public static void init() {
-    featurePermutations = new IntPermutator(4);
+    featurePermutations = new IntCombinator(4);
+    generateGuestSpritesheets();
     goin = new Environment(Game.getMap("test"));
     goin.addListener(new EnvironmentAdapter() {
       @Override
@@ -188,6 +196,50 @@ public final class GameManager {
 
   private static int getGuestsInAreas(ClubArea area) {
     return areas.get(area).stream().mapToInt(GameManager::countGuestsInArea).sum();
+  }
+
+  private static void generateGuestSpritesheets() {
+    String[] states = { "walk", "idle" };
+    int spriteWidth = 20;
+    int spriteHeight = 22;
+    int foundSpritesheets = 0;
+    for (Gender gender : Gender.values()) {
+      for (int[] permutation : getFeaturePermutations()) {
+        for (String state : states) {
+          for (Direction direction : Direction.values()) {
+            String gend = gender.toString().toLowerCase();
+            String dir = direction.toString().toLowerCase();
+            String baseSpritePath = String.format("%s-%s-%s", gend, state, dir);
+            Spritesheet baseSpritesheet = Spritesheet.find(baseSpritePath);
+            if (baseSpritesheet == null) {
+              continue;
+            }
+//            System.out.println("base Sprite Path: " + baseSpritePath);
+            BufferedImage baseSprite = baseSpritesheet.getImage();
+            BufferedImage combinedSprite = ImageProcessing.getCompatibleImage(baseSprite.getWidth(), baseSprite.getHeight());
+            Graphics2D g = combinedSprite.createGraphics();
+            g.drawImage(baseSprite, 0, 0, baseSprite.getWidth(), baseSprite.getHeight(), null);
+            for (Feature feature : Feature.values()) {
+              String feat = feature.toString().toLowerCase();
+              int featIndex = feature.ordinal();
+              String featureSpritePath = String.format("%s-%s%d-%s-%s", gend, feat, featIndex, state, dir);
+              BufferedImage featureSprite = Spritesheet.find(featureSpritePath).getImage();
+              g.drawImage(featureSprite, 0, 0, featureSprite.getWidth(), featureSprite.getHeight(), null);
+            }
+            g.dispose();
+            String combinedSpritePath = String.format("%s-%d_%d_%d_%d-%s-%s", gend, permutation[0], permutation[1], permutation[2], permutation[3], state, dir);
+//            System.out.println("combined Sprite Path: " + combinedSpritePath);
+//            System.out.println("----");
+            Spritesheet combinedSpritesheet = Spritesheet.load(combinedSprite, combinedSpritePath, spriteWidth, spriteHeight);
+            foundSpritesheets++;
+
+          }
+        }
+
+      }
+    }
+    System.out.println("total number of spritesheets: " + foundSpritesheets);
+
   }
 
   private static int countGuestsInArea(MapArea area) {

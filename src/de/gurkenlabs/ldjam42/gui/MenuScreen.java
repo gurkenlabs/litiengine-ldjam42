@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 
 import de.gurkenlabs.ldjam42.GameManager;
 import de.gurkenlabs.ldjam42.constants.GoInSprites;
-import de.gurkenlabs.ldjam42.util.IntPermutator;
+import de.gurkenlabs.ldjam42.util.IntCombinator;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.graphics.FreeFlightCamera;
 import de.gurkenlabs.litiengine.gui.ImageComponent;

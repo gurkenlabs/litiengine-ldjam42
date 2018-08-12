@@ -72,7 +72,6 @@ public class PartyGuest extends Creature {
     this.features = new int[4];
     this.setLocation(location);
     // TODO: evaluate random apperance
-    this.setController(EntityAnimationController.class, new PartyGuestAnimationController(this));
     this.setVelocity((short) MathUtilities.randomInRange(20, 50));
     this.setController(MovementController.class, new PartyGuestController(this));
     this.initialize();
@@ -144,12 +143,20 @@ public class PartyGuest extends Creature {
 
     double remainingSpace = GameManager.getRemainingSpace(current);
 
-
     long guestsInComfortZone = this.getGuestsInComfortZone();
     double comfort = 1 / (guestsInComfortZone == 0 ? 1.0 : (double) guestsInComfortZone);
 
     this.satisfaction = (remainingSpace * REMAINING_SPACE_WEIGHT + comfort * COMFORT_ZONE_WEIGHT) / (COMFORT_ZONE_WEIGHT + REMAINING_SPACE_WEIGHT);
   }
+
+//  @Override
+//  public String getSpritePrefix() {
+//    if (this.getFeatures() == null) {
+//      return super.getSpritePrefix();
+//    }
+//    String prefix = 
+//    return prefix;
+//  }
 
   private int getGuestsInComfortZone() {
     int cnt = 0;
@@ -191,7 +198,10 @@ public class PartyGuest extends Creature {
         this.features[i] = MathUtilities.randomInRange(0, 4);
       }
     }
+    this.setSpritePrefix(String.format("%s-%d_%d_%d_%d", this.getGender().toString().toLowerCase(), this.getFeatures()[0], this.getFeatures()[1], this.getFeatures()[2], this.getFeatures()[3]));
     this.initializeWealth();
+    this.setController(EntityAnimationController.class, new PartyGuestAnimationController(this));
+
   }
 
   private void initializeWealth() {

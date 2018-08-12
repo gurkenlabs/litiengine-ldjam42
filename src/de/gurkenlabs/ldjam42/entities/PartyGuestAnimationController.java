@@ -1,25 +1,27 @@
 package de.gurkenlabs.ldjam42.entities;
 
+import de.gurkenlabs.litiengine.Direction;
 import de.gurkenlabs.litiengine.graphics.Spritesheet;
 import de.gurkenlabs.litiengine.graphics.animation.Animation;
 import de.gurkenlabs.litiengine.graphics.animation.CreatureAnimationController;
 
 public class PartyGuestAnimationController extends CreatureAnimationController<PartyGuest> {
-  private static final String PANTS = "pants";
-  private static final String TOP = "top";
-  private static final String FACE = "face";
-  private static final String HAIR = "hair";
 
-  private static String GENDER;
+  private static String[] states = { "walk", "idle" };
 
   public PartyGuestAnimationController(PartyGuest entity) {
     super(entity, new Animation(Spritesheet.find("dummy"), true));
-    this.GENDER = entity.getGender().toString().toLowerCase();
-    // add clothing array from partyGuest
-    for(int i = 0; i<=3;i++) {
-      
+    for (String state : states) {
+      for (Direction dir : Direction.values()) {
+        String spritePath = String.format("%s-%d_%d_%d_%d-%s-%s", entity.getGender().toString().toLowerCase(), entity.getFeatures()[0], entity.getFeatures()[1], entity.getFeatures()[2], entity.getFeatures()[3], state, dir.toString().toLowerCase());
+        Spritesheet sprite = Spritesheet.find(spritePath);
+
+        if (sprite == null) {
+          continue;
+        }
+        this.add(new Animation(sprite, true, 200));
+      }
     }
-//    this.add(new Animation(, true, 200));
   }
 
   @Override
