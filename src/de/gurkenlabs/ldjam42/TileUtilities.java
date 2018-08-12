@@ -4,11 +4,10 @@ import java.awt.Point;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import de.gurkenlabs.ldjam42.entities.PartyGuest;
+import de.gurkenlabs.ldjam42.entities.PartyGuestController;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.entities.ICollisionEntity;
 import de.gurkenlabs.litiengine.environment.tilemap.MapUtilities;
@@ -54,31 +53,17 @@ public final class TileUtilities {
             break;
           }
         }
+
+        // if guest has this tile as target
+        Rectangle2D bounds = MapUtilities.getTileBoundingBox(x, y);
+        Point2D center = new Point2D.Double(bounds.getCenterX(), bounds.getCenterY());
+        if (PartyGuestController.isTargeted(center)) {
+          continue;
+        }
+
         if (!guestOnTile) {
           tiles.add(new Point(x, y));
         }
-      }
-    }
-
-    return tiles;
-  }
-
-  public static Map<Point, Boolean> getTilesWithOccupation(Rectangle2D area) {
-    Point start = MapUtilities.getTile(Game.getEnvironment().getMap(), area.getX(), area.getY());
-    Point end = MapUtilities.getTile(Game.getEnvironment().getMap(), area.getMaxX(), area.getMaxY());
-    Map<Point, Boolean> tiles = new HashMap<>();
-    for (int x = start.x; x <= end.x; x++) {
-      for (int y = start.y; y <= end.y; y++) {
-        boolean guestOnTile = false;
-        for (PartyGuest guest : Game.getEnvironment().getByType(PartyGuest.class)) {
-          if (guest.getCollisionBox().intersects(MapUtilities.getTileBoundingBox(x, y))) {
-            guestOnTile = true;
-            break;
-          }
-        }
-
-        tiles.put(new Point(x, y), guestOnTile);
-
       }
     }
 

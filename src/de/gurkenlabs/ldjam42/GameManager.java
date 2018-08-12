@@ -43,6 +43,8 @@ public final class GameManager {
   private static List<PartyGuest> kickedPartyGuests = new CopyOnWriteArrayList<>();
   private static volatile int currentMoney;
 
+  private static PartyGuest currentFocus;
+
   private GameManager() {
   }
 
@@ -93,11 +95,10 @@ public final class GameManager {
 
   public static void update() {
     for (ClubArea area : ClubArea.values()) {
-      final int GUEST_SPACE = 16 * 16;
       double totalSpace = space.get(area);
 
       double guestsCount = getGuestsInAreas(area);
-      double guestSpace = guestsCount * GUEST_SPACE;
+      double guestSpace = guestsCount * Math.pow(PartyGuest.OCCUPATION, 2);
 
       remaining.put(area, Math.max((totalSpace - guestSpace) / totalSpace, 0));
       guestsInArea.put(area, getGuestsInAreas(area));
@@ -167,6 +168,14 @@ public final class GameManager {
 
   public static int getTotalGuestsInMainAreas() {
     return totalGuestsInMainAreas;
+  }
+
+  public static PartyGuest getCurrentFocus() {
+    return currentFocus;
+  }
+
+  public static void setCurrentFocus(PartyGuest focus) {
+    currentFocus = focus;
   }
 
   private static int getGuestsInAreas(ClubArea area) {

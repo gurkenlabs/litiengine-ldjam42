@@ -2,7 +2,8 @@ package de.gurkenlabs.ldjam42.entities;
 
 import java.awt.geom.Point2D;
 import java.util.List;
-import java.util.Random;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 import de.gurkenlabs.ldjam42.ClubArea;
@@ -17,8 +18,7 @@ import de.gurkenlabs.litiengine.util.ArrayUtilities;
 import de.gurkenlabs.litiengine.util.MathUtilities;
 
 public class PartyGuestController extends MovementController<PartyGuest> {
-
-  private static final Random RANDOM = new Random();
+  private static Map<PartyGuest, Point2D> currentTargets = new ConcurrentHashMap<>();
 
   // STATE MONEY
   private static final int PAY_MIN_SPEND = 5;
@@ -26,9 +26,6 @@ public class PartyGuestController extends MovementController<PartyGuest> {
   private static final int PAY_MAX_INTERVAL = 11000;
   private int paymentInterval;
   private long lastPayment;
-
-  // STATE PARTY
-  private long partyStart;
 
   // STATE CHANGE_AREA
   private static final int CHANGE_AREA_MIN = 10000;
@@ -65,6 +62,16 @@ public class PartyGuestController extends MovementController<PartyGuest> {
     }
   }
 
+  public static boolean isTargeted(Point2D target) {
+    for (Point2D point : currentTargets.values()) {
+      if (target.equals(point)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
   private void changeArea() {
     if (this.nav != null && this.nav.isNavigating()) {
       // still navigating
@@ -95,15 +102,18 @@ public class PartyGuestController extends MovementController<PartyGuest> {
     MapArea targetMapArea = mapAreas.get(index);
     Point2D target = TileUtilities.getRandomTileCenterLocation(targetMapArea.getBoundingBox());
     this.nav.navigate(target);
+    currentTargets.put(this.getEntity(), target);
   }
 
   private void initEntityNavigator() {
     if (this.nav == null && Game.getEnvironment() != null && Game.getEnvironment().isLoaded()) {
       this.nav = new EntityNavigator(this.getEntity(), new AStarPathFinder(GameManager.getGrid()));
+      this.nav.setAcceptableError(1);
       this.nav.addNavigationListener(() -> {
         TileUtilities.centerEntityInCurrentTile(this.getEntity());
         this.lastChangeArea = Game.getLoop().getTicks();
         this.nextChangeInterval = MathUtilities.randomInRange(CHANGE_AREA_MIN, CHANGE_AREA_MAX);
+        currentTargets.remove(this.getEntity());
       });
     }
   }
@@ -135,13 +145,14 @@ public class PartyGuestController extends MovementController<PartyGuest> {
   }
 
   private void spendMoney() {
-    if (this.getEntity().getSatisfaction() == 0) {
+    // only spend money in main area and if we have any satisfaction
+    if (this.getEntity().getSatisfaction() == 0 || !this.getEntity().getCurrentArea().isMainArea()) {
       this.paymentInterval = MathUtilities.randomInRange(PAY_MIN_INTERVAL, PAY_MAX_INTERVAL);
       this.lastPayment = Game.getLoop().getTicks();
       return;
     }
 
-    int money = Math.round(PAY_MIN_SPEND + (float) Math.pow(this.getEntity().getWealth(), 2));
+    int money = (int) (Math.round(PAY_MIN_SPEND + (float) Math.pow(this.getEntity().getWealth(), 2)) * this.getEntity().getSatisfaction());
     GameManager.spendMoney(money);
     this.paymentInterval = MathUtilities.randomInRange(PAY_MIN_INTERVAL, PAY_MAX_INTERVAL);
     this.lastPayment = Game.getLoop().getTicks();

@@ -23,12 +23,18 @@ import de.gurkenlabs.litiengine.graphics.TextRenderer;
 import de.gurkenlabs.litiengine.graphics.animation.EntityAnimationController;
 import de.gurkenlabs.litiengine.physics.MovementController;
 import de.gurkenlabs.litiengine.util.MathUtilities;
+import de.gurkenlabs.litiengine.util.geom.GeometricUtilities;
 
 @MovementInfo(velocity = 50)
 @EntityInfo(width = 11, height = 22)
 @CollisionInfo(collision = true, collisionBoxWidth = 11, collisionBoxHeight = 11, align = Align.CENTER, valign = Valign.MIDDLE)
 public class PartyGuest extends Creature {
+  public static final double OCCUPATION = 20;
   private static final int MAX_GROUP_SIZE = 9;
+  private static final int DEFAULT_WEALTH_MIN = 1;
+  private static final int DEFAULT_WEALTH_MAX = 5;
+  private static final double COMFORT_ZONE_WEIGHT = 1;
+  private static final double REMAINING_SPACE_WEIGHT = 2;
 
   private static int currentGroupId;
   private static double currentGroupProbability = 1;
@@ -52,6 +58,7 @@ public class PartyGuest extends Creature {
         final int y = (int) Game.getCamera().getViewPortDimensionCenter(e).getY() - 10;
         TextRenderer.render(g, (int) (guest.getSatisfaction() * 100) + "%", x, y);
         TextRenderer.render(g, guest.getState() != null ? guest.getState().toString() : "", x, y + 10);
+        Game.getRenderEngine().renderOutline(g, guest.getComfortZone());
       }
     });
   }
@@ -123,8 +130,6 @@ public class PartyGuest extends Creature {
   }
 
   public void updateSatisfaction() {
-    final double COMFORT_ZONE_WEIGHT = 1;
-    final double REMAINING_SPACE_WEIGHT = 2;
     this.updateCurrentArea();
 
     // update by value for the area the guest is currently in
@@ -132,10 +137,24 @@ public class PartyGuest extends Creature {
 
     double remainingSpace = GameManager.getRemainingSpace(current);
 
-    long guestsInComfortZone = Game.getEnvironment().findEntities(this.getComfortZone()).stream().filter(e -> e instanceof PartyGuest && !e.equals(this)).count();
+    long guestsInComfortZone = this.getGuestsInComfortZone();
     double comfort = 1 / (guestsInComfortZone == 0 ? 1.0 : (double) guestsInComfortZone);
 
     this.satisfaction = (remainingSpace * REMAINING_SPACE_WEIGHT + comfort * COMFORT_ZONE_WEIGHT) / (COMFORT_ZONE_WEIGHT + REMAINING_SPACE_WEIGHT);
+  }
+
+  private int getGuestsInComfortZone() {
+    int cnt = 0;
+    for (PartyGuest g : Game.getEnvironment().getByType(PartyGuest.class)) {
+      if (g == null || g.equals(this)) {
+        continue;
+      }
+
+      if (GeometricUtilities.intersects(g.getComfortZone(), this.getComfortZone())) {
+        cnt++;
+      }
+    }
+    return cnt;
   }
 
   private void updateCurrentArea() {
@@ -159,8 +178,6 @@ public class PartyGuest extends Creature {
   }
 
   private void initializeWealth() {
-    final int DEFAULT_WEALTH_MIN = 1;
-    final int DEFAULT_WEALTH_MAX = 5;
     this.wealth = MathUtilities.randomInRange(DEFAULT_WEALTH_MIN, DEFAULT_WEALTH_MAX);
     // TODO: implement VIP
   }
