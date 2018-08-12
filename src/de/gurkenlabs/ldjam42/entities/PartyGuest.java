@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
 import java.util.Optional;
+import java.util.stream.IntStream;
 
 import de.gurkenlabs.ldjam42.BadBehavior;
 import de.gurkenlabs.ldjam42.ClubArea;
@@ -39,8 +40,10 @@ public class PartyGuest extends Creature {
   private static int currentGroupId;
   private static double currentGroupProbability = 1;
   private static int currentGroupSize;
+  private static int[] currentGroupFeatures = new int[2], currentGroupFeatureIndices = new int[2];
 
   private int group;
+  private int[] features;
   private BadBehavior badBehavior;
   private final Gender gender;
   private State state;
@@ -66,7 +69,7 @@ public class PartyGuest extends Creature {
   public PartyGuest(Point2D location) {
     this.gender = MathUtilities.randomBoolean() ? Gender.FEMALE : Gender.MALE;
     this.satisfaction = 1;
-
+    this.features = new int[4];
     this.setLocation(location);
     // TODO: evaluate random apperance
     this.setController(EntityAnimationController.class, new PartyGuestAnimationController(this));
@@ -95,6 +98,10 @@ public class PartyGuest extends Creature {
 
   public int getGroup() {
     return this.group;
+  }
+
+  public int[] getFeatures() {
+    return this.features;
   }
 
   public ClubArea getCurrentArea() {
@@ -137,6 +144,7 @@ public class PartyGuest extends Creature {
 
     double remainingSpace = GameManager.getRemainingSpace(current);
 
+
     long guestsInComfortZone = this.getGuestsInComfortZone();
     double comfort = 1 / (guestsInComfortZone == 0 ? 1.0 : (double) guestsInComfortZone);
 
@@ -174,6 +182,15 @@ public class PartyGuest extends Creature {
 
     // init group
     this.group = getGroupId();
+    int featureNumber = 0;
+    for (int i = 0; i <= 3; i++) {
+      final int tmp = i;
+      if (IntStream.of(currentGroupFeatureIndices).anyMatch(x -> x == tmp)) {
+        this.features[tmp] = currentGroupFeatures[featureNumber];
+      } else {
+        this.features[i] = MathUtilities.randomInRange(0, 4);
+      }
+    }
     this.initializeWealth();
   }
 
@@ -202,6 +219,15 @@ public class PartyGuest extends Creature {
     currentGroupId++;
     currentGroupSize = 0;
     currentGroupProbability = 1;
+    currentGroupFeatureIndices[0] = MathUtilities.randomInRange(0, 4);
+    currentGroupFeatureIndices[1] = MathUtilities.randomInRange(0, 4);
+    while (currentGroupFeatureIndices[0] == currentGroupFeatureIndices[1]) {
+      currentGroupFeatureIndices[1] = MathUtilities.randomInRange(0, 4);
+    }
+
+    currentGroupFeatures[0] = MathUtilities.randomInRange(0, 4);
+    currentGroupFeatures[1] = MathUtilities.randomInRange(0, 4);
+
     return currentGroupId;
   }
 }

@@ -10,6 +10,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import de.gurkenlabs.ldjam42.entities.PartyGuest;
 import de.gurkenlabs.ldjam42.entities.PartyGuestSpawner;
+import de.gurkenlabs.ldjam42.util.IntPermutator;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.entities.IEntity;
 import de.gurkenlabs.litiengine.entities.MapArea;
@@ -27,6 +28,8 @@ public final class GameManager {
 
   // 06:00 am the next day
   public static long END_TIME = 104400000;
+
+  private static IntPermutator featurePermutations;
 
   private static IEnvironment goin;
   private static long startedTicks;
@@ -49,6 +52,7 @@ public final class GameManager {
   }
 
   public static void init() {
+    featurePermutations = new IntPermutator(4);
     goin = new Environment(Game.getMap("test"));
     goin.addListener(new EnvironmentAdapter() {
       @Override
@@ -123,6 +127,10 @@ public final class GameManager {
     return goin;
   }
 
+  public static List<int[]> getFeaturePermutations() {
+    return featurePermutations.getPermutations();
+  }
+
   public static Time getStartTime() {
     return new Time(START_TIME);
   }
@@ -141,7 +149,7 @@ public final class GameManager {
   }
 
   public static int getGuests(ClubArea area) {
-    return guestsInArea != null ? guestsInArea.get(area) : 0;
+    return (guestsInArea != null && guestsInArea.get(area) != null) ? guestsInArea.get(area) : 0;
   }
 
   public static double getGuestsRelative(ClubArea area) {
