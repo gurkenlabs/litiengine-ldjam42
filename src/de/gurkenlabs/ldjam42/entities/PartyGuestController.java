@@ -57,6 +57,7 @@ public class PartyGuestController extends MovementController<PartyGuest> {
 
   private void updateState() {
 
+    this.getEntity().updateSatisfaction();
     if (Game.getLoop().getDeltaTime(this.lastPayment) > paymentInterval) {
       this.getEntity().setState(State.SPEND_MONEY);
       return;
@@ -66,12 +67,12 @@ public class PartyGuestController extends MovementController<PartyGuest> {
   }
 
   private void spendMoney() {
-    if(this.getEntity().getSatisfaction() == 0) {
+    if (this.getEntity().getSatisfaction() == 0) {
       this.paymentInterval = MathUtilities.randomInRange(PAY_MIN_INTERVAL, PAY_MAX_INTERVAL);
       this.lastPayment = Game.getLoop().getTicks();
       return;
     }
-    
+
     int money = Math.round(PAY_MIN_SPEND + (float) Math.pow(this.getEntity().getWealth(), 2));
     GameManager.spendMoney(money);
     this.paymentInterval = MathUtilities.randomInRange(PAY_MIN_INTERVAL, PAY_MAX_INTERVAL);

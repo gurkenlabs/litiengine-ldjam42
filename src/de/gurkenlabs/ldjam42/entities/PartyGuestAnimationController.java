@@ -3,7 +3,6 @@ package de.gurkenlabs.ldjam42.entities;
 import de.gurkenlabs.litiengine.graphics.Spritesheet;
 import de.gurkenlabs.litiengine.graphics.animation.Animation;
 import de.gurkenlabs.litiengine.graphics.animation.CreatureAnimationController;
-import de.gurkenlabs.litiengine.graphics.emitters.SpritesheetEntityEmitter;
 
 public class PartyGuestAnimationController extends CreatureAnimationController<PartyGuest> {
   private static final String PANTS = "pants";

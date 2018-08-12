@@ -48,29 +48,11 @@ public final class GameManager {
           spawner.setInterval(15000);
         });
 
-        areas.put(ClubArea.CHILLAREA, environment.getByTag(MapArea.class, "area_chill"));
-        if (areas.get(ClubArea.CHILLAREA).isEmpty()) {
-          throw new IllegalArgumentException("No area_chill.");
-        }
-
-        areas.put(ClubArea.DANCEFLOOR, environment.getByTag(MapArea.class, "area_dance"));
-        if (areas.get(ClubArea.DANCEFLOOR).isEmpty()) {
-          throw new IllegalArgumentException("No area_dance.");
-        }
-
-        areas.put(ClubArea.PIZZASTAND, environment.getByTag(MapArea.class, "area_food"));
-        if (areas.get(ClubArea.PIZZASTAND).isEmpty()) {
-          throw new IllegalArgumentException("No area_food.");
-        }
-
-        areas.put(ClubArea.BAR, environment.getByTag(MapArea.class, "area_drink"));
-        if (areas.get(ClubArea.BAR).isEmpty()) {
-          throw new IllegalArgumentException("No area_drink.");
-        }
-
-        areas.put(ClubArea.LOBBY, environment.getByTag(MapArea.class, "area_entry"));
-        if (areas.get(ClubArea.LOBBY).isEmpty()) {
-          throw new IllegalArgumentException("No area_entry.");
+        for (ClubArea area : ClubArea.values()) {
+          areas.put(area, environment.getByTag(MapArea.class, area.getTag()));
+          if (areas.get(area).isEmpty()) {
+            throw new IllegalArgumentException("No " + area.getTag());
+          }
         }
       }
     });
@@ -117,6 +99,16 @@ public final class GameManager {
 
   public static int getGuests(ClubArea area) {
     return getGuestsInAreas(area);
+  }
+
+  public static double getGuestsRelative(ClubArea area) {
+    double total = GameManager.getTotalGuestsInMainAreas();
+    double count = getGuestsInAreas(area);
+    if (total == 0) {
+      return 0;
+    }
+
+    return count / total;
   }
 
   public static int getTotalGuestsInMainAreas() {

@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.util.List;
 
 import de.gurkenlabs.ldjam42.GameManager;
 import de.gurkenlabs.ldjam42.constants.GoInSprites;

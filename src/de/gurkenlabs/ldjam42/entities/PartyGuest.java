@@ -5,8 +5,11 @@ import java.awt.Font;
 import java.awt.geom.Point2D;
 import java.util.EnumMap;
 import java.util.Map;
+import java.util.Optional;
 
 import de.gurkenlabs.ldjam42.BadBehavior;
+import de.gurkenlabs.ldjam42.ClubArea;
+import de.gurkenlabs.ldjam42.GameManager;
 import de.gurkenlabs.ldjam42.Needs;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.annotation.CollisionInfo;
@@ -14,6 +17,7 @@ import de.gurkenlabs.litiengine.annotation.EntityInfo;
 import de.gurkenlabs.litiengine.annotation.MovementInfo;
 import de.gurkenlabs.litiengine.entities.Creature;
 import de.gurkenlabs.litiengine.entities.ICollisionEntity;
+import de.gurkenlabs.litiengine.entities.MapArea;
 import de.gurkenlabs.litiengine.graphics.DebugRenderer;
 import de.gurkenlabs.litiengine.graphics.TextRenderer;
 import de.gurkenlabs.litiengine.graphics.animation.EntityAnimationController;
@@ -25,7 +29,12 @@ import de.gurkenlabs.litiengine.util.MathUtilities;
 @EntityInfo(width = 11, height = 22)
 @CollisionInfo(collision = true, collisionBoxWidth = 11, collisionBoxHeight = 11)
 public class PartyGuest extends Creature {
+  private static final int HIGHEST_NEED_VALUE = 3;
+  private static final int AVG_NEED_VALUE = 2;
+  private static final int LOW_NEED_VALUE = 1;
   private static final int MAX_GROUP_SIZE = 9;
+  private static final int ENDURANCE = 180000;
+
   private static int currentGroupId;
   private static double currentGroupProbability = 1;
   private static int currentGroupSize;
@@ -37,6 +46,8 @@ public class PartyGuest extends Creature {
   private State state;
   private int wealth;
   private double satisfaction;
+  private long clubEntered;
+  private ClubArea currentArea;
 
   static {
     DebugRenderer.addEntityDebugListener((g, e) -> {
@@ -46,7 +57,14 @@ public class PartyGuest extends Creature {
         g.setFont(g.getFont().deriveFont(Font.BOLD, 4f));
         final int x = (int) Game.getCamera().getViewPortDimensionCenter(e).getX();
         final int y = (int) Game.getCamera().getViewPortDimensionCenter(e).getY() - 10;
-        TextRenderer.render(g, Integer.toString(guest.getGroup()), x, y);
+        TextRenderer.render(g, Double.toString(guest.getSatisfaction()), x, y);
+
+        if (guest.getHighestNeed() != null) {
+          TextRenderer.render(g, guest.getHighestNeed().toString(), x, y + 5);
+        }
+        if (guest.getCurrentArea() != null) {
+          TextRenderer.render(g, guest.getCurrentArea().toString(), x, y + 10);
+        }
       }
     });
   }
@@ -73,12 +91,32 @@ public class PartyGuest extends Creature {
     return true;
   }
 
+  @Override
+  public void loaded() {
+    super.loaded();
+    this.clubEntered = Game.getLoop().getTicks();
+  }
+
   public int getGroup() {
     return this.group;
   }
 
+  public ClubArea getCurrentArea() {
+    return this.currentArea;
+  }
+
   public Map<Needs, Integer> getNeeds() {
     return this.needs;
+  }
+
+  public Needs getHighestNeed() {
+    for (Needs need : this.needs.keySet()) {
+      if (this.needs.get(need) == HIGHEST_NEED_VALUE) {
+        return need;
+      }
+    }
+
+    return null;
   }
 
   public BadBehavior getBadBehavior() {
@@ -110,7 +148,51 @@ public class PartyGuest extends Creature {
   }
 
   public void updateSatisfaction() {
+    this.updateCurrentArea();
+    final double CURRENT_AREA_WEIGHT = 2.0;
+    final double CAPACITY_WEIGHT = 1.0;
+    final double ENDURANCE_WEIGHT = 0.5;
 
+    // update by endurance
+    double endurance = Math.max(1 - (Game.getLoop().getDeltaTime(this.clubEntered)) / (double) ENDURANCE, 0);
+    if (endurance == 0) {
+      this.satisfaction = 0;
+      return;
+    }
+
+    // update by the amount of guests in all areas
+    double capacity = 0;
+    for (Needs need : this.needs.keySet()) {
+      ClubArea area = ClubArea.getArea(need);
+      if (area == ClubArea.LOBBY) {
+        continue;
+      }
+
+      double rel = (1 - GameManager.getGuestsRelative(ClubArea.getArea(need))) * this.needs.get(need);
+      capacity += rel;
+    }
+
+    capacity /= HIGHEST_NEED_VALUE + AVG_NEED_VALUE * 2 + LOW_NEED_VALUE;
+
+    // update by value for the are the guest is currently in
+    ClubArea current = this.getCurrentArea();
+    double need = current.getNeed() == null ? 0 : this.needs.get(current.getNeed()) / (double) HIGHEST_NEED_VALUE;
+
+    double capWeight = CAPACITY_WEIGHT * endurance;
+    this.satisfaction = (capWeight * capacity + ENDURANCE_WEIGHT * endurance + need * CURRENT_AREA_WEIGHT) / (capWeight + ENDURANCE_WEIGHT + CURRENT_AREA_WEIGHT);
+  }
+
+  private void updateCurrentArea() {
+    for (MapArea area : Game.getEnvironment().getAreas()) {
+      if (!area.getBoundingBox().intersects(this.getCollisionBox())) {
+        continue;
+      }
+      Optional<String> tag = area.getTags().stream().filter(x -> x.startsWith("area")).findFirst();
+      if (tag.isPresent()) {
+        this.currentArea = ClubArea.getAreaByTag(tag.get());
+        break;
+      }
+    }
   }
 
   private void initialize() {
@@ -131,10 +213,6 @@ public class PartyGuest extends Creature {
   }
 
   private void initializeNeeds() {
-    final int HIGHEST_NEED_VALUE = 3;
-    final int AVG_NEED_VALUE = 2;
-    final int LOW_NEED_VALUE = 1;
-
     Needs[] n = Needs.values();
     Needs highestNeed = ArrayUtilities.getRandom(n);
     this.needs.put(highestNeed, HIGHEST_NEED_VALUE);
