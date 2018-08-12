@@ -67,7 +67,7 @@ public final class GameManager {
       public void environmentLoaded(IEnvironment environment) {
         spawner = new PartyGuestSpawner(getSpawnPoints(), 1000, 5);
         Game.getLoop().execute(10500, () -> {
-          spawner.setInterval(7500);
+          spawner.setInterval(11000);
         });
 
         for (ClubArea area : ClubArea.values()) {
@@ -103,6 +103,16 @@ public final class GameManager {
         }
       }
     });
+  }
+
+  public static void dismiss() {
+    if (currentFocus == null) {
+      return;
+    }
+
+    Game.getEnvironment().remove(currentFocus);
+    kickedPartyGuests.add(currentFocus);
+    setCurrentFocus(null);
   }
 
   public static void update() {
@@ -192,6 +202,11 @@ public final class GameManager {
 
   public static void setCurrentFocus(PartyGuest focus) {
     currentFocus = focus;
+    if (currentFocus == null) {
+      IngameScreen.instance().getHud().hideDismissButton();
+    } else {
+      IngameScreen.instance().getHud().showDismissButton();
+    }
   }
 
   private static int getGuestsInAreas(ClubArea area) {

@@ -30,12 +30,12 @@ import de.gurkenlabs.litiengine.util.geom.GeometricUtilities;
 @EntityInfo(width = 11, height = 22)
 @CollisionInfo(collision = true, collisionBoxWidth = 11, collisionBoxHeight = 11, align = Align.CENTER, valign = Valign.MIDDLE)
 public class PartyGuest extends Creature {
-  public static final double OCCUPATION = 20;
+  public static final double OCCUPATION = 16;
   private static final int MAX_GROUP_SIZE = 9;
-  private static final int DEFAULT_WEALTH_MIN = 1;
-  private static final int DEFAULT_WEALTH_MAX = 5;
-  private static final double COMFORT_ZONE_WEIGHT = 1;
-  private static final double REMAINING_SPACE_WEIGHT = 2;
+  private static final int WEALTH_DEFAULT = 1;
+  private static final int WEALTH_VIP = 10;
+  private static final double COMFORT_ZONE_WEIGHT = 4;
+  private static final double REMAINING_SPACE_WEIGHT = 1;
 
   private static int currentGroupId;
   private static double currentGroupProbability = 1;
@@ -50,6 +50,8 @@ public class PartyGuest extends Creature {
   private int wealth;
   private double satisfaction;
   private ClubArea currentArea;
+
+  private long clubbingSince;
 
   static {
     DebugRenderer.addEntityDebugListener((g, e) -> {
@@ -89,6 +91,7 @@ public class PartyGuest extends Creature {
   @Override
   public void loaded() {
     super.loaded();
+    this.clubbingSince = Game.getLoop().getTicks();
   }
 
   public Ellipse2D getComfortZone() {
@@ -123,6 +126,10 @@ public class PartyGuest extends Creature {
     return this.wealth;
   }
 
+  public long getClubbingSince() {
+    return this.clubbingSince;
+  }
+
   public void setBadBehavior(BadBehavior behavior) {
     this.badBehavior = behavior;
   }
@@ -144,7 +151,7 @@ public class PartyGuest extends Creature {
     double remainingSpace = GameManager.getRemainingSpace(current);
 
     long guestsInComfortZone = this.getGuestsInComfortZone();
-    double comfort = 1 / (guestsInComfortZone == 0 ? 1.0 : (double) guestsInComfortZone);
+    double comfort = 1 / Math.sqrt(guestsInComfortZone == 0 ? 1.0 : (double) guestsInComfortZone);
 
     this.satisfaction = (remainingSpace * REMAINING_SPACE_WEIGHT + comfort * COMFORT_ZONE_WEIGHT) / (COMFORT_ZONE_WEIGHT + REMAINING_SPACE_WEIGHT);
   }
@@ -205,8 +212,8 @@ public class PartyGuest extends Creature {
   }
 
   private void initializeWealth() {
-    this.wealth = MathUtilities.randomInRange(DEFAULT_WEALTH_MIN, DEFAULT_WEALTH_MAX);
-    // TODO: implement VIP
+    this.wealth = WEALTH_DEFAULT;
+    // TODO: implement VIP WEALTH_VIP
   }
 
   private static int getGroupId() {
