@@ -1,3 +1,4 @@
+#IDLE
 male-idle-down.png, 20, 22;250,250
 
 male-pants0-idle-down.png, 20, 22;250,250
@@ -19,3 +20,26 @@ male-pants3-idle-down.png, 20, 22;250,250
 male-top3-idle-down.png, 20, 22;250,250
 male-hair3-idle-down.png, 20, 22;250,250
 male-face3-idle-down.png, 20, 22;250,250
+
+#WALK
+male-walk-down.png, 20, 22;250,250
+
+male-pants0-walk-down.png, 20, 22;250,250
+male-top0-walk-down.png, 20, 22;250,250
+male-hair0-walk-down.png, 20, 22;250,250
+male-face0-walk-down.png, 20, 22;250,250
+
+male-pants1-walk-down.png, 20, 22;250,250
+male-top1-walk-down.png, 20, 20;250,250
+male-hair1-walk-down.png, 20, 22;250,250
+male-face1-walk-down.png, 20, 22;250,250
+
+male-pants2-walk-down.png, 20, 22;250,250
+male-top2-walk-down.png, 20, 22;250,250
+male-hair2-walk-down.png, 20, 22;250,250
+male-face2-walk-down.png, 20, 22;250,250
+
+male-pants3-walk-down.png, 20, 22;250,250
+male-top3-walk-down.png, 20, 22;250,250
+male-hair3-walk-down.png, 20, 22;250,250
+male-face3-walk-down.png, 20, 22;250,250
