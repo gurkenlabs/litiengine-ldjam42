@@ -1,18 +1,12 @@
 package de.gurkenlabs.ldjam42.gui;
 
-import java.awt.Color;
 import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
 
 import de.gurkenlabs.ldjam42.GameManager;
-import de.gurkenlabs.ldjam42.constants.GoInSprites;
-import de.gurkenlabs.ldjam42.util.IntCombinator;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.graphics.FreeFlightCamera;
 import de.gurkenlabs.litiengine.gui.ImageComponent;
 import de.gurkenlabs.litiengine.gui.screens.Screen;
-import de.gurkenlabs.litiengine.util.ImageProcessing;
 
 public class MenuScreen extends Screen {
   public static final String NAME = "MENU";
