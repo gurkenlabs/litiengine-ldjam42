@@ -13,6 +13,7 @@ import de.gurkenlabs.litiengine.input.Input;
 
 public class Program {
   public static final Font GUI_FONT = Resources.getFont("marquee moon.ttf").deriveFont(48f);
+  public static final Font GUI_FONT_SMALL = GUI_FONT.deriveFont(30f);
 
   /**
    * The main entry point for the GOIN club.
@@ -41,7 +42,7 @@ public class Program {
     GuiProperties.getDefaultAppearanceHovered().setTextAntialiasing(RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 
     Game.getScreenManager().addScreen(new MenuScreen());
-    Game.getScreenManager().addScreen(new IngameScreen());
+    Game.getScreenManager().addScreen(IngameScreen.instance());
 
     Input.keyboard().onKeyPressed(KeyEvent.VK_ESCAPE, e -> {
       // TODO: implement confirmation; for now, we use alt+f4

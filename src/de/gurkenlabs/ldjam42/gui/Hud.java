@@ -1,6 +1,9 @@
 package de.gurkenlabs.ldjam42.gui;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.sql.Time;
 import java.text.SimpleDateFormat;
 
 import de.gurkenlabs.ldjam42.ClubArea;
@@ -10,9 +13,13 @@ import de.gurkenlabs.ldjam42.entities.PartyGuest;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.graphics.TextRenderer;
 import de.gurkenlabs.litiengine.gui.GuiComponent;
+import de.gurkenlabs.litiengine.gui.ImageComponent;
 import de.gurkenlabs.litiengine.util.MathUtilities;
 
 public final class Hud extends GuiComponent {
+  private static final Color COLOR_MONEY = new Color(77, 125, 10);
+  private static final Color COLOR_MONEY_BORDER = new Color(11, 240, 10, 50);
+  private ImageComponent kickButton;
 
   public Hud() {
     super(0, 0, Game.getScreenManager().getResolution().getWidth(), Game.getScreenManager().getResolution().getHeight());
@@ -21,23 +28,62 @@ public final class Hud extends GuiComponent {
   @Override
   public void render(final Graphics2D g) {
     this.renderCurrentFocus(g);
-    this.renderAreaInfo(g);
     this.renderTime(g);
     this.renderMoney(g);
 
     super.render(g);
   }
 
+  public void showDismissButton() {
+    this.kickButton.setVisible(true);
+  }
+
+  public void hideDismissButton() {
+    this.kickButton.setVisible(false);
+  }
+
+  @Override
+  public void prepare() {
+    super.prepare();
+    this.kickButton.setVisible(true);
+    this.kickButton.onMousePressed(e -> {
+      GameManager.dismiss();
+    });
+  }
+
+  @Override
+  protected void initializeComponents() {
+    super.initializeComponents();
+
+    double width = Game.getScreenManager().getResolution().getWidth() / 10;
+    double height = Game.getScreenManager().getResolution().getHeight() / 10;
+    this.kickButton = new ImageComponent(Game.getScreenManager().getResolution().getWidth() / 2.0 - width / 2.0, Game.getScreenManager().getResolution().getHeight() / 2 + height, width, height);
+    this.kickButton.setText("DISMISS");
+    this.kickButton.getAppearance().setForeColor(new Color(0, 0, 0, 220));
+    this.kickButton.getAppearance().setBackgroundColor1(new Color(255, 0, 0, 150));
+    this.kickButton.getAppearance().setTransparentBackground(false);
+    this.kickButton.getAppearanceHovered().setForeColor(new Color(0, 0, 0, 255));
+    this.kickButton.getAppearanceHovered().setBackgroundColor1(new Color(255, 0, 0, 190));
+    this.kickButton.getAppearanceHovered().setTransparentBackground(false);
+
+    this.getComponents().add(this.kickButton);
+  }
+
   private void renderCurrentFocus(Graphics2D g) {
-    if (GameManager.getCurrentFocus() != null) {
-      PartyGuest guest = GameManager.getCurrentFocus();
-      // render info/ image of currently focused guest
-      String info = guest.getMapId() + " " + guest.getSatisfaction();
-      double height = g.getFontMetrics().getHeight();
-      double y = Game.getScreenManager().getResolution().getHeight() - height * 2;
-      double guestWidth = g.getFontMetrics().stringWidth(info);
-      TextRenderer.render(g, info, Game.getScreenManager().getResolution().getWidth() / 2.0 - guestWidth / 2, y);
+    if (GameManager.getCurrentFocus() == null) {
+      return;
     }
+
+    PartyGuest guest = GameManager.getCurrentFocus();
+
+    g.setFont(Program.GUI_FONT_SMALL);
+    Time clubbingSince = new Time(GameManager.getStartTime().getTime() + Game.getLoop().convertToMs(guest.getClubbingSince()) * 60);
+    // render info/ image of currently focused guest
+    SimpleDateFormat form = new SimpleDateFormat("HH:mm");
+    String time = "Clubbing since " + form.format(clubbingSince);
+    double width = g.getFontMetrics().stringWidth(time);
+    double y = Game.getScreenManager().getResolution().getHeight() - g.getFontMetrics().getHeight();
+    TextRenderer.render(g, time, Game.getScreenManager().getResolution().getWidth() / 2.0 - width / 2, y);
   }
 
   private void renderAreaInfo(Graphics2D g) {
@@ -61,10 +107,22 @@ public final class Hud extends GuiComponent {
   }
 
   private void renderMoney(Graphics2D g) {
-    String money = GameManager.getCurrentMoney() + "$";
+    g.setColor(COLOR_MONEY);
+
+    g.setFont(Program.GUI_FONT.deriveFont(80f));
+    String unit = "$";
+    double unitWidth = g.getFontMetrics().stringWidth(unit);
+    double unitHeight = g.getFontMetrics().getHeight();
+    double unitY = unitHeight * 1.1;
+    g.setFont(Program.GUI_FONT.deriveFont(80f));
+    TextRenderer.renderWithOutline(g, unit, Game.getScreenManager().getResolution().getWidth() / 2.0 - unitWidth / 2, unitY, COLOR_MONEY_BORDER, RenderingHints.VALUE_ANTIALIAS_ON);
+
+    g.setFont(Program.GUI_FONT);
+    String money = GameManager.getCurrentMoney() + "";
     double width = g.getFontMetrics().stringWidth(money);
     double height = g.getFontMetrics().getHeight();
-    double moneyY = Game.getScreenManager().getResolution().getHeight() - height * 2;
-    TextRenderer.render(g, money, Game.getScreenManager().getResolution().getWidth() / 2.0 - width / 2, moneyY);
+    double moneyY = height + unitY * 1.1;
+    g.setFont(Program.GUI_FONT);
+    TextRenderer.renderWithOutline(g, money, Game.getScreenManager().getResolution().getWidth() / 2.0 - width / 2, moneyY, COLOR_MONEY_BORDER, RenderingHints.VALUE_ANTIALIAS_ON);
   }
 }

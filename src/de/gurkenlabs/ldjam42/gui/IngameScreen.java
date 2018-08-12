@@ -16,8 +16,18 @@ public class IngameScreen extends Screen {
   public static final String NAME = "INGAME";
   private Hud hud;
 
-  public IngameScreen() {
+  private static IngameScreen instance;
+
+  private IngameScreen() {
     super(NAME);
+  }
+
+  public static IngameScreen instance() {
+    if (instance == null) {
+      instance = new IngameScreen();
+    }
+
+    return instance;
   }
 
   @Override
@@ -26,12 +36,15 @@ public class IngameScreen extends Screen {
       Game.getEnvironment().render(g);
     }
 
-
     if (GameManager.getGrid() != null) {
       // GameManager.getGrid().render(g);
     }
 
     super.render(g);
+  }
+
+  public Hud getHud() {
+    return this.hud;
   }
 
   @Override
