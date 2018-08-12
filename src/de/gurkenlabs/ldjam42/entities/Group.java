@@ -3,17 +3,17 @@ package de.gurkenlabs.ldjam42.entities;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import de.gurkenlabs.litiengine.util.MathUtilities;
+import de.gurkenlabs.litiengine.util.ArrayUtilities;
 
 public class Group {
   static final int MAX_GROUP_SIZE = 9;
 
   private static int currentGroupId;
   private final List<PartyGuest> members;
-  private final int[] groupFeatures = new int[2];
-  private final int[] groupFeatureIndices = new int[2];
+  private final int[] groupFeatureValues = new int[2];
+  private final Feature[] groupFeatureIndices = new Feature[2];
   private final int id;
-  
+
   private double probability;
 
   public Group() {
@@ -21,14 +21,14 @@ public class Group {
     this.id = ++currentGroupId;
     this.probability = 1;
 
-    this.groupFeatureIndices[0] = MathUtilities.randomInRange(0, 4);
-    this.groupFeatureIndices[1] = MathUtilities.randomInRange(0, 4);
+    this.groupFeatureIndices[0] = ArrayUtilities.getRandom(Feature.values());
+    this.groupFeatureIndices[1] = ArrayUtilities.getRandom(Feature.values());
     while (this.groupFeatureIndices[0] == this.groupFeatureIndices[1]) {
-      this.groupFeatureIndices[1] = MathUtilities.randomInRange(0, 4);
+      this.groupFeatureIndices[1] = ArrayUtilities.getRandom(Feature.values());
     }
 
-    this.groupFeatures[0] = MathUtilities.randomInRange(0, 4);
-    this.groupFeatures[1] = MathUtilities.randomInRange(0, 4);
+    this.groupFeatureValues[0] = this.groupFeatureIndices[0].getRandomValue();
+    this.groupFeatureValues[1] = this.groupFeatureIndices[1].getRandomValue();
   }
 
   public double getProbability() {
@@ -55,14 +55,21 @@ public class Group {
     return this.id;
   }
 
-  public int[] getFeatures() {
-    return this.groupFeatures;
+  public int[] getFeatureValues() {
+    return this.groupFeatureValues;
   }
 
-  public int[] getFeatureIndices() {
+  public Feature[] getFeatures() {
     return this.groupFeatureIndices;
   }
-  
-  
 
+  public int getFeature(Feature feature) {
+    for (int i = 0; i < this.groupFeatureIndices.length; i++) {
+      if (this.groupFeatureIndices[i] == feature) {
+        return this.groupFeatureValues[i];
+      }
+    }
+    
+    return -1;
+  }
 }

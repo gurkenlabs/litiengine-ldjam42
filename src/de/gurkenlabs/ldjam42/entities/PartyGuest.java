@@ -5,7 +5,6 @@ import java.awt.Font;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
 import java.util.Optional;
-import java.util.stream.IntStream;
 
 import de.gurkenlabs.ldjam42.BadBehavior;
 import de.gurkenlabs.ldjam42.ClubArea;
@@ -23,6 +22,7 @@ import de.gurkenlabs.litiengine.graphics.DebugRenderer;
 import de.gurkenlabs.litiengine.graphics.TextRenderer;
 import de.gurkenlabs.litiengine.graphics.animation.EntityAnimationController;
 import de.gurkenlabs.litiengine.physics.MovementController;
+import de.gurkenlabs.litiengine.util.ArrayUtilities;
 import de.gurkenlabs.litiengine.util.MathUtilities;
 import de.gurkenlabs.litiengine.util.geom.GeometricUtilities;
 
@@ -213,17 +213,12 @@ public class PartyGuest extends Creature {
   }
 
   private void initializeFeatures() {
-    // init group
-
-    int featureNumber = 0;
-    for (int i = 0; i <= 3; i++) {
-      final int tmp = i;
-
+    for (Feature feature : Feature.values()) {
       // group features
-      if (IntStream.of(this.getGroup().getFeatureIndices()).anyMatch(x -> x == tmp)) {
-        this.features[tmp] = this.getGroup().getFeatures()[featureNumber];
+      if (ArrayUtilities.contains(this.getGroup().getFeatures(), feature)) {
+        this.features[feature.ordinal()] = this.getGroup().getFeature(feature);
       } else {
-        this.features[i] = MathUtilities.randomInRange(0, 4);
+        this.features[feature.ordinal()] = feature.getRandomValue();
       }
     }
   }
