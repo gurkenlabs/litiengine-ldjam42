@@ -274,7 +274,7 @@
    <keyframes>250,250</keyframes>
   </sprite>
   <sprite width="20" height="22" name="male-pants0-walk-down">
-   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAQElEQVR42mNgGAWjYBSMglEwCkbBKBgFo2A4gOKcrP+D1rxby2b9/398138QPRjNgxtKzRAEOXBQJxlqe3jAAAAdzSGk3iWIugAAAABJRU5ErkJggg==</image>
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAOUlEQVR42mNgGAWjYBSMglEwCkbBKBgFo2AU0BjcWjbr///ju/6D6MFoHtxQanoa5MBBHyvDInkBAD5EHRTZg+jvAAAAAElFTkSuQmCC</image>
    <keyframes>250,250</keyframes>
   </sprite>
   <sprite width="20" height="22" name="male-top0-walk-down">
@@ -335,6 +335,142 @@
   </sprite>
   <sprite width="20" height="22" name="male-face3-walk-down">
    <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAASElEQVR42mNgGAWjYBSMgoEH8QH2/2F40DnOxcbkPz7+gHsY5CBkAyl1IC08DHckNQyjtoep61MaeJhuaXsUjIJRMApGwRAFAHqeMsGWtFyCAAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-pants0-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAMUlEQVR42mNgGAWjYBSMglEwCkbBKBgFo2Cog0WlWf9BeFCbme/pQFUHUtu8UTBkAQDjuA3vrrTT4wAAAABJRU5ErkJggg==</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-top0-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAGklEQVR42u3BAQ0AAADCoPdPbQ43oAAAAPg1DdYAASddwiQAAAAASUVORK5CYII=</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-hair0-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAZElEQVR42mNgGMqgJiLgPwyj82FiA+q4RaVZcIyNP2CehTkG3UB0hxNrMLU9y0DIV6T4nNqeRTGQWuqo5VmqO5DaniXa16SooZkDqaGGmp6laXFFLc+OglEwCkbBKBgFo4D+AADwc9aTOG4YJQAAAABJRU5ErkJggg==</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-face0-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAGklEQVR42u3BAQ0AAADCoPdPbQ43oAAAAPg1DdYAASddwiQAAAAASUVORK5CYII=</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-pants1-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAPUlEQVR42mNgGAWjYBSMglEwCkbBKBgFo2Cogvmq7P/XmkmiYGqYi24myB6yHYjuSLINw+FpmB2jyWHEAgB10ioLlPQliwAAAABJRU5ErkJggg==</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="20" name="female-top1-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAgElEQVR42mNgGAWjYBSMglEwCmgKNmzb+//WsllwDOIPOgfCHAljDybzGE56ev7/l5sLNujt1///QfzBZB7cQJBhIAzyOSXmgfSDzIOZSZUkAzOMUsehOxJkJtXSIshAiqMDKR1SxXEgB4F8C4teauVgkLnISWbQlQyjYBQMJQAAQvWsPD11LMMAAAAASUVORK5CYII=</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-hair1-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAaUlEQVR42mNgGMrgxrEN/5HxoHPc90cnUTAljqW6Z7E5EN2xA+VZFANhYuhsUhxJTc+iGIhPDbEGU9uzNHMgNcwadSDVHYjLYFLSzZBxIDXMwjCYEnmaO5DatRI1PDsKRsEoGAWjYBACAFqrk/RJvXKsAAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-face1-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAK0lEQVR42mNgGAWjYBSMglEwCmgO3hzu+I9MD2pHjnp4FIyCUTAKRsHQAgAsYxNFq8U5AQAAAABJRU5ErkJggg==</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-pants2-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAARElEQVR42mNgGAWjYBSMglEwCkbBKBgFo2CoAmlp6f/oeNCYi80QajiSaubiM4hcR9LK04M/HRoYGIB9CKKpEcWkmAcAykk+rbnkKagAAAAASUVORK5CYII=</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-top2-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAWUlEQVR42mNgGAWjYBSMglEwCmgKmrS0/uPjD7jjdlpZ/QfRMAzjD7h5yJpBNAyTayi1zcNp4K1lsyiKYpB+qjgQGVDLcdgcSbX0SLEvscTOaBE0CkbBSAAA/8N4188yVBsAAAAASUVORK5CYII=</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-hair2-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAaUlEQVR42u2VQQoAIAgE/ZAf8f//qVtIRFmtdGgHupTYbAiJBFDVMlryml7IzNo6lYSF9UK9nN9/EtY3GJ3vCqLDtoazmmhTdNg0QUQvCv4huBrq3eFOe8HIxVE5VNjU3+i2hhBCCDmjAjjPzOWfM0k9AAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-face2-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAP0lEQVR42mNgGAWjYBSQBx4+fPifEB4UjhSXV4U7Bp0/4J5FN4ASA6nlWbokGUo9OwpGwSgYBaNgFIyCUQAHAE5dj3Ur+z2qAAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-top3-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAYUlEQVR42mNgGAWjYBSMglEwCkY28KoU+g+i/x/f9R+ZP1jMgxtwa9ksqjqQWuaBDQBhkIEUG4ZkJsw8qphJNYNoaWbCMh6qhiDIPKo4DBQVIMNo4UAQhqXFUTAKRgGZAABb804zX4Ff8wAAAABJRU5ErkJggg==</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-hair3-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAbElEQVR42mNgIAK42Jj8h2GGwQRgjooPsIdjSh1KNc+iOwwdk2oBVT2Ly3HIloDoysrK/wPhWawGnjhxAgMT40BqexbDQJBGXJgYn1PTsyQlZHIcR6lnaVoSUOrZUTAKRsEoGAWjYBSMgqEJAIaD6WmN7BdBAAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-face3-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAMklEQVR42mNgGAWjYBSMglGAFTzYavAfxr6UfeM/DGOTH/XsKBgFo2AUjIJRMAoGDAAAilEdicOjTmwAAAAASUVORK5CYII=</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-pants0-walk-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAANElEQVR42mNgGAWjYBSMglEwCkbBKBgFo2Cog0WlWf9heDCaBwb5ng7/qelpaps3CoYsAAAADRLv23+nTQAAAABJRU5ErkJggg==</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-top0-walk-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAGklEQVR42u3BAQ0AAADCoPdPbQ43oAAAAPg1DdYAASddwiQAAAAASUVORK5CYII=</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-hair0-walk-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAZElEQVR42mNgGMqgJiLgPwyj82FiA+q4RaVZcIyNP2AehjkG3TB0h5NiKFU9TMhHpPqaqh5GNowa6qjuYWo7kBYeZiDGN8T6mGYOpIYaWniYZkUWNT08CkbBKBgFo2AUjAL6AQBDQNaTNW3u2wAAAABJRU5ErkJggg==</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-face0-walk-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAGklEQVR42u3BAQ0AAADCoPdPbQ43oAAAAPg1DdYAASddwiQAAAAASUVORK5CYII=</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-pants1-walk-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAANElEQVR42mNgGAWjYBSMglEwCkbBKBgFo2Aog/mq7P/XmknCMYg/mMyDA1o4cDT6RwEQAAAALR6LZvDV4QAAAABJRU5ErkJggg==</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-hair1-walk-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAaUlEQVR42mNgGMrgxrEN/5HxoHPc90cnUTCljqWqh7E5EN2xA+ZhZMNgYuhsUh1JVQ/DDMOnhhRDqe5hWjmQWuaNOpBqDsRlKKlpZsg4kFrmwQ2lRJ7mDqRFzUQtD4+CUTAKRsEoGEQAADK2k/RkK2MDAAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-face1-walk-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAK0lEQVR42mNgGAWjYBSMglEwCmgO3hzu+I9MD2pHjnp4FIyCUTAKRsHQAgAsYxNFq8U5AQAAAABJRU5ErkJggg==</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-pants2-walk-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAARElEQVR42u3SQQoAIAgFUe/hJf79L2e0DQkio4J54HZQ0AwAAAD4mbvHOM/0sthOtLo3jd9qpFFJceJ9erds0arg6sENxmQ1fSSkiX0AAAAASUVORK5CYII=</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-top2-walk-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAWUlEQVR42mNgGAWjYBSMglEwCmgKmrS0/uPjD7jjdlpZ/QfRMAzjD7h5yJpBNAyTayi1zcNp4K1lsyiKYpB+qjgQGVDLcdgcSbX0SLEvscTOaBE0CkbBSAAA/8N4188yVBsAAAAASUVORK5CYII=</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-hair2-walk-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAaklEQVR42mNgIALo6ur+x4YZBhqgO8jLywuOKXEkVTyM7CB0xyGLD4iHkTVjkyfHgVT1MMwAfGpIMZDqHqaVA6ll3qgDh7cDCSVochI2TUKQkGJiyy1aeJhmNRI1PDwKRsEoGAWjYBSQBgCe6czlBz0u0AAAAABJRU5ErkJggg==</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-face2-walk-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAP0lEQVR42mNgGAWjYBSQBx4+fPifEB4UjhSXV4U7Bp0/4B5G10xp6FHTwzRPNtTw8CgYBaNgFIyCUTAKRgEDAC9mj3UerwBQAAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-pants3-walk-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAXUlEQVR42mNgGAWjYBSMglEwCkbBKBgFo2AogzB3+/8gfGJv538YezCZxyAbkP3fsXUFHIP4g8k8uIHI9GAyj6GysvL/5cuXwYZQ04EgNshckPlUS4/UMBDZw8QAACXmX6vlMVFjAAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-top3-walk-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAXUlEQVR42mNgGAWjYBSMglEwCkY28KoU+g+i/x/f9R+ZP+gceGvZLKo4kNrmgQ0AYZCBMPZgMg8MEpbxgA2C0ZQ6ENk8qkU1yDBqOpBqjkM2kNoOpIZ5o2AUjHgAABY8WLJD28BgAAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-hair3-walk-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAbUlEQVR42mNgIAK42Jj8h2GGwQRgjooPsIdjajiUKh5Gdxg6JsdwqnkYl+OQLQDRlZWV/wfEw9gMO3HiBAYm1oFU9TC6YSBNuDCxvqa2h4lKxOQ6jhoepllpQA0Pj4JRMApGwSgYBaNgFAwtAACzlelpMnLdEwAAAABJRU5ErkJggg==</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-face3-walk-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAMklEQVR42mNgGAWjYBSMglGAFTzYavAfxr6UfeM/DGOTH/XwKBgFo2AUjIJRMAoGDAAAT0Edia3mZeYAAAAASUVORK5CYII=</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-pants3-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAZklEQVR42mNgGAWjYBSMglEwCkbBKBgFowAHCHO3/z+o7ZENyP4P0nxibyeYppaDYWbBzAXZQ7YDHVtXoGCyDaOVmTADkWlqOJBa5sENBLGp6UBqmcdQWVn5//Lly2BDQDSIT0/zAA46cLvo2IawAAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-idle-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAsklEQVR42mNgGAU0BLeWzfqPCw8Kx/0/vgsnJtWRVPcszIHpsRFgjM4mxWBqe5bqhlLTsxiGxsTEoDgMxh+WIUgNz2J14HNXVzimxIFUDUF8BpOTg6nlWYKOJNcwanmWpobCyj10syhKg9gMpCSaqWUehoHY6IE0D8VAZEyNdEg1M7H5ktKGArqjKC5mkNMMtVox6GZSrRykhQOpFoIURwetkg3MIBCbmg6klnmjDiRkHgDtXXttpsbORQAAAABJRU5ErkJggg==</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-walk-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAArklEQVR42mNgGAU0BLeWzfqPCw8Kx/0/vgsnJseRVPUwzIHpsRFgjM4m1VCqe5jaBlLbw3ADY2JiUBwG4w/bEKSWh1Ec+NzVFY4pdSA1Mx1OQ8nNwdT0ME5HUlIGUtPDNDEQVuahm0VR9GIzkJI0SC3zMAzERg+keSgGomNKHUgN83BGCyWNBfQ0SJHjaJGLaWHe0HEgVaKDBubBDQSxqelAapk3+B2IDKjtQGIAAFtVdgdjPzSRAAAAAElFTkSuQmCC</image>
+   <keyframes>250,250</keyframes>
+  </sprite>
+  <sprite width="20" height="22" name="female-top1-walk-down">
+   <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAcUlEQVR42mNgGAWjYBSMglEwCmgKNmzb+//WsllwDOIPOgfCHAljDybzGE56ev7/l5sLNujt1///QfzBZB7YxyADQYaBMDVCkJrmgQHIIJih1HAgsnlUS4swQymNEpgDqeY4WJqhVpRQ27xRMApGPAAAAg+9LV9zU4kAAAAASUVORK5CYII=</image>
    <keyframes>250,250</keyframes>
   </sprite>
  </spriteSheets>
