@@ -125,13 +125,12 @@ public final class GameManager {
           Game.getLoop().execute(360000, () -> {
             spawner.setInterval(spawner.getInterval() - 1000);
             spawner.setAmount(6);
-            flashInterval /= 2;
+            flashInterval /= 4;
             System.out.println("stage 2");
           });
 
           Game.getLoop().execute(480000, () -> {
-            spawner.setInterval(spawner.getInterval() - 1000);
-            flashInterval /= 2;
+            spawner.setInterval(spawner.getInterval() - 2000);
             System.out.println("stage 3");
           });
         });
@@ -349,6 +348,11 @@ public final class GameManager {
     }
 
     Collection<PartyGuest> guests = Game.getEnvironment().getByType(PartyGuest.class);
+    Optional<PartyGuest> nakedGuest = guests.stream().filter(x -> x.isNaked() && x.getHitBox().contains(Input.mouse().getMapLocation())).findFirst();
+    if (nakedGuest.isPresent()) {
+      return nakedGuest.get();
+    }
+    
     Optional<PartyGuest> guest = guests.stream().filter(x -> x.getHitBox().contains(Input.mouse().getMapLocation())).findFirst();
     if (guest.isPresent()) {
       return guest.get();
