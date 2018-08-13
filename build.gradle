@@ -6,7 +6,7 @@ apply plugin: 'eclipse'
 apply plugin: 'application'
 
 archivesBaseName = "litiengine-ldjam42"
-version = "v0.0.1"
+version = "v1.0.0"
 targetCompatibility = "1.8.0"
 mainClassName = "de.gurkenlabs.ldjam42.Program"
 
@@ -67,8 +67,8 @@ launch4j {
   outputDir = 'libs'
   outfile = archivesBaseName +'.exe'
   companyName = 'gurkenlabs.de'
-  version = '0.0.1'
-  textVersion = 'v0.0.1'
+  version = '1.0.0'
+  textVersion = 'v1.0.0'
   copyright = '2018 gurkenlabs.de'
   bundledJrePath = 'jre'
   jvmOptions = ['-Xms256m', '-Xmx1024m']
@@ -96,3 +96,6 @@ task copyDistributionFiles(type: Copy) {
 }
 
 jar.dependsOn copyDistributionFiles
+tasks.withType(JavaCompile) {
+  options.encoding = 'UTF-8'
+}

@@ -33,7 +33,7 @@ public class Program {
    */
   public static void main(String[] args) {
     Locale.setDefault(new Locale("en", "US"));
-    Game.getInfo().setVersion("v0.0.1");
+    Game.getInfo().setVersion("v1.0.0");
     Game.getInfo().setName("GO IN");
     Game.getInfo().setSubTitle("Behave or GET LOST!");
     Game.init(args);
