@@ -5,9 +5,12 @@ import java.awt.Graphics2D;
 import de.gurkenlabs.ldjam42.GameManager;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.gui.screens.Screen;
+import de.gurkenlabs.litiengine.sound.Sound;
 
 public class IngameScreen extends Screen {
   public static final String NAME = "INGAME";
+  public static Sound INGAME_MUSIC = Sound.get("ingame-music.ogg");
+
   private Hud hud;
 
   private static IngameScreen instance;
@@ -44,6 +47,7 @@ public class IngameScreen extends Screen {
   @Override
   public void prepare() {
     super.prepare();
+    Game.getSoundEngine().playMusic(INGAME_MUSIC);
   }
 
   @Override

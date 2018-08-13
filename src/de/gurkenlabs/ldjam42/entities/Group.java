@@ -10,8 +10,8 @@ public class Group {
 
   private static int currentGroupId;
   private final List<PartyGuest> members;
-  private final int[] groupFeatureValues = new int[2];
-  private final Feature[] groupFeatureIndices = new Feature[2];
+  private final int[] groupFeatureValues = new int[1];
+  private final Feature[] groupFeatureIndices = new Feature[1];
   private final int id;
 
   private double probability;
@@ -22,13 +22,7 @@ public class Group {
     this.probability = 1;
 
     this.groupFeatureIndices[0] = ArrayUtilities.getRandom(Feature.values());
-    this.groupFeatureIndices[1] = ArrayUtilities.getRandom(Feature.values());
-    while (this.groupFeatureIndices[0] == this.groupFeatureIndices[1]) {
-      this.groupFeatureIndices[1] = ArrayUtilities.getRandom(Feature.values());
-    }
-
     this.groupFeatureValues[0] = this.groupFeatureIndices[0].getRandomValue();
-    this.groupFeatureValues[1] = this.groupFeatureIndices[1].getRandomValue();
   }
 
   public double getProbability() {

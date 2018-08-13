@@ -15,12 +15,14 @@ import de.gurkenlabs.litiengine.graphics.TextRenderer;
 import de.gurkenlabs.litiengine.graphics.animation.AnimationController;
 import de.gurkenlabs.litiengine.gui.ImageComponent;
 import de.gurkenlabs.litiengine.gui.screens.Screen;
+import de.gurkenlabs.litiengine.sound.Sound;
 
 public class MenuScreen extends Screen {
   private static final BufferedImage gurkenlabs = Resources.getImage("gurkenlabs-neon.png");
   private AnimationController logoAnimationController;
 
   public static final String NAME = "MENU";
+  public static Sound MENU_MUSIC = Sound.get("tanzendiscodisco_muffled.ogg");
   private ImageComponent playButton;
   private boolean locked;
 
@@ -69,6 +71,7 @@ public class MenuScreen extends Screen {
     super.prepare();
 
     this.logoAnimationController = new AnimationController(Spritesheet.find("Logo_anim"));
+    Game.getSoundEngine().playMusic(MENU_MUSIC);
     Game.getLoop().attach(this.logoAnimationController);
   }
 
