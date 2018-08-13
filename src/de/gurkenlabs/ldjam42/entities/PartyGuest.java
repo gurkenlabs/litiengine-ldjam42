@@ -57,14 +57,6 @@ public class PartyGuest extends Creature {
 
   static {
     DebugRenderer.addEntityDebugListener((g, e) -> {
-      if (e instanceof PartyGuest) {
-        PartyGuest guest = (PartyGuest) e;
-        g.setColor(Color.BLACK);
-        g.setFont(g.getFont().deriveFont(Font.BOLD, 4f));
-        final int x = (int) Game.getCamera().getViewPortDimensionCenter(e).getX();
-        final int y = (int) Game.getCamera().getViewPortDimensionCenter(e).getY() - 10;
-        TextRenderer.render(g, (int) (guest.getSatisfaction() * 100) + "%", x, y);
-      }
     });
 
     femaleNames = Resources.getStringList("names-female.txt");
