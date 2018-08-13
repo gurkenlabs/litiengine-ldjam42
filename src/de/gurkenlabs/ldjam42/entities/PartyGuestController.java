@@ -150,7 +150,7 @@ public class PartyGuestController extends MovementController<PartyGuest> {
 
     this.getEntity().updateSatisfaction();
 
-    if (Game.getLoop().getDeltaTime(this.lastPayment) > paymentInterval) {
+    if (Game.getLoop().getDeltaTime(this.lastPayment) > paymentInterval && !this.getEntity().isNaked()) {
       this.getEntity().setState(State.SPEND_MONEY);
       return;
     }

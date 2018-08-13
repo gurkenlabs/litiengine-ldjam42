@@ -716,6 +716,17 @@
    </properties>
    <polyline/>
   </object>
+  <object id="4442" name="" type="PROP" x="177" y="77" width="62" height="35">
+   <properties>
+    <property name="addShadow" value="true"/>
+    <property name="collision" value="true"/>
+    <property name="collisionboxHeightFactor" value="14.0"/>
+    <property name="collisionboxWidthFactor" value="62.0"/>
+    <property name="indestructible" value="false"/>
+    <property name="isObstacle" value="true"/>
+    <property name="spritesheetName" value="dj"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="props" visible="0">
   <properties>
