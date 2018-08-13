@@ -110,9 +110,11 @@ public final class GameManager {
     env.addListener(new EnvironmentAdapter() {
       @Override
       public void environmentLoaded(IEnvironment environment) {
-        spawner = new PartyGuestSpawner(getSpawnPoints(), 1000, 5);
-        Game.getLoop().execute(10500, () -> {
-          spawner.setInterval(11000);
+        Game.getLoop().execute(IngameScreen.TUTORIAL_DURATION, () -> {
+          spawner = new PartyGuestSpawner(getSpawnPoints(), 1000, 5);
+          Game.getLoop().execute(10500, () -> {
+            spawner.setInterval(11000);
+          });
         });
 
         for (ClubArea area : ClubArea.values()) {
@@ -211,7 +213,7 @@ public final class GameManager {
       setGameState(GameState.ENDSCREEN);
     }
 
-//let someone flash after a certain time period
+    //let someone flash after a certain time period
     if (Game.getLoop().convertToMs(Game.getLoop().getTicks()) - lastFlash > flashInterval) {
       PartyGuest flasher = (PartyGuest) ArrayUtilities.getRandom(Game.getEnvironment().getByType(PartyGuest.class).toArray());
       if (!flasher.isFlashing()) {

@@ -1,6 +1,8 @@
 package de.gurkenlabs.ldjam42.gui;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
@@ -17,8 +19,10 @@ import de.gurkenlabs.litiengine.gui.Menu;
 import de.gurkenlabs.litiengine.gui.screens.Screen;
 import de.gurkenlabs.litiengine.input.Input;
 import de.gurkenlabs.litiengine.sound.Sound;
+import de.gurkenlabs.litiengine.util.MathUtilities;
 
 public class IngameScreen extends Screen {
+  public static final int TUTORIAL_DURATION = 10000;
   private static final Color COLOR_MONEY = new Color(77, 125, 10);
   private static final Color COLOR_MONEY_BORDER = new Color(11, 240, 10, 50);
 
@@ -31,6 +35,7 @@ public class IngameScreen extends Screen {
 
   private Hud hud;
   private Menu ingameMenu;
+  private long tutorialTick;
 
   private IngameScreen() {
     super(NAME);
@@ -82,7 +87,37 @@ public class IngameScreen extends Screen {
           (int) Game.getScreenManager().getResolution().getHeight(), null);
     }
 
+    this.renderTutorial(g);
+
     super.render(g);
+  }
+
+  private void renderTutorial(Graphics2D g) {
+    // render status
+    long deltaTime = Game.getLoop().getDeltaTime(this.tutorialTick);
+    if (this.tutorialTick != 0 && deltaTime <= TUTORIAL_DURATION) {
+      g.setColor(Color.WHITE);
+      // fade out status color
+      final double fadeOutTime = 0.75 * TUTORIAL_DURATION;
+      if (deltaTime > fadeOutTime) {
+        double fade = deltaTime - fadeOutTime;
+        int alpha = (int) (255 - (fade / (TUTORIAL_DURATION - fadeOutTime)) * 255);
+        g.setColor(new Color(255, 255, 255, MathUtilities.clamp(alpha, 0, 255)));
+      }
+
+      Font old = g.getFont();
+      g.setFont(Program.GUI_FONT);
+      FontMetrics fm = g.getFontMetrics();
+      final String tut1 = "Give your guests the space they need.";
+      TextRenderer.renderWithOutline(g, tut1, Game.getScreenManager().getResolution().getWidth() / 2d - fm.stringWidth(tut1) / 2.0, Game.getScreenManager().getCenter().getY(), Hud.COLOR_OUTLINE, RenderingHints.VALUE_ANTIALIAS_ON);
+      final String tut2 = "You earn more $$$ from satisfied customers! Keep them happy and ...";
+      TextRenderer.renderWithOutline(g, tut2, Game.getScreenManager().getResolution().getWidth() / 2d - fm.stringWidth(tut2) / 2.0, Game.getScreenManager().getCenter().getY() + fm.getHeight(), Hud.COLOR_OUTLINE, RenderingHints.VALUE_ANTIALIAS_ON);
+
+      g.setFont(Program.GUI_FONT.deriveFont(80f));
+      final String tut3 = "PARTY HARD!";
+      TextRenderer.renderWithOutline(g, tut3, Game.getScreenManager().getResolution().getWidth() / 2d - g.getFontMetrics().stringWidth(tut3) / 2.0, Game.getScreenManager().getCenter().getY() + g.getFontMetrics().getHeight() * 2, Hud.COLOR_OUTLINE, RenderingHints.VALUE_ANTIALIAS_ON);
+      g.setFont(old);
+    }
   }
 
   private void renderMoney(Graphics2D g) {
@@ -126,13 +161,15 @@ public class IngameScreen extends Screen {
     });
 
     Game.getLoop().setTimeScale(1);
-    Game.getSoundEngine().playMusic(INGAME_MUSIC);  }
+    Game.getSoundEngine().playMusic(INGAME_MUSIC);
+    this.tutorialTick = Game.getLoop().getTicks();
+  }
 
   private void hideIngameMenu() {
     this.ingameMenu.setVisible(false);
     Game.getLoop().setTimeScale(1);
   }
-  
+
   private void toggleIngameMenu() {
     this.ingameMenu.setVisible(!this.ingameMenu.isVisible());
 
