@@ -2,7 +2,6 @@ package de.gurkenlabs.ldjam42.gui;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
-import java.awt.RenderingHints.Key;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
@@ -23,7 +22,7 @@ import de.gurkenlabs.litiengine.sound.Sound;
 
 public class MenuScreen extends Screen {
   private static final BufferedImage gurkenlabs = Resources.getImage("gurkenlabs-neon.png");
-  private AnimationController logoAnimationController;
+  private static AnimationController logoAnimationController;
 
   public static final String NAME = "MENU";
   public static Sound MENU_MUSIC = Sound.get("tanzendiscodisco_muffled.ogg");
@@ -40,13 +39,7 @@ public class MenuScreen extends Screen {
       Game.getEnvironment().render(g);
     }
 
-    // render game logo
-    final int defaultSize = 73;
-    final double logoScale = 6;
-    final double size = defaultSize * logoScale;
-    double x = Game.getScreenManager().getCenter().getX() - size / 2.0;
-    double y = Game.getScreenManager().getCenter().getY() - size;
-    ImageRenderer.renderScaled(g, this.logoAnimationController.getCurrentSprite(), x, y, logoScale);
+    renderGameLogo(g);
 
     // render gurkenlabs logo
     final double gurkenX = Game.getScreenManager().getResolution().getWidth() - gurkenlabs.getWidth() - 10;
@@ -126,5 +119,15 @@ public class MenuScreen extends Screen {
     FreeFlightCamera camera = new FreeFlightCamera(Game.getEnvironment().getCenter());
     Game.setCamera(camera);
     GameManager.start();
+  }
+
+  public static void renderGameLogo(Graphics2D g) {
+    // render game logo
+    final int defaultSize = 73;
+    final double logoScale = 6;
+    final double size = defaultSize * logoScale;
+    double x = Game.getScreenManager().getCenter().getX() - size / 2.0;
+    double y = Game.getScreenManager().getCenter().getY() - size;
+    ImageRenderer.renderScaled(g, MenuScreen.logoAnimationController.getCurrentSprite(), x, y, logoScale);
   }
 }

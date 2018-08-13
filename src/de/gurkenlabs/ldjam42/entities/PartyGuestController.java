@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 import de.gurkenlabs.ldjam42.ClubArea;
 import de.gurkenlabs.ldjam42.GameManager;
+import de.gurkenlabs.ldjam42.GameState;
 import de.gurkenlabs.ldjam42.TileUtilities;
 import de.gurkenlabs.ldjam42.graphics.CoinEmitter;
 import de.gurkenlabs.litiengine.Game;
@@ -47,6 +48,13 @@ public class PartyGuestController extends MovementController<PartyGuest> {
   public void update() {
     super.update();
 
+    if (GameManager.getGameState() == GameState.ENDSCREEN) {
+      if (this.nav != null) {
+        this.nav.stop();
+      }
+
+      return;
+    }
     this.updateState();
 
     switch (this.getEntity().getState()) {
