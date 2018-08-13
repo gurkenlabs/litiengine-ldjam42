@@ -7,6 +7,8 @@ import java.util.Optional;
 import de.gurkenlabs.ldjam42.BadBehavior;
 import de.gurkenlabs.ldjam42.ClubArea;
 import de.gurkenlabs.ldjam42.GameManager;
+import de.gurkenlabs.ldjam42.graphics.DismissEmitter;
+import de.gurkenlabs.ldjam42.graphics.FlashEmitter;
 import de.gurkenlabs.litiengine.Align;
 import de.gurkenlabs.litiengine.Direction;
 import de.gurkenlabs.litiengine.Game;
@@ -68,7 +70,7 @@ public class PartyGuest extends Creature {
     this.features = new int[4];
     this.setLocation(location);
     // TODO: evaluate random apperance
-    this.setVelocity((short) MathUtilities.randomInRange(20, 40));
+    this.setVelocity((short) MathUtilities.randomInRange(20, 30));
     this.setController(MovementController.class, new PartyGuestController(this));
     this.initialize();
   }
@@ -183,6 +185,28 @@ public class PartyGuest extends Creature {
     if (!this.isNaked() && this.nakedGuestsInComfortZone() > 0) {
       this.satisfaction /= BAD_BEHAVIOR_PENALTY * this.nakedGuestsInComfortZone();
     }
+  }
+
+  public void flash() {
+    Game.getEnvironment().add(new FlashEmitter(this));
+
+    this.features[0] = 0;
+    this.features[1] = 0;
+    this.setVelocity((short) MathUtilities.randomInRange(30, 50));
+//    System.out.println(String.format("Someone named %s (%s) is showing what they've got.", this.getName(), this.getSpritePrefix()));
+  }
+
+  public boolean isFlashing() {
+    return (this.getFeatures()[0] == 0 && this.getFeatures()[1] == 0);
+  }
+
+  @Override
+  public String getSpritePrefix() {
+    if (this.features != null && this.getGender() != null) {
+      String prefix = (String.format("%s-%d_%d_%d_%d", this.getGender().toString().toLowerCase(), this.getFeatures()[0], this.getFeatures()[1], this.getFeatures()[2], this.getFeatures()[3]));
+      return prefix;
+    }
+    return super.getSpritePrefix();
   }
 
   private int getGuestsInComfortZone() {
