@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="26" height="22" tilewidth="16" tileheight="16" infinite="0" nextobjectid="1">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="26" height="22" tilewidth="16" tileheight="16" nextobjectid="1" name="club1">
  <properties>
   <property name="AMBIENTALPHA" value="60"/>
   <property name="AMBIENTLIGHT" value="#006666"/>
@@ -726,6 +726,54 @@
   <properties>
    <property name="layerOrder" value="9"/>
   </properties>
+  <object id="4019" name="" type="PROP" x="160" y="76" width="18" height="36">
+   <properties>
+    <property name="addShadow" type="addShadow" value="true"/>
+    <property name="collision" type="collision" value="true"/>
+    <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
+    <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="18.0"/>
+    <property name="indestructible" type="indestructible" value="false"/>
+    <property name="isObstacle" value="true"/>
+    <property name="spritesheetName" type="spritesheetName" value="speakers"/>
+   </properties>
+   <polyline/>
+  </object>
+  <object id="4042" name="" type="PROP" x="238" y="76" width="18" height="36">
+   <properties>
+    <property name="addShadow" type="addShadow" value="true"/>
+    <property name="collision" type="collision" value="true"/>
+    <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
+    <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="18.0"/>
+    <property name="indestructible" type="indestructible" value="false"/>
+    <property name="isObstacle" type="isObstacle" value="true"/>
+    <property name="spritesheetName" type="spritesheetName" value="speakers"/>
+   </properties>
+   <polyline/>
+  </object>
+  <object id="4094" name="" type="PROP" x="78" y="76" width="18" height="36">
+   <properties>
+    <property name="addShadow" type="addShadow" value="true"/>
+    <property name="collision" type="collision" value="true"/>
+    <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
+    <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="18.0"/>
+    <property name="indestructible" type="indestructible" value="false"/>
+    <property name="isObstacle" type="isObstacle" value="true"/>
+    <property name="spritesheetName" type="spritesheetName" value="speakers"/>
+   </properties>
+   <polyline/>
+  </object>
+  <object id="4098" name="" type="PROP" x="320" y="76" width="18" height="36">
+   <properties>
+    <property name="addShadow" type="addShadow" value="true"/>
+    <property name="collision" type="collision" value="true"/>
+    <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
+    <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="18.0"/>
+    <property name="indestructible" type="indestructible" value="false"/>
+    <property name="isObstacle" type="isObstacle" value="true"/>
+    <property name="spritesheetName" type="spritesheetName" value="speakers"/>
+   </properties>
+   <polyline/>
+  </object>
  </objectgroup>
  <objectgroup color="#00ffcc" name="areas">
   <properties>

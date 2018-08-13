@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.geom.Point2D;
 import java.util.Random;
 
+import de.gurkenlabs.litiengine.Align;
+import de.gurkenlabs.litiengine.Valign;
 import de.gurkenlabs.litiengine.annotation.EmitterInfo;
 import de.gurkenlabs.litiengine.annotation.EntityInfo;
 import de.gurkenlabs.litiengine.entities.IEntity;
@@ -19,6 +21,8 @@ public class DismissEmitter extends EntityEmitter {
 
   public DismissEmitter(final IEntity entity) {
     super(entity);
+    this.setOriginAlign(Align.CENTER);
+    this.setOriginValign(Valign.MIDDLE);
     this.addParticleColor(new Color(255, 255, 255, 100), new Color(180, 180, 180, 100));
   }
 
