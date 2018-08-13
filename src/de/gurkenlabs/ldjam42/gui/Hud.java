@@ -42,6 +42,7 @@ public final class Hud extends GuiComponent {
   private static final int PADDING = 10;
   private static final BufferedImage MARKER = ImageProcessing.scaleImage(Spritesheet.find("marker").getImage(), 4f);
   private static final BufferedImage SMILEY_BAD = Spritesheet.find("smileys").getSprite(0);
+  private static final BufferedImage WARNING = Spritesheet.find("warn").getSprite(0);
   private static final BufferedImage SMILEY_AVG = Spritesheet.find("smileys").getSprite(1);
   private static final BufferedImage SMILEY_GOOD = Spritesheet.find("smileys").getSprite(2);
 
@@ -186,16 +187,16 @@ public final class Hud extends GuiComponent {
     TextRenderer.renderWithOutline(g, guest.getName(), nameBgX + PADDING, nameY, COLOR_OUTLINE, RenderingHints.VALUE_ANTIALIAS_ON);
 
     // render guest image
-    
+
     // BEWARE!!! THAT'S UGLY JAM CODE 
-    String animationName = String.format("%s-%d_%d_%d_%d-%s-%s", 
-        guest.getGender().toString().toLowerCase(), 
-        guest.getFeatures()[0], 
-        guest.getFeatures()[1], 
-        guest.getFeatures()[2], 
-        guest.getFeatures()[3], 
-        guest.isIdle() ? "idle" : "walk", 
-            Direction.DOWN.toString().toLowerCase());
+    String animationName = String.format("%s-%d_%d_%d_%d-%s-%s",
+        guest.getGender().toString().toLowerCase(),
+        guest.getFeatures()[0],
+        guest.getFeatures()[1],
+        guest.getFeatures()[2],
+        guest.getFeatures()[3],
+        guest.isIdle() ? "idle" : "walk",
+        Direction.DOWN.toString().toLowerCase());
     BufferedImage image = guest.getAnimationController().getAnimation(animationName).getSpritesheet().getSprite(guest.getAnimationController().getCurrentAnimation().getCurrentKeyFrame().getSpriteIndex());
     // BEWARE!!! THAT'S UGLY JAM CODE 
     double factor = 150 / image.getWidth();
@@ -269,6 +270,14 @@ public final class Hud extends GuiComponent {
   }
 
   private void renderSatisfaction(final Graphics2D g, final PartyGuest guest) {
+    if (guest.isNaked()) {
+      final Point2D location = new Point2D.Double(
+          Game.getCamera().getViewPortDimensionCenter(guest).getX() - WARNING.getWidth() * 0.25 / 2.0 - 4,
+          Game.getCamera().getViewPortDimensionCenter(guest).getY() - guest.getHeight() * 3 / 4);
+      ImageRenderer.renderScaled(g, WARNING, location, 0.25);
+      return;
+    }
+
     final Point2D location = new Point2D.Double(
         Game.getCamera().getViewPortDimensionCenter(guest).getX() - SMILEY_AVG.getWidth() * 0.25 / 2.0 - 4,
         Game.getCamera().getViewPortDimensionCenter(guest).getY() - guest.getHeight() * 3 / 4);

@@ -136,7 +136,6 @@ public class IngameScreen extends Screen {
     double width = g.getFontMetrics().stringWidth(money);
     double height = g.getFontMetrics().getHeight();
     double moneyY = height + unitY;
-    g.setFont(Program.GUI_FONT);
     TextRenderer.renderWithOutline(g, money, Game.getScreenManager().getResolution().getWidth() / 2.0 - width / 2, moneyY, COLOR_MONEY_BORDER, RenderingHints.VALUE_ANTIALIAS_ON);
   }
 

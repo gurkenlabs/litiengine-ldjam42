@@ -198,7 +198,7 @@ public class PartyGuestController extends MovementController<PartyGuest> {
 
     int money = (int) (Math.round(PAY_MIN_SPEND + (float) Math.pow(this.getEntity().getWealth(), 2)) * this.getEntity().getSatisfaction());
     GameManager.spendMoney(money);
-    Game.getEnvironment().add(new CoinEmitter(this.getEntity().getCenter()));
+    // Game.getEnvironment().add(new CoinEmitter(this.getEntity().getCenter()));
     this.paymentInterval = MathUtilities.randomInRange(PAY_MIN_INTERVAL, PAY_MAX_INTERVAL);
     this.lastPayment = Game.getLoop().getTicks();
   }

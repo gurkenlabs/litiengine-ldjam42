@@ -115,6 +115,25 @@ public final class GameManager {
           Game.getLoop().execute(10500, () -> {
             spawner.setInterval(11000);
           });
+
+          Game.getLoop().execute(180000, () -> {
+            spawner.setInterval(spawner.getInterval() - 1000);
+            flashInterval /= 2;
+            System.out.println("stage 1");
+          });
+
+          Game.getLoop().execute(360000, () -> {
+            spawner.setInterval(spawner.getInterval() - 1000);
+            spawner.setAmount(6);
+            flashInterval /= 2;
+            System.out.println("stage 2");
+          });
+
+          Game.getLoop().execute(480000, () -> {
+            spawner.setInterval(spawner.getInterval() - 1000);
+            flashInterval /= 2;
+            System.out.println("stage 3");
+          });
         });
 
         for (ClubArea area : ClubArea.values()) {
