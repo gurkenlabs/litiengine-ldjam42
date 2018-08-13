@@ -52,11 +52,10 @@ public final class GameManager {
   private static EnumMap<ClubArea, Double> space = new EnumMap<>(ClubArea.class);
   private static EnumMap<ClubArea, Double> remaining = new EnumMap<>(ClubArea.class);
   private static EnumMap<ClubArea, Integer> guestsInArea = new EnumMap<>(ClubArea.class);
+  private static List<PartyGuest> kickedPartyGuests = new CopyOnWriteArrayList<>();
   private static int totalGuestsInMainAreas;
 
   private static AStarGrid grid;
-
-  private static List<PartyGuest> kickedPartyGuests = new CopyOnWriteArrayList<>();
   private static volatile int currentMoney;
 
   private static PartyGuest currentFocus;
@@ -89,7 +88,11 @@ public final class GameManager {
     });
 
     goin = new Environment(Game.getMap("club1"));
-    goin.addListener(new EnvironmentAdapter() {
+    addListeners(goin);
+  }
+
+  private static void addListeners(IEnvironment env) {
+    env.addListener(new EnvironmentAdapter() {
       @Override
       public void environmentLoaded(IEnvironment environment) {
         spawner = new PartyGuestSpawner(getSpawnPoints(), 1000, 5);
@@ -123,7 +126,7 @@ public final class GameManager {
       }
     });
 
-    goin.addEntityListener(new EnvironmentEntityAdapter() {
+    env.addEntityListener(new EnvironmentEntityAdapter() {
       @Override
       public void entityRemoved(IEntity entity) {
         // remember kicked party guests
@@ -133,6 +136,23 @@ public final class GameManager {
         }
       }
     });
+  }
+
+  public static void restart() {
+    goin = new Environment(Game.getMap("club1"));
+    addListeners(goin);
+    space.clear();
+    remaining.clear();
+    guestsInArea.clear();
+    kickedPartyGuests.clear();
+    areas.clear();
+    totalGuestsInMainAreas = 0;
+    PartyGuestController.currentTargets.clear();
+
+    currentFocus = null;
+    currentMoney = 0;
+    Game.loadEnvironment(GameManager.getGoin());
+    startedTicks = Game.getLoop().getTicks();
   }
 
   public static void dismiss() {

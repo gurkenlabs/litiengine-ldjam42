@@ -47,6 +47,9 @@ public class IngameScreen extends Screen {
           (int) Game.getScreenManager().getResolution().getHeight(), null);
     }
 
+    if (Game.getConfiguration().debug().isDebug()) {
+      // Game.getLoop().setTimeScale(4);
+    }
     super.render(g);
   }
 
@@ -89,6 +92,8 @@ public class IngameScreen extends Screen {
     this.ingameMenu = new Menu(x, y, width, height, "Restart Party", "End Night");
     this.ingameMenu.onChange(i -> {
       if (i == 0) {
+        GameManager.restart();
+        this.toggleIngameMenu();
         return;
       }
 
