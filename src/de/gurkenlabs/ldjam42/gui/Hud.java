@@ -3,6 +3,7 @@ package de.gurkenlabs.ldjam42.gui;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.sql.Time;
@@ -15,14 +16,17 @@ import de.gurkenlabs.ldjam42.entities.PartyGuest;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.graphics.ImageRenderer;
 import de.gurkenlabs.litiengine.graphics.ShapeRenderer;
+import de.gurkenlabs.litiengine.graphics.Spritesheet;
 import de.gurkenlabs.litiengine.graphics.TextRenderer;
 import de.gurkenlabs.litiengine.gui.GuiComponent;
 import de.gurkenlabs.litiengine.gui.ImageComponent;
+import de.gurkenlabs.litiengine.util.ImageProcessing;
 import de.gurkenlabs.litiengine.util.MathUtilities;
 
 public final class Hud extends GuiComponent {
   private static final Color COLOR_MONEY = new Color(77, 125, 10);
   private static final Color COLOR_MONEY_BORDER = new Color(11, 240, 10, 50);
+  private static final BufferedImage MARKER = ImageProcessing.scaleImage(Spritesheet.find("marker").getImage(), 4f);
   private ImageComponent kickButton;
 
   public Hud() {
@@ -80,6 +84,9 @@ public final class Hud extends GuiComponent {
     }
 
     PartyGuest guest = GameManager.getCurrentFocus();
+
+    final Point2D loc = Game.getCamera().getViewPortLocation(guest.getCenter());
+    ImageRenderer.render(g, MARKER, (loc.getX() * Game.getRenderEngine().getBaseRenderScale() - MARKER.getWidth() / 2.0), loc.getY() * Game.getRenderEngine().getBaseRenderScale() - (MARKER.getHeight() * 3));
 
     BufferedImage image = guest.getAnimationController().getCurrentSprite();
     double factor = 150 / image.getWidth();

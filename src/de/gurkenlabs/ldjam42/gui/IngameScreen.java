@@ -1,16 +1,10 @@
 package de.gurkenlabs.ldjam42.gui;
 
 import java.awt.Graphics2D;
-import java.util.Collection;
-import java.util.Optional;
-
-import javax.swing.SwingUtilities;
 
 import de.gurkenlabs.ldjam42.GameManager;
-import de.gurkenlabs.ldjam42.entities.PartyGuest;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.gui.screens.Screen;
-import de.gurkenlabs.litiengine.input.Input;
 
 public class IngameScreen extends Screen {
   public static final String NAME = "INGAME";

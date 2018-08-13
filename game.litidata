@@ -473,6 +473,9 @@
    <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAcUlEQVR42mNgGAWjYBSMglEwCmgKNmzb+//WsllwDOIPOgfCHAljDybzGE56ev7/l5sLNujt1///QfzBZB7YxyADQYaBMDVCkJrmgQHIIJih1HAgsnlUS4swQymNEpgDqeY4WJqhVpRQ27xRMApGPAAAAg+9LV9zU4kAAAAASUVORK5CYII=</image>
    <keyframes>250,250</keyframes>
   </sprite>
+  <sprite width="9" height="8" name="marker">
+   <image>iVBORw0KGgoAAAANSUhEUgAAAAkAAAAICAYAAAArzdW1AAAAL0lEQVR42mO4yOf0nxBmABH/GVxwYrAiEMClEK6AaEXYFGIoQFeIUwHRimAK0cUAgAdgbYFo2hQAAAAASUVORK5CYII=</image>
+  </sprite>
  </spriteSheets>
  <tilesets>
   <tileset firstgid="0" name="test-tileset" tilewidth="16" tileheight="16" tilecount="16" columns="4">
