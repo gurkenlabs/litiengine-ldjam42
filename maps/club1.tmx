@@ -118,7 +118,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
  <layer name="wall-detail1" width="26" height="22">
@@ -180,6 +180,66 @@
 </data>
  </layer>
  <layer name="wall-overlay" width="26" height="22">
+  <properties>
+   <property name="RENDERTYPE" value="OVERLAY"/>
+   <property name="layerOrder" value="0"/>
+  </properties>
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54
+</data>
+ </layer>
+ <layer name="wall-overlay1" width="26" height="22">
+  <properties>
+   <property name="RENDERTYPE" value="OVERLAY"/>
+   <property name="layerOrder" value="0"/>
+  </properties>
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,45,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer name="wall-overlay2" width="26" height="22">
   <properties>
    <property name="RENDERTYPE" value="OVERLAY"/>
    <property name="layerOrder" value="0"/>
@@ -252,6 +312,11 @@
     <property name="lightFocusOffsetY" value="0.0"/>
     <property name="lightIntensity" value="150"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
   </object>
   <object id="2972" type="LIGHTSOURCE" x="119" y="149" width="48" height="48">
@@ -263,6 +328,11 @@
     <property name="lightFocusOffsetY" value="0.0"/>
     <property name="lightIntensity" value="150"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -275,6 +345,11 @@
     <property name="lightFocusOffsetY" value="0.0"/>
     <property name="lightIntensity" value="150"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -287,6 +362,11 @@
     <property name="lightFocusOffsetY" value="0.0"/>
     <property name="lightIntensity" value="150"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -299,6 +379,11 @@
     <property name="lightFocusOffsetY" value="0.0"/>
     <property name="lightIntensity" value="150"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -311,6 +396,11 @@
     <property name="lightFocusOffsetY" value="0.0"/>
     <property name="lightIntensity" value="150"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -323,6 +413,11 @@
     <property name="lightFocusOffsetY" value="0.0"/>
     <property name="lightIntensity" value="150"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -335,6 +430,11 @@
     <property name="lightFocusOffsetY" value="0.0"/>
     <property name="lightIntensity" value="150"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -347,6 +447,11 @@
     <property name="lightFocusOffsetY" value="0.0"/>
     <property name="lightIntensity" value="150"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -359,6 +464,11 @@
     <property name="lightFocusOffsetY" value="0.0"/>
     <property name="lightIntensity" value="100"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -371,6 +481,11 @@
     <property name="lightFocusOffsetY" value="0.0"/>
     <property name="lightIntensity" value="100"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -383,6 +498,11 @@
     <property name="lightFocusOffsetY" value="0.0"/>
     <property name="lightIntensity" value="100"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -395,6 +515,11 @@
     <property name="lightFocusOffsetY" value="0.0"/>
     <property name="lightIntensity" value="100"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -407,6 +532,11 @@
     <property name="lightFocusOffsetY" value="-1.0"/>
     <property name="lightIntensity" value="100"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -419,6 +549,11 @@
     <property name="lightFocusOffsetY" value="-1.0"/>
     <property name="lightIntensity" value="100"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -431,6 +566,11 @@
     <property name="lightFocusOffsetY" value="-1.0"/>
     <property name="lightIntensity" value="100"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -452,6 +592,11 @@
     <property name="lightFocusOffsetY" value="-1.0"/>
     <property name="lightIntensity" value="150"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -464,6 +609,11 @@
     <property name="lightFocusOffsetY" value="-1.0"/>
     <property name="lightIntensity" value="150"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -476,6 +626,11 @@
     <property name="lightFocusOffsetY" value="-1.0"/>
     <property name="lightIntensity" value="150"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -488,6 +643,11 @@
     <property name="lightFocusOffsetY" value="-1.0"/>
     <property name="lightIntensity" value="150"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -500,6 +660,11 @@
     <property name="lightFocusOffsetY" value="-1.0"/>
     <property name="lightIntensity" value="150"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
@@ -548,6 +713,11 @@
     <property name="lightFocusOffsetY" value="-1.0"/>
     <property name="lightIntensity" value="100"/>
     <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
    <polyline points=""/>
   </object>
