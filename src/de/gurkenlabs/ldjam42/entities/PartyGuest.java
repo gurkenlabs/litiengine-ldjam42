@@ -10,6 +10,7 @@ import de.gurkenlabs.ldjam42.BadBehavior;
 import de.gurkenlabs.ldjam42.ClubArea;
 import de.gurkenlabs.ldjam42.GameManager;
 import de.gurkenlabs.litiengine.Align;
+import de.gurkenlabs.litiengine.Direction;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.Resources;
 import de.gurkenlabs.litiengine.Valign;
@@ -108,6 +109,29 @@ public class PartyGuest extends Creature {
 
   public int[] getFeatures() {
     return this.features;
+  }
+
+  @Override
+  public Direction getFacingDirection() {
+    float angle = this.getAngle();
+    if (angle >= 0 && angle < 60) {
+      return Direction.DOWN;
+    }
+    if (angle >= 60 && angle < 120) {
+      return Direction.RIGHT;
+    }
+    if (angle >= 120 && angle < 240) {
+      return Direction.UP;
+    }
+    if (angle >= 240 && angle < 300) {
+      return Direction.LEFT;
+    }
+
+    if (angle >= 300 && angle <= 360) {
+      return Direction.DOWN;
+    }
+
+    return Direction.UNDEFINED;
   }
 
   public ClubArea getCurrentArea() {
