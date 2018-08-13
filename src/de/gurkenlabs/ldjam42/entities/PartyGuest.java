@@ -68,9 +68,9 @@ public class PartyGuest extends Creature {
   }
 
   public PartyGuest(Point2D location) {
-    this.gender = MathUtilities.randomBoolean() ? Gender.FEMALE : Gender.MALE;
+    this.gender = Gender.values()[MathUtilities.randomInRange(0, Gender.values().length)];
 
-    this.setName(ArrayUtilities.getRandom(this.getGender() == Gender.FEMALE ? femaleNames : maleNames));
+    this.setName(ArrayUtilities.getRandom(this.getGender() == Gender.FEMALE || this.getGender() == Gender.FEMALE2 ? femaleNames : maleNames));
     this.satisfaction = 1;
     this.features = new int[4];
     this.setLocation(location);
