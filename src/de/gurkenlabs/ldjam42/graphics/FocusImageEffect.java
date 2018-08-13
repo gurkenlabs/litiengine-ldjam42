@@ -13,7 +13,7 @@ import de.gurkenlabs.litiengine.util.ImageProcessing;
 
 public class FocusImageEffect extends ImageEffect {
   private static final Color HOVER_COLOR = new Color(255, 255, 255, 70);
-  private static final Color TARGET_COLOR = new Color(255, 0, 0, 200);
+  private static final Color TARGET_COLOR = new Color(28, 221, 238, 200);
   private final PartyGuest guest;
 
   public FocusImageEffect(PartyGuest guest) {
