@@ -301,7 +301,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
    </layer>
-   <objectgroup name="lights" visible="0">
+   <objectgroup name="lights">
     <properties>
      <property name="layerOrder" value="8"/>
     </properties>
@@ -314,46 +314,12 @@
       <property name="lightFocusOffsetY" value="0.0"/>
       <property name="lightIntensity" value="150"/>
       <property name="lightShape" value="ellipse"/>
-      <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
-      <property name="minTimeOff" value="100"/>
-      <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
+      <property name="maxTimeOff" value="0"/>
+      <property name="maxTimeOn" value="0"/>
+      <property name="minTimeOff" value="0"/>
+      <property name="minTimeOn" value="0"/>
+      <property name="pulseDuration" value="0"/>
      </properties>
-    </object>
-    <object id="2972" type="LIGHTSOURCE" x="119" y="149" width="48" height="48">
-     <properties>
-      <property name="lightActive" value="true"/>
-      <property name="lightBrightness" value="255"/>
-      <property name="lightColor" value="#6666ff"/>
-      <property name="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" value="150"/>
-      <property name="lightShape" value="ellipse"/>
-      <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
-      <property name="minTimeOff" value="100"/>
-      <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
-     </properties>
-     <polyline points=""/>
-    </object>
-    <object id="2975" type="LIGHTSOURCE" x="119" y="192" width="48" height="48">
-     <properties>
-      <property name="lightActive" value="true"/>
-      <property name="lightBrightness" value="255"/>
-      <property name="lightColor" value="#6666ff"/>
-      <property name="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" value="150"/>
-      <property name="lightShape" value="ellipse"/>
-      <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
-      <property name="minTimeOff" value="100"/>
-      <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
-     </properties>
-     <polyline points=""/>
     </object>
     <object id="2983" type="LIGHTSOURCE" x="182" y="112" width="48" height="48">
      <properties>
@@ -364,96 +330,11 @@
       <property name="lightFocusOffsetY" value="0.0"/>
       <property name="lightIntensity" value="150"/>
       <property name="lightShape" value="ellipse"/>
-      <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
-      <property name="minTimeOff" value="100"/>
-      <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
-     </properties>
-     <polyline points=""/>
-    </object>
-    <object id="2994" type="LIGHTSOURCE" x="182" y="155" width="48" height="48">
-     <properties>
-      <property name="lightActive" value="true"/>
-      <property name="lightBrightness" value="255"/>
-      <property name="lightColor" value="#cc00cc"/>
-      <property name="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" value="150"/>
-      <property name="lightShape" value="ellipse"/>
-      <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
-      <property name="minTimeOff" value="100"/>
-      <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
-     </properties>
-     <polyline points=""/>
-    </object>
-    <object id="2997" type="LIGHTSOURCE" x="182" y="192" width="48" height="48">
-     <properties>
-      <property name="lightActive" value="true"/>
-      <property name="lightBrightness" value="255"/>
-      <property name="lightColor" value="#cc00cc"/>
-      <property name="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" value="150"/>
-      <property name="lightShape" value="ellipse"/>
-      <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
-      <property name="minTimeOff" value="100"/>
-      <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
-     </properties>
-     <polyline points=""/>
-    </object>
-    <object id="3003" type="LIGHTSOURCE" x="246" y="112" width="48" height="48">
-     <properties>
-      <property name="lightActive" value="true"/>
-      <property name="lightBrightness" value="255"/>
-      <property name="lightColor" value="#ffcc00"/>
-      <property name="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" value="150"/>
-      <property name="lightShape" value="ellipse"/>
-      <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
-      <property name="minTimeOff" value="100"/>
-      <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
-     </properties>
-     <polyline points=""/>
-    </object>
-    <object id="3007" type="LIGHTSOURCE" x="246" y="155" width="48" height="48">
-     <properties>
-      <property name="lightActive" value="true"/>
-      <property name="lightBrightness" value="255"/>
-      <property name="lightColor" value="#ffcc00"/>
-      <property name="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" value="150"/>
-      <property name="lightShape" value="ellipse"/>
-      <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
-      <property name="minTimeOff" value="100"/>
-      <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
-     </properties>
-     <polyline points=""/>
-    </object>
-    <object id="3010" type="LIGHTSOURCE" x="246" y="192" width="48" height="48">
-     <properties>
-      <property name="lightActive" value="true"/>
-      <property name="lightBrightness" value="255"/>
-      <property name="lightColor" value="#ffcc00"/>
-      <property name="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" value="150"/>
-      <property name="lightShape" value="ellipse"/>
-      <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
-      <property name="minTimeOff" value="100"/>
-      <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
+      <property name="maxTimeOff" value="0"/>
+      <property name="maxTimeOn" value="0"/>
+      <property name="minTimeOff" value="0"/>
+      <property name="minTimeOn" value="0"/>
+      <property name="pulseDuration" value="0"/>
      </properties>
      <polyline points=""/>
     </object>
@@ -467,61 +348,10 @@
       <property name="lightIntensity" value="100"/>
       <property name="lightShape" value="ellipse"/>
       <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
+      <property name="maxTimeOn" value="500"/>
       <property name="minTimeOff" value="100"/>
       <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
-     </properties>
-     <polyline points=""/>
-    </object>
-    <object id="3020" type="LIGHTSOURCE" x="153" y="181" width="48" height="48">
-     <properties>
-      <property name="lightActive" value="true"/>
-      <property name="lightBrightness" value="255"/>
-      <property name="lightColor" value="#ffffcc"/>
-      <property name="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" value="100"/>
-      <property name="lightShape" value="ellipse"/>
-      <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
-      <property name="minTimeOff" value="100"/>
-      <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
-     </properties>
-     <polyline points=""/>
-    </object>
-    <object id="3023" type="LIGHTSOURCE" x="213" y="133" width="48" height="48">
-     <properties>
-      <property name="lightActive" value="true"/>
-      <property name="lightBrightness" value="255"/>
-      <property name="lightColor" value="#ffffcc"/>
-      <property name="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" value="100"/>
-      <property name="lightShape" value="ellipse"/>
-      <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
-      <property name="minTimeOff" value="100"/>
-      <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
-     </properties>
-     <polyline points=""/>
-    </object>
-    <object id="3028" type="LIGHTSOURCE" x="213" y="181" width="48" height="48">
-     <properties>
-      <property name="lightActive" value="true"/>
-      <property name="lightBrightness" value="255"/>
-      <property name="lightColor" value="#ffffcc"/>
-      <property name="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" value="100"/>
-      <property name="lightShape" value="ellipse"/>
-      <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
-      <property name="minTimeOff" value="100"/>
-      <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
+      <property name="pulseDuration" value="0"/>
      </properties>
      <polyline points=""/>
     </object>
@@ -535,14 +365,14 @@
       <property name="lightIntensity" value="100"/>
       <property name="lightShape" value="ellipse"/>
       <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
+      <property name="maxTimeOn" value="500"/>
       <property name="minTimeOff" value="100"/>
       <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
+      <property name="pulseDuration" value="200"/>
      </properties>
      <polyline points=""/>
     </object>
-    <object id="3136" type="LIGHTSOURCE" x="189" y="64" width="43" height="45">
+    <object id="3136" type="LIGHTSOURCE" x="221" y="64" width="43" height="45">
      <properties>
       <property name="lightActive" value="true"/>
       <property name="lightBrightness" value="255"/>
@@ -552,14 +382,14 @@
       <property name="lightIntensity" value="100"/>
       <property name="lightShape" value="ellipse"/>
       <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
+      <property name="maxTimeOn" value="500"/>
       <property name="minTimeOff" value="100"/>
       <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
+      <property name="pulseDuration" value="200"/>
      </properties>
      <polyline points=""/>
     </object>
-    <object id="3139" type="LIGHTSOURCE" x="217" y="64" width="43" height="45">
+    <object id="3139" type="LIGHTSOURCE" x="190" y="64" width="43" height="45">
      <properties>
       <property name="lightActive" value="true"/>
       <property name="lightBrightness" value="255"/>
@@ -568,11 +398,6 @@
       <property name="lightFocusOffsetY" value="-1.0"/>
       <property name="lightIntensity" value="100"/>
       <property name="lightShape" value="ellipse"/>
-      <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
-      <property name="minTimeOff" value="100"/>
-      <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
      </properties>
      <polyline points=""/>
     </object>
@@ -585,7 +410,7 @@
       <property name="lightShape" value="rectangle"/>
      </properties>
     </object>
-    <object id="3164" type="LIGHTSOURCE" x="34" y="0" width="43" height="45">
+    <object id="3180" type="LIGHTSOURCE" x="185" y="0" width="43" height="45">
      <properties>
       <property name="lightActive" value="true"/>
       <property name="lightBrightness" value="255"/>
@@ -594,78 +419,10 @@
       <property name="lightFocusOffsetY" value="-1.0"/>
       <property name="lightIntensity" value="150"/>
       <property name="lightShape" value="ellipse"/>
-      <property name="maxTimeOff" value="200"/>
+      <property name="maxTimeOff" value="0"/>
       <property name="maxTimeOn" value="2000"/>
-      <property name="minTimeOff" value="100"/>
-      <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
-     </properties>
-     <polyline points=""/>
-    </object>
-    <object id="3177" type="LIGHTSOURCE" x="105" y="0" width="43" height="45">
-     <properties>
-      <property name="lightActive" value="true"/>
-      <property name="lightBrightness" value="255"/>
-      <property name="lightColor" value="#ffcc00"/>
-      <property name="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" value="-1.0"/>
-      <property name="lightIntensity" value="150"/>
-      <property name="lightShape" value="ellipse"/>
-      <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
-      <property name="minTimeOff" value="100"/>
-      <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
-     </properties>
-     <polyline points=""/>
-    </object>
-    <object id="3180" type="LIGHTSOURCE" x="183" y="0" width="43" height="45">
-     <properties>
-      <property name="lightActive" value="true"/>
-      <property name="lightBrightness" value="255"/>
-      <property name="lightColor" value="#ffcc00"/>
-      <property name="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" value="-1.0"/>
-      <property name="lightIntensity" value="150"/>
-      <property name="lightShape" value="ellipse"/>
-      <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
-      <property name="minTimeOff" value="100"/>
-      <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
-     </properties>
-     <polyline points=""/>
-    </object>
-    <object id="3183" type="LIGHTSOURCE" x="268" y="0" width="43" height="45">
-     <properties>
-      <property name="lightActive" value="true"/>
-      <property name="lightBrightness" value="255"/>
-      <property name="lightColor" value="#ffcc00"/>
-      <property name="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" value="-1.0"/>
-      <property name="lightIntensity" value="150"/>
-      <property name="lightShape" value="ellipse"/>
-      <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
-      <property name="minTimeOff" value="100"/>
-      <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
-     </properties>
-     <polyline points=""/>
-    </object>
-    <object id="3186" type="LIGHTSOURCE" x="350" y="0" width="43" height="45">
-     <properties>
-      <property name="lightActive" value="true"/>
-      <property name="lightBrightness" value="255"/>
-      <property name="lightColor" value="#ffcc00"/>
-      <property name="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" value="-1.0"/>
-      <property name="lightIntensity" value="150"/>
-      <property name="lightShape" value="ellipse"/>
-      <property name="maxTimeOff" value="200"/>
-      <property name="maxTimeOn" value="2000"/>
-      <property name="minTimeOff" value="100"/>
-      <property name="minTimeOn" value="200"/>
+      <property name="minTimeOff" value="0"/>
+      <property name="minTimeOn" value="1000"/>
       <property name="pulseDuration" value="2000"/>
      </properties>
      <polyline points=""/>
@@ -719,12 +476,250 @@
       <property name="maxTimeOn" value="2000"/>
       <property name="minTimeOff" value="100"/>
       <property name="minTimeOn" value="200"/>
-      <property name="pulseDuration" value="2000"/>
+      <property name="pulseDuration" value="1000"/>
      </properties>
      <polyline points=""/>
     </object>
+    <object id="4166" type="LIGHTSOURCE" x="153" y="178" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffffcc"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="100"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="maxTimeOff" type="maxTimeOff" value="200"/>
+      <property name="maxTimeOn" type="maxTimeOn" value="500"/>
+      <property name="minTimeOff" type="minTimeOff" value="100"/>
+      <property name="minTimeOn" type="minTimeOn" value="200"/>
+      <property name="pulseDuration" type="pulseDuration" value="0"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4171" type="LIGHTSOURCE" x="212" y="178" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffffcc"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="100"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="maxTimeOff" type="maxTimeOff" value="200"/>
+      <property name="maxTimeOn" type="maxTimeOn" value="500"/>
+      <property name="minTimeOff" type="minTimeOff" value="100"/>
+      <property name="minTimeOn" type="minTimeOn" value="200"/>
+      <property name="pulseDuration" type="pulseDuration" value="0"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4176" type="LIGHTSOURCE" x="212" y="133" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffffcc"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="100"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="maxTimeOff" type="maxTimeOff" value="200"/>
+      <property name="maxTimeOn" type="maxTimeOn" value="500"/>
+      <property name="minTimeOff" type="minTimeOff" value="100"/>
+      <property name="minTimeOn" type="minTimeOn" value="200"/>
+      <property name="pulseDuration" type="pulseDuration" value="0"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4292" type="LIGHTSOURCE" x="107" y="0" width="43" height="45">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="maxTimeOff" type="maxTimeOff" value="0"/>
+      <property name="maxTimeOn" type="maxTimeOn" value="2000"/>
+      <property name="minTimeOff" type="minTimeOff" value="0"/>
+      <property name="minTimeOn" type="minTimeOn" value="1000"/>
+      <property name="pulseDuration" type="pulseDuration" value="2000"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4295" type="LIGHTSOURCE" x="35" y="0" width="43" height="45">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="maxTimeOff" type="maxTimeOff" value="0"/>
+      <property name="maxTimeOn" type="maxTimeOn" value="2000"/>
+      <property name="minTimeOff" type="minTimeOff" value="0"/>
+      <property name="minTimeOn" type="minTimeOn" value="1000"/>
+      <property name="pulseDuration" type="pulseDuration" value="2000"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4300" type="LIGHTSOURCE" x="265" y="0" width="43" height="45">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="maxTimeOff" type="maxTimeOff" value="0"/>
+      <property name="maxTimeOn" type="maxTimeOn" value="2000"/>
+      <property name="minTimeOff" type="minTimeOff" value="0"/>
+      <property name="minTimeOn" type="minTimeOn" value="1000"/>
+      <property name="pulseDuration" type="pulseDuration" value="2000"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4303" type="LIGHTSOURCE" x="338" y="0" width="43" height="45">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="maxTimeOff" type="maxTimeOff" value="0"/>
+      <property name="maxTimeOn" type="maxTimeOn" value="2000"/>
+      <property name="minTimeOff" type="minTimeOff" value="0"/>
+      <property name="minTimeOn" type="minTimeOn" value="1000"/>
+      <property name="pulseDuration" type="pulseDuration" value="2000"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4190" type="LIGHTSOURCE" x="250" y="111" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffff00"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="maxTimeOff" type="maxTimeOff" value="0"/>
+      <property name="maxTimeOn" type="maxTimeOn" value="0"/>
+      <property name="minTimeOff" type="minTimeOff" value="0"/>
+      <property name="minTimeOn" type="minTimeOn" value="0"/>
+      <property name="pulseDuration" type="pulseDuration" value="0"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4424" type="LIGHTSOURCE" x="119" y="193" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#6666ff"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="maxTimeOff" type="maxTimeOff" value="0"/>
+      <property name="maxTimeOn" type="maxTimeOn" value="0"/>
+      <property name="minTimeOff" type="minTimeOff" value="0"/>
+      <property name="minTimeOn" type="minTimeOn" value="0"/>
+      <property name="pulseDuration" type="pulseDuration" value="0"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4425" type="LIGHTSOURCE" x="182" y="193" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#cc00cc"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="maxTimeOff" type="maxTimeOff" value="0"/>
+      <property name="maxTimeOn" type="maxTimeOn" value="0"/>
+      <property name="minTimeOff" type="minTimeOff" value="0"/>
+      <property name="minTimeOn" type="minTimeOn" value="0"/>
+      <property name="pulseDuration" type="pulseDuration" value="0"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4426" type="LIGHTSOURCE" x="250" y="192" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffff00"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="maxTimeOff" type="maxTimeOff" value="0"/>
+      <property name="maxTimeOn" type="maxTimeOn" value="0"/>
+      <property name="minTimeOff" type="minTimeOff" value="0"/>
+      <property name="minTimeOn" type="minTimeOn" value="0"/>
+      <property name="pulseDuration" type="pulseDuration" value="0"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4439" type="LIGHTSOURCE" x="119" y="150" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#6666ff"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="maxTimeOff" type="maxTimeOff" value="0"/>
+      <property name="maxTimeOn" type="maxTimeOn" value="0"/>
+      <property name="minTimeOff" type="minTimeOff" value="0"/>
+      <property name="minTimeOn" type="minTimeOn" value="0"/>
+      <property name="pulseDuration" type="pulseDuration" value="0"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4440" type="LIGHTSOURCE" x="182" y="150" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#cc00cc"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="maxTimeOff" type="maxTimeOff" value="0"/>
+      <property name="maxTimeOn" type="maxTimeOn" value="0"/>
+      <property name="minTimeOff" type="minTimeOff" value="0"/>
+      <property name="minTimeOn" type="minTimeOn" value="0"/>
+      <property name="pulseDuration" type="pulseDuration" value="0"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4441" type="LIGHTSOURCE" x="250" y="149" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffff00"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="maxTimeOff" type="maxTimeOff" value="0"/>
+      <property name="maxTimeOn" type="maxTimeOn" value="0"/>
+      <property name="minTimeOff" type="minTimeOff" value="0"/>
+      <property name="minTimeOn" type="minTimeOn" value="0"/>
+      <property name="pulseDuration" type="pulseDuration" value="0"/>
+     </properties>
+     <polyline/>
+    </object>
    </objectgroup>
-   <objectgroup name="props" visible="1">
+   <objectgroup name="props" visible="0">
     <properties>
      <property name="layerOrder" value="9"/>
     </properties>
@@ -959,41 +954,47 @@
     <object id="174" type="COLLISIONBOX" x="0" y="16" width="16" height="320">
      <polyline points=""/>
     </object>
-    <object id="171" type="COLLISIONBOX" x="0" y="336" width="416" height="16">
+    <object id="171" name="" type="COLLISIONBOX" x="0" y="336" width="416" height="16">
      <polyline points=""/>
     </object>
     <object id="3944" type="COLLISIONBOX" x="96" y="320" width="16" height="16">
      <properties>
       <property name="isObstacle" value="true"/>
+      <property name="isObstructingLight" value="true"/>
      </properties>
     </object>
     <object id="3949" type="COLLISIONBOX" x="304" y="320" width="16" height="16">
      <properties>
       <property name="isObstacle" value="true"/>
+      <property name="isObstructingLight" value="true"/>
      </properties>
      <polyline points=""/>
     </object>
     <object id="3952" type="COLLISIONBOX" x="304" y="208" width="16" height="80">
      <properties>
       <property name="isObstacle" value="true"/>
+      <property name="isObstructingLight" value="true"/>
      </properties>
      <polyline points=""/>
     </object>
     <object id="3960" type="COLLISIONBOX" x="96" y="208" width="16" height="80">
      <properties>
       <property name="isObstacle" value="true"/>
+      <property name="isObstructingLight" value="true"/>
      </properties>
      <polyline points=""/>
     </object>
     <object id="3963" type="COLLISIONBOX" x="96" y="96" width="16" height="64">
      <properties>
       <property name="isObstacle" value="true"/>
+      <property name="isObstructingLight" value="true"/>
      </properties>
      <polyline points=""/>
     </object>
     <object id="3975" type="COLLISIONBOX" x="304" y="96" width="16" height="64">
      <properties>
       <property name="isObstacle" value="true"/>
+      <property name="isObstructingLight" value="true"/>
      </properties>
      <polyline points=""/>
     </object>
@@ -1030,12 +1031,14 @@
     <object id="4002" type="COLLISIONBOX" x="256" y="240" width="48" height="16">
      <properties>
       <property name="isObstacle" value="true"/>
+      <property name="isObstructingLight" value="true"/>
      </properties>
      <polyline points=""/>
     </object>
     <object id="4010" type="COLLISIONBOX" x="112" y="240" width="48" height="16">
      <properties>
       <property name="isObstacle" value="true"/>
+      <property name="isObstructingLight" value="true"/>
      </properties>
      <polyline points=""/>
     </object>
