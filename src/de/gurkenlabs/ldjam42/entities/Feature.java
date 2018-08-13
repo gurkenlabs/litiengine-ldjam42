@@ -10,7 +10,7 @@ public enum Feature {
 
   public static final int NAKED_VALUE_INDEX = 0;
   public static final int FEATURE_VALUES = 4;
-  private static final double NAKED_VALUE_PROB = 0.05;
+  private static final double NAKED_VALUE_PROB = 0.08;
 
   public int getRandomValue() {
     // special cases for naked features
