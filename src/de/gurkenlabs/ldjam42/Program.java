@@ -62,7 +62,7 @@ public class Program {
       // System.exit(0);
     });
 
-    Game.getRenderEngine().setBaseRenderScale(4);
+    Game.getRenderEngine().setBaseRenderScale(4.6f);
 
     Environment.registerMapObjectLoader(new ClubLightsourceMapObjectLoader());
     PropMapObjectLoader.registerCustomPropType(Speaker.class);

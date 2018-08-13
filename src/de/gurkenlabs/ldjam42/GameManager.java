@@ -35,6 +35,7 @@ import de.gurkenlabs.litiengine.environment.IEnvironment;
 import de.gurkenlabs.litiengine.graphics.Spritesheet;
 import de.gurkenlabs.litiengine.input.Input;
 import de.gurkenlabs.litiengine.pathfinding.astar.AStarGrid;
+import de.gurkenlabs.litiengine.sound.Sound;
 import de.gurkenlabs.litiengine.util.ArrayUtilities;
 import de.gurkenlabs.litiengine.util.ImageProcessing;
 
@@ -44,6 +45,8 @@ public final class GameManager {
 
   // 06:00 am the next day
   public static long END_TIME = 104400000;
+
+  private static final Sound SELECT = Sound.get("select.ogg");
 
   private static IntCombinator featurePermutations;
 
@@ -116,13 +119,13 @@ public final class GameManager {
             spawner.setInterval(11000);
           });
 
-          Game.getLoop().execute(180000, () -> {
+          Game.getLoop().execute(120000, () -> {
             spawner.setInterval(spawner.getInterval() - 1000);
             flashInterval /= 2;
             System.out.println("stage 1");
           });
 
-          Game.getLoop().execute(360000, () -> {
+          Game.getLoop().execute(300000, () -> {
             spawner.setInterval(spawner.getInterval() - 1000);
             spawner.setAmount(6);
             flashInterval /= 4;
@@ -240,7 +243,7 @@ public final class GameManager {
     //let someone flash after a certain time period
     if (Game.getLoop().convertToMs(Game.getLoop().getTicks()) - lastFlash > flashInterval) {
       PartyGuest flasher = (PartyGuest) ArrayUtilities.getRandom(Game.getEnvironment().getByType(PartyGuest.class).toArray());
-      if (!flasher.isFlashing()) {
+      if (flasher != null && !flasher.isFlashing()) {
         flasher.flash();
         lastFlash = Game.getLoop().convertToMs(Game.getLoop().getTicks());
       }
@@ -350,9 +353,10 @@ public final class GameManager {
     Collection<PartyGuest> guests = Game.getEnvironment().getByType(PartyGuest.class);
     Optional<PartyGuest> nakedGuest = guests.stream().filter(x -> x.isNaked() && x.getHitBox().contains(Input.mouse().getMapLocation())).findFirst();
     if (nakedGuest.isPresent()) {
+      Game.getSoundEngine().playSound(SELECT);
       return nakedGuest.get();
     }
-    
+
     Optional<PartyGuest> guest = guests.stream().filter(x -> x.getHitBox().contains(Input.mouse().getMapLocation())).findFirst();
     if (guest.isPresent()) {
       return guest.get();

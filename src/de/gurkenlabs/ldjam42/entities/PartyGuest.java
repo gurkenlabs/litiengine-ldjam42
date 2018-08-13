@@ -40,8 +40,8 @@ public class PartyGuest extends Creature {
   private static final int WEALTH_DEFAULT = 1;
   private static final int WEALTH_VIP = 10;
   private static final double COMFORT_ZONE_WEIGHT = 4;
-  private static final double REMAINING_SPACE_WEIGHT = 1;
-  private static final double BAD_BEHAVIOR_PENALTY = 2;
+  private static final double REMAINING_SPACE_WEIGHT = 0.5;
+  private static final double BAD_BEHAVIOR_PENALTY = 3;
 
   private static final String[] femaleNames;
   private static final String[] maleNames;
