@@ -61,6 +61,8 @@ public final class GameManager {
 
   private static PartyGuest currentFocus;
 
+  private static GameState gameState;
+
   private GameManager() {
   }
 
@@ -76,8 +78,8 @@ public final class GameManager {
         return;
       }
 
-      if (SwingUtilities.isLeftMouseButton(e)) {
-        GameManager.setCurrentFocus(getFocusedGuest());
+      if (SwingUtilities.isLeftMouseButton(e) && getGameState() == GameState.INGAME) {
+        setCurrentFocus(getFocusedGuest());
       }
     });
 
@@ -313,5 +315,13 @@ public final class GameManager {
       throw new IllegalArgumentException("No party guest spawnpoint found on the map.");
     }
     return new ArrayList<>(points);
+  }
+
+  public static GameState getGameState() {
+    return gameState;
+  }
+
+  public static void setGameState(GameState gameState) {
+    GameManager.gameState = gameState;
   }
 }

@@ -15,9 +15,11 @@ import javax.swing.JPanel;
 
 import de.gurkenlabs.ldjam42.ClubArea;
 import de.gurkenlabs.ldjam42.GameManager;
+import de.gurkenlabs.ldjam42.GameState;
 import de.gurkenlabs.ldjam42.Program;
 import de.gurkenlabs.ldjam42.entities.PartyGuest;
 import de.gurkenlabs.litiengine.Align;
+import de.gurkenlabs.litiengine.Direction;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.Valign;
 import de.gurkenlabs.litiengine.graphics.DebugRenderer;
@@ -60,6 +62,10 @@ public final class Hud extends GuiComponent {
 
   @Override
   public void render(final Graphics2D g) {
+    if (GameManager.getGameState() != GameState.INGAME) {
+      return;
+    }
+
     this.renderCurrentFocus(g);
     this.renderClubInfo(g);
 
@@ -116,7 +122,7 @@ public final class Hud extends GuiComponent {
 
     // render marker
     final Point2D loc = Game.getCamera().getViewPortLocation(guest.getCenter());
-    ImageRenderer.render(g, MARKER, (loc.getX() * Game.getRenderEngine().getBaseRenderScale() - MARKER.getWidth() / 2.0), loc.getY() * Game.getRenderEngine().getBaseRenderScale() - (MARKER.getHeight() * 3) -5);
+    ImageRenderer.render(g, MARKER, (loc.getX() * Game.getRenderEngine().getBaseRenderScale() - MARKER.getWidth() / 2.0), loc.getY() * Game.getRenderEngine().getBaseRenderScale() - (MARKER.getHeight() * 3) - 5);
 
     // render clubbing bg
     g.setFont(Program.GUI_FONT_SMALL);
@@ -180,13 +186,25 @@ public final class Hud extends GuiComponent {
     TextRenderer.renderWithOutline(g, guest.getName(), nameBgX + PADDING, nameY, COLOR_OUTLINE, RenderingHints.VALUE_ANTIALIAS_ON);
 
     // render guest image
-    BufferedImage image = guest.getAnimationController().getCurrentSprite();
+    
+    // BEWARE!!! THAT'S UGLY JAM CODE 
+    String animationName = String.format("%s-%d_%d_%d_%d-%s-%s", 
+        guest.getGender().toString().toLowerCase(), 
+        guest.getFeatures()[0], 
+        guest.getFeatures()[1], 
+        guest.getFeatures()[2], 
+        guest.getFeatures()[3], 
+        guest.isIdle() ? "idle" : "walk", 
+            Direction.DOWN.toString().toLowerCase());
+    BufferedImage image = guest.getAnimationController().getAnimation(animationName).getSpritesheet().getSprite(guest.getAnimationController().getCurrentAnimation().getCurrentKeyFrame().getSpriteIndex());
+    // BEWARE!!! THAT'S UGLY JAM CODE 
+    
     double factor = 150 / image.getWidth();
     double imgWidth = factor * image.getWidth();
     double imgHeight = factor * image.getHeight();
     double imgX = Game.getScreenManager().getResolution().getWidth() / 2.0 - imgWidth / 2.0;
     double imgY = nameBgY - imgHeight - PADDING;
-    ImageRenderer.renderScaled(g, guest.getAnimationController().getCurrentSprite(), imgX, imgY, factor);
+    ImageRenderer.renderScaled(g, image, imgX, imgY, factor);
   }
 
   private void renderAreaInfo(Graphics2D g) {
