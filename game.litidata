@@ -1,42 +1,558 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <litidata version="1.0">
  <maps>
-  <map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="26" height="22" tilewidth="16" tileheight="16" nextobjectid="1" name="test">
-   <tileset firstgid="1" source="test-tileset.tsx"/>
+  <map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="26" height="22" tilewidth="16" tileheight="16" nextobjectid="1" name="club1">
+   <tileset firstgid="1" source="tiles-club.tsx"/>
    <layer name="ground" width="26" height="22">
     <properties>
      <property name="layerOrder" value="0"/>
     </properties>
     <data encoding="csv">
-1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,1,
-1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,1,
-1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,1,
-1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,1,
-1,1,6,6,1,1,1,1,1,6,6,6,6,6,6,6,6,1,1,1,1,1,6,6,1,1,
-1,3,3,3,3,3,2684354561,2,2,2,2,2,2,2,2,2,2,2,2,2684354561,5,5,5,5,5,1,
-1,3,3,3,3,3,2684354561,2,2,2,2,2,2,2,2,2,2,2,2,2684354561,5,5,5,5,5,1,
-1,3,3,3,3,3,2684354561,2,2,2,2,2,2,2,2,2,2,2,2,2684354561,5,5,5,5,5,1,
-1,3,3,3,3,3,2684354561,2,2,2,2,2,2,2,2,2,2,2,2,2684354561,5,5,5,5,5,1,
-1,3,3,3,3,3,2684354561,2,2,2,2,2,2,2,2,2,2,2,2,2684354561,5,5,5,5,5,1,
-1,3,3,3,3,3,2684354561,2,2,2,2,2,2,2,2,2,2,2,2,2684354561,5,5,5,5,5,1,
-1,3,3,3,3,3,6,2,2,2,2,2,2,2,2,2,2,2,2,6,5,5,5,5,5,1,
-1,3,3,3,3,3,6,2,2,2,2,2,2,2,2,2,2,2,2,6,5,5,5,5,5,1,
-1,3,3,3,3,3,1,2,2,2,2,2,2,2,2,2,2,2,2,1,5,5,5,5,5,1,
-1,3,3,3,3,3,1,2,2,2,2,2,2,2,2,2,2,2,2,1,5,5,5,5,5,1,
-1,3,3,3,3,3,2684354561,1,1,1,6,6,6,6,6,6,1,1,1,2684354561,5,5,5,5,5,1,
-1,3,3,3,3,3,3,3,3,1,6,6,6,6,6,6,1,5,5,5,5,5,5,5,5,1,
-1,3,3,3,3,3,3,3,3,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,1,
-1,3,3,3,3,3,3,3,3,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,1,
-1,3,3,3,3,3,3,3,3,1,6,6,6,6,6,6,1,5,5,5,5,5,5,5,5,1,
-1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,0,
+0,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,0,
+0,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,0,
+0,18,51,51,18,18,18,18,49,49,18,18,18,18,18,18,49,49,18,18,18,18,52,52,18,0,
+0,0,51,51,0,0,0,0,49,49,0,0,0,0,0,0,49,49,0,0,0,0,52,52,0,0,
+0,6,6,6,6,6,0,5,5,5,5,5,5,5,5,5,5,5,5,0,5,5,5,5,5,0,
+0,6,6,6,6,6,0,5,3,3,6,6,2,2,6,6,4,4,5,0,5,5,5,5,5,0,
+0,6,6,6,6,6,0,5,3,3,6,6,2,2,6,6,4,4,5,0,5,5,5,5,5,0,
+0,6,6,6,6,6,0,5,3,3,6,6,2,2,6,6,4,4,5,0,5,5,5,5,5,0,
+0,6,6,6,6,6,19,5,3,3,6,6,2,2,6,6,4,4,5,19,5,5,5,5,5,0,
+0,6,6,6,6,6,19,5,3,3,6,6,2,2,6,6,4,4,5,19,5,5,5,5,5,0,
+0,6,6,6,6,6,19,5,3,3,6,6,2,2,6,6,4,4,5,19,5,5,5,5,5,0,
+0,6,6,6,6,6,0,5,3,3,6,6,2,2,6,6,4,4,5,0,5,5,5,5,5,0,
+0,6,6,6,6,6,0,5,3,3,6,6,2,2,6,6,4,4,5,0,5,5,5,5,5,0,
+0,6,6,6,6,6,0,5,5,5,5,5,5,5,5,5,5,5,5,0,5,5,5,5,5,0,
+0,6,6,6,6,6,0,19,19,19,19,19,19,19,19,19,19,19,19,0,5,5,5,5,5,0,
+0,6,6,6,6,6,0,19,19,19,19,19,19,19,19,19,19,19,19,0,5,5,5,5,5,0,
+0,6,6,6,6,6,19,19,19,19,19,19,19,19,19,19,19,19,19,19,5,5,5,5,5,0,
+0,6,6,6,6,6,19,19,19,19,19,19,19,19,19,19,19,19,19,19,5,5,5,5,5,0,
+0,6,6,6,6,6,0,19,19,19,19,19,19,19,19,19,19,19,19,0,5,5,5,5,5,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
    </layer>
-   <objectgroup name="areas">
+   <layer name="ground-detail1" width="26" height="22">
     <properties>
      <property name="layerOrder" value="1"/>
     </properties>
-    <object id="67" type="AREA" x="160" y="256" width="96" height="80">
+    <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,82,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,81,0,
+0,84,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,83,0,
+0,84,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,83,0,
+0,84,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,83,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,82,85,85,85,81,0,82,85,85,85,85,85,85,85,85,85,85,81,0,82,85,85,85,81,0,
+0,84,0,0,0,83,0,84,0,0,0,0,0,0,0,0,0,0,83,0,84,0,0,0,83,0,
+0,84,0,0,0,83,0,84,0,0,0,0,0,0,0,0,0,0,83,0,84,0,0,0,83,0,
+0,84,0,0,0,83,0,84,0,0,0,0,0,0,0,0,0,0,83,0,84,0,0,0,83,0,
+0,84,0,0,0,66,85,67,0,0,0,0,0,0,0,0,0,0,66,85,67,0,0,0,83,0,
+0,84,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,83,0,
+0,84,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,83,0,
+0,84,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,83,0,
+0,84,0,0,0,83,0,0,0,0,0,0,0,0,0,0,0,0,0,0,84,0,0,0,83,0,
+0,84,0,0,0,83,0,0,0,0,0,0,0,0,0,0,0,0,0,0,84,0,0,0,83,0,
+0,84,0,0,0,83,0,82,85,85,0,0,0,0,0,0,85,85,81,0,84,0,0,0,83,0,
+0,84,0,0,0,83,0,84,0,0,0,0,0,0,0,0,0,0,83,0,84,0,0,0,83,0,
+0,84,0,0,0,66,85,67,0,0,0,0,0,0,0,0,0,0,66,85,67,0,0,0,83,0,
+0,84,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,83,0,
+0,84,0,0,0,83,0,84,0,0,0,0,0,0,0,0,0,0,83,0,84,0,0,0,83,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+   </layer>
+   <layer name="ground-detail2" width="26" height="22">
+    <properties>
+     <property name="layerOrder" value="2"/>
+    </properties>
+    <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,84,44,44,0,0,0,0,44,44,0,0,0,0,0,0,44,44,0,0,0,0,44,44,83,0,
+0,0,44,44,0,0,0,0,44,44,0,0,0,0,0,0,44,44,0,0,0,0,44,44,0,0,
+0,0,60,60,0,0,0,0,60,60,0,0,0,0,0,0,60,60,0,0,0,0,60,60,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,33,33,33,33,33,33,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+   </layer>
+   <layer name="wall" width="26" height="22">
+    <properties>
+     <property name="layerOrder" value="0"/>
+    </properties>
+    <data encoding="csv">
+0,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,51,0,0,51,51,49,49,0,0,49,49,49,49,49,49,0,0,49,49,52,52,0,0,52,0,
+0,51,0,0,51,51,0,49,0,0,49,49,49,49,49,49,0,0,49,0,52,52,0,0,52,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,49,0,0,0,0,0,0,0,0,0,0,0,0,49,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,49,49,49,49,0,0,0,0,0,0,49,49,49,49,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,49,0,0,0,0,0,0,0,0,0,0,0,0,49,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54
+</data>
+   </layer>
+   <layer name="wall-detail1" width="26" height="22">
+    <properties>
+     <property name="layerOrder" value="0"/>
+    </properties>
+    <data encoding="csv">
+0,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,65,65,65,65,65,0,65,65,65,65,65,65,65,65,65,65,65,65,0,65,65,65,65,65,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,65,0,0,0,0,0,0,0,0,0,0,0,0,65,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,65,0,0,0,0,0,0,0,0,0,0,0,0,65,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+   </layer>
+   <layer name="wall-detail2" width="26" height="22">
+    <properties>
+     <property name="layerOrder" value="0"/>
+    </properties>
+    <data encoding="csv">
+0,0,0,0,0,45,0,0,0,0,35,0,0,0,0,34,0,0,0,0,45,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,45,0,0,0,0,0,45,0,0,0,0,0,0,0,0,0,0,45,0,0,0,0,0,45,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,45,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+   </layer>
+   <layer name="wall-overlay" width="26" height="22">
+    <properties>
+     <property name="layerOrder" value="0"/>
+     <property name="rendertype" value="OVERLAY"/>
+    </properties>
+    <data encoding="csv">
+87,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,87,
+87,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,87,
+87,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,87,
+87,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,87,
+87,88,0,0,86,90,90,88,0,0,86,90,90,90,90,88,0,0,86,90,90,88,0,0,86,87,
+87,0,0,0,0,0,87,0,0,0,0,0,0,0,0,0,0,0,0,87,0,0,0,0,0,87,
+87,0,0,0,0,0,87,0,0,0,0,0,0,0,0,0,0,0,0,87,0,0,0,0,0,87,
+87,0,0,0,0,0,87,0,0,0,0,0,0,0,0,0,0,0,0,87,0,0,0,0,0,87,
+87,0,0,0,0,0,87,0,0,0,0,0,0,0,0,0,0,0,0,87,0,0,0,0,0,87,
+87,0,0,0,0,0,89,0,0,0,0,0,0,0,0,0,0,0,0,89,0,0,0,0,0,87,
+87,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,87,
+87,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,87,
+87,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,87,
+87,0,0,0,0,0,87,0,0,0,0,0,0,0,0,0,0,0,0,87,0,0,0,0,0,87,
+87,0,0,0,0,0,87,0,0,0,0,0,0,0,0,0,0,0,0,87,0,0,0,0,0,87,
+87,0,0,0,0,0,87,90,90,88,0,0,0,0,0,0,86,90,90,87,0,0,0,0,0,87,
+87,0,0,0,0,0,87,0,0,0,0,0,0,0,0,0,0,0,0,87,0,0,0,0,0,87,
+87,0,0,0,0,0,89,0,0,0,0,0,0,0,0,0,0,0,0,89,0,0,0,0,0,87,
+87,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,87,
+87,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,87,
+87,0,0,0,0,0,87,0,0,0,0,0,0,0,0,0,0,0,0,87,0,0,0,0,0,87,
+89,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,91
+</data>
+   </layer>
+   <layer name="overlay" width="26" height="22">
+    <properties>
+     <property name="layerOrder" value="0"/>
+     <property name="rendertype" value="OVERLAY"/>
+    </properties>
+    <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,43,0,0,43,43,43,43,0,0,43,43,43,43,43,43,0,0,43,43,43,43,0,0,43,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+   </layer>
+   <objectgroup name="lights">
+    <object id="314" name="" type="LIGHTSOURCE" x="119" y="112" width="48" height="48">
+     <properties>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#6666ff"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" value="150"/>
+      <property name="lightShape" value="ellipse"/>
+     </properties>
+    </object>
+    <object id="2972" name="" type="LIGHTSOURCE" x="119" y="149" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#6666ff"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="2975" name="" type="LIGHTSOURCE" x="119" y="192" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#6666ff"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="2983" name="" type="LIGHTSOURCE" x="182" y="112" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#cc00cc"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="2994" name="" type="LIGHTSOURCE" x="182" y="155" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#cc00cc"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="2997" name="" type="LIGHTSOURCE" x="182" y="192" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#cc00cc"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3003" name="" type="LIGHTSOURCE" x="246" y="112" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3007" name="" type="LIGHTSOURCE" x="246" y="155" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3010" name="" type="LIGHTSOURCE" x="246" y="192" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3013" name="" type="LIGHTSOURCE" x="153" y="133" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffffcc"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="100"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3020" name="" type="LIGHTSOURCE" x="153" y="181" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffffcc"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="100"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3023" name="" type="LIGHTSOURCE" x="213" y="133" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffffcc"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="100"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3028" name="" type="LIGHTSOURCE" x="213" y="181" width="48" height="48">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffffcc"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="100"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3032" name="" type="LIGHTSOURCE" x="159" y="64" width="43" height="45">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ff3333"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="100"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3136" name="" type="LIGHTSOURCE" x="189" y="64" width="43" height="45">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#00ff33"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="100"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3139" name="" type="LIGHTSOURCE" x="217" y="64" width="43" height="45">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#3333ff"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="100"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3142" name="" type="LIGHTSOURCE" x="16" y="0" width="384" height="64">
+     <properties>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="150"/>
+      <property name="lightColor" value="#000000"/>
+      <property name="lightIntensity" value="150"/>
+      <property name="lightShape" value="rectangle"/>
+     </properties>
+    </object>
+    <object id="3164" name="" type="LIGHTSOURCE" x="34" y="0" width="43" height="45">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3177" name="" type="LIGHTSOURCE" x="105" y="0" width="43" height="45">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3180" name="" type="LIGHTSOURCE" x="183" y="0" width="43" height="45">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3183" name="" type="LIGHTSOURCE" x="268" y="0" width="43" height="45">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3186" name="" type="LIGHTSOURCE" x="350" y="0" width="43" height="45">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="150"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3189" name="" type="LIGHTSOURCE" x="112" y="240" width="48" height="96">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#000000"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="-1.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="100"/>
+      <property name="lightShape" type="lightShape" value="rectangle"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3618" name="" type="LIGHTSOURCE" x="160" y="256" width="96" height="80">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#000000"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="-1.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="100"/>
+      <property name="lightShape" type="lightShape" value="rectangle"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3626" name="" type="LIGHTSOURCE" x="256" y="240" width="48" height="96">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#000000"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="-1.0"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="100"/>
+      <property name="lightShape" type="lightShape" value="rectangle"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3637" name="" type="LIGHTSOURCE" x="160" y="240" width="96" height="32">
+     <properties>
+      <property name="lightActive" type="lightActive" value="true"/>
+      <property name="lightBrightness" type="lightBrightness" value="255"/>
+      <property name="lightColor" type="lightColor" value="#cc00cc"/>
+      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.02"/>
+      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" type="lightIntensity" value="100"/>
+      <property name="lightShape" type="lightShape" value="ellipse"/>
+     </properties>
+     <polyline/>
+    </object>
+   </objectgroup>
+   <objectgroup name="props"/>
+   <objectgroup color="#00ffcc" name="areas" visible="1">
+    <properties>
+     <property name="layerOrder" value="1"/>
+    </properties>
+    <object id="67" type="AREA" x="112" y="256" width="192" height="80">
      <properties>
       <property name="tags" value="area_entry"/>
      </properties>
@@ -47,7 +563,7 @@
      </properties>
      <polyline points=""/>
     </object>
-    <object id="102" type="AREA" x="16" y="16" width="384" height="64">
+    <object id="102" type="AREA" x="16" y="16" width="384" height="48">
      <properties>
       <property name="tags" value="area_chill"/>
      </properties>
@@ -59,82 +575,57 @@
      </properties>
      <polyline points=""/>
     </object>
-    <object id="132" type="AREA" x="96" y="272" width="48" height="64">
-     <properties>
-      <property name="tags" value="area_drink"/>
-     </properties>
-     <polyline points=""/>
-    </object>
-    <object id="142" type="AREA" x="272" y="272" width="48" height="64">
-     <properties>
-      <property name="tags" value="area_food"/>
-     </properties>
-     <polyline points=""/>
-    </object>
     <object id="152" type="AREA" x="320" y="96" width="80" height="240">
      <properties>
       <property name="tags" value="area_food"/>
      </properties>
      <polyline points=""/>
     </object>
-    <object id="163" name="party-spawn" type="SPAWNPOINT" x="192" y="288" width="32" height="32">
+    <object id="200" type="AREA" x="304" y="160" width="16" height="48">
      <properties>
-      <property name="spawnDirection" value="UNDEFINED"/>
-      <property name="spawnType" value=""/>
-      <property name="tags" value="entry"/>
+      <property name="tags" value="area_food,transition"/>
      </properties>
+     <polyline points=""/>
     </object>
-    <object id="165" type="COLLISIONBOX" x="0" y="0" width="416" height="16">
-     <polyline/>
-    </object>
-    <object id="171" type="COLLISIONBOX" x="0" y="336" width="416" height="16">
-     <polyline/>
-    </object>
-    <object id="174" type="COLLISIONBOX" x="0" y="16" width="16" height="320">
-     <polyline/>
-    </object>
-    <object id="188" type="COLLISIONBOX" x="400" y="16" width="16" height="320">
-     <polyline/>
-    </object>
-    <object id="200" type="AREA" x="304" y="192" width="16" height="32">
+    <object id="204" type="AREA" x="96" y="288" width="16" height="32">
      <properties>
-      <property name="tags" type="tags" value="area_food,transition"/>
+      <property name="tags" value="area_entry"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="204" type="AREA" x="144" y="288" width="16" height="32">
+    <object id="210" type="AREA" x="96" y="160" width="16" height="48">
      <properties>
-      <property name="tags" type="tags" value="area_entry"/>
+      <property name="tags" value="area_drink,transition"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="210" name="" type="AREA" x="96" y="192" width="16" height="32">
+    <object id="214" type="AREA" x="128" y="64" width="32" height="32">
      <properties>
-      <property name="tags" type="tags" value="area_drink,transition"/>
+      <property name="tags" value="area_chill,transition"/>
      </properties>
-     <polyline/>
-    </object>
-    <object id="214" type="AREA" x="144" y="80" width="128" height="16">
-     <properties>
-      <property name="tags" type="tags" value="area_chill,transition"/>
-     </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
     <object id="224" type="AREA" x="352" y="80" width="32" height="16">
      <properties>
-      <property name="tags" type="tags" value="area_food,transition"/>
+      <property name="tags" value="area_food,transition"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="232" type="AREA" x="32" y="80" width="32" height="16">
+    <object id="232" type="AREA" x="32" y="64" width="32" height="16">
      <properties>
-      <property name="tags" type="tags" value="area_drink,transition"/>
+      <property name="tags" value="area_drink,transition"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="240" type="AREA" x="256" y="288" width="16" height="32">
+    <object id="240" type="AREA" x="304" y="288" width="16" height="32">
      <properties>
-      <property name="tags" type="tags" value="area_entry"/>
+      <property name="tags" value="area_entry"/>
+     </properties>
+     <polyline points=""/>
+    </object>
+    <object id="259" type="AREA" x="256" y="64" width="32" height="32">
+     <properties>
+      <property name="tags" type="tags" value="area_chill,transition"/>
      </properties>
      <polyline/>
     </object>
@@ -143,51 +634,93 @@
     <properties>
      <property name="layerOrder" value="2"/>
     </properties>
-    <object id="1" type="COLLISIONBOX" x="16" y="80" width="16" height="16"/>
-    <object id="3" type="COLLISIONBOX" x="64" y="80" width="80" height="16">
-     <polyline points=""/>
+    <object id="188" type="COLLISIONBOX" x="400" y="16" width="16" height="320">
+     <polyline/>
     </object>
-    <object id="9" type="COLLISIONBOX" x="272" y="80" width="80" height="16">
-     <polyline points=""/>
+    <object id="165" type="COLLISIONBOX" x="0" y="0" width="416" height="16">
+     <polyline/>
     </object>
-    <object id="12" type="COLLISIONBOX" x="384" y="80" width="16" height="16">
-     <polyline points=""/>
+    <object id="174" type="COLLISIONBOX" x="0" y="16" width="16" height="320">
+     <polyline/>
     </object>
-    <object id="19" type="COLLISIONBOX" x="304" y="96" width="16" height="96">
-     <polyline points=""/>
+    <object id="171" type="COLLISIONBOX" x="0" y="336" width="416" height="16">
+     <polyline/>
     </object>
-    <object id="27" type="COLLISIONBOX" x="96" y="96" width="16" height="96">
-     <polyline points=""/>
+    <object id="3944" name="" type="COLLISIONBOX" x="96" y="320" width="16" height="16">
+     <properties>
+      <property name="isObstacle" value="true"/>
+     </properties>
     </object>
-    <object id="30" type="COLLISIONBOX" x="96" y="224" width="16" height="48">
-     <polyline points=""/>
+    <object id="3949" name="" type="COLLISIONBOX" x="304" y="320" width="16" height="16">
+     <properties>
+      <property name="isObstacle" type="isObstacle" value="true"/>
+     </properties>
+     <polyline/>
     </object>
-    <object id="36" type="COLLISIONBOX" x="304" y="224" width="16" height="48">
-     <polyline points=""/>
+    <object id="3952" name="" type="COLLISIONBOX" x="304" y="208" width="16" height="80">
+     <properties>
+      <property name="isObstacle" type="isObstacle" value="true"/>
+     </properties>
+     <polyline/>
     </object>
-    <object id="39" type="COLLISIONBOX" x="256" y="256" width="48" height="16">
-     <polyline points=""/>
+    <object id="3960" name="" type="COLLISIONBOX" x="96" y="208" width="16" height="80">
+     <properties>
+      <property name="isObstacle" type="isObstacle" value="true"/>
+     </properties>
+     <polyline/>
     </object>
-    <object id="49" type="COLLISIONBOX" x="112" y="256" width="48" height="16">
-     <polyline points=""/>
+    <object id="3963" name="" type="COLLISIONBOX" x="96" y="96" width="16" height="64">
+     <properties>
+      <property name="isObstacle" type="isObstacle" value="true"/>
+     </properties>
+     <polyline/>
     </object>
-    <object id="52" type="COLLISIONBOX" x="144" y="272" width="16" height="16">
-     <polyline points=""/>
+    <object id="3975" name="" type="COLLISIONBOX" x="304" y="96" width="16" height="64">
+     <properties>
+      <property name="isObstacle" type="isObstacle" value="true"/>
+     </properties>
+     <polyline/>
     </object>
-    <object id="58" type="COLLISIONBOX" x="256" y="272" width="16" height="16">
-     <polyline points=""/>
+    <object id="3978" name="" type="COLLISIONBOX" x="16" y="64" width="16" height="32">
+     <properties>
+      <property name="isObstacle" type="isObstacle" value="true"/>
+     </properties>
+     <polyline/>
     </object>
-    <object id="61" type="COLLISIONBOX" x="256" y="320" width="16" height="16">
-     <polyline points=""/>
+    <object id="3983" name="" type="COLLISIONBOX" x="64" y="64" width="64" height="32">
+     <properties>
+      <property name="isObstacle" type="isObstacle" value="true"/>
+     </properties>
+     <polyline/>
     </object>
-    <object id="64" type="COLLISIONBOX" x="144" y="320" width="16" height="16">
-     <polyline points=""/>
+    <object id="3991" name="" type="COLLISIONBOX" x="160" y="64" width="96" height="32">
+     <properties>
+      <property name="isObstacle" type="isObstacle" value="true"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="3996" name="" type="COLLISIONBOX" x="288" y="64" width="64" height="32">
+     <properties>
+      <property name="isObstacle" type="isObstacle" value="true"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4000" name="" type="COLLISIONBOX" x="384" y="64" width="16" height="32">
+     <properties>
+      <property name="isObstacle" type="isObstacle" value="true"/>
+     </properties>
+     <polyline/>
     </object>
    </objectgroup>
-   <objectgroup name="default">
-    <properties>
-     <property name="layerOrder" value="3"/>
-    </properties>
+   <objectgroup name="spawnpoints">
+    <object id="163" name="party-spawn" type="SPAWNPOINT" x="192" y="288" width="32" height="32">
+     <properties>
+      <property name="spawnDirection" type="spawnDirection" value="UNDEFINED"/>
+      <property name="spawnType" type="spawnType" value=""/>
+      <property name="tags" type="tags" value="entry"/>
+     </properties>
+     <polyline/>
+    </object>
    </objectgroup>
   </map>
  </maps>
@@ -473,10 +1006,39 @@
    <image>iVBORw0KGgoAAAANSUhEUgAAACgAAAAWCAYAAACyjt6wAAAAcUlEQVR42mNgGAWjYBSMglEwCmgKNmzb+//WsllwDOIPOgfCHAljDybzGE56ev7/l5sLNujt1///QfzBZB7YxyADQYaBMDVCkJrmgQHIIJih1HAgsnlUS4swQymNEpgDqeY4WJqhVpRQ27xRMApGPAAAAg+9LV9zU4kAAAAASUVORK5CYII=</image>
    <keyframes>250,250</keyframes>
   </sprite>
+  <sprite width="16" height="16" name="tiles-club">
+   <image>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</image>
+  </sprite>
  </spriteSheets>
  <tilesets>
   <tileset firstgid="0" name="test-tileset" tilewidth="16" tileheight="16" tilecount="16" columns="4">
    <image source="test-tiles.png" width="64" height="64"/>
+  </tileset>
+  <tileset firstgid="0" name="tiles-club" tilewidth="16" tileheight="16" tilecount="256" columns="16">
+   <image source="tiles-club.png" trans="ff00ff" width="256" height="256"/>
+   <terraintypes>
+    <terrain name="Stains" tile="0"/>
+   </terraintypes>
+   <tile id="96" terrain=",,,0"/>
+   <tile id="97" terrain=",,0,0"/>
+   <tile id="98" terrain=",,0,0"/>
+   <tile id="99" terrain=",,0,"/>
+   <tile id="112" terrain=",0,,0"/>
+   <tile id="113" terrain="0,0,0,"/>
+   <tile id="114" terrain="0,0,,0"/>
+   <tile id="115" terrain="0,,0,"/>
+   <tile id="116" terrain=",,,0"/>
+   <tile id="117" terrain=",,0,"/>
+   <tile id="128" terrain=",0,,0"/>
+   <tile id="129" terrain="0,,0,0"/>
+   <tile id="130" terrain=",0,0,0"/>
+   <tile id="131" terrain="0,,0,"/>
+   <tile id="132" terrain=",0,,"/>
+   <tile id="133" terrain="0,,,"/>
+   <tile id="144" terrain=",0,,"/>
+   <tile id="145" terrain="0,0,,"/>
+   <tile id="146" terrain="0,0,,"/>
+   <tile id="147" terrain="0,,,"/>
   </tileset>
  </tilesets>
  <emitters/>
