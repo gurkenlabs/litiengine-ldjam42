@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
+import java.util.Locale;
 
 import de.gurkenlabs.ldjam42.gui.IngameScreen;
 import de.gurkenlabs.ldjam42.gui.MenuScreen;
@@ -27,6 +28,7 @@ public class Program {
    * @param args
    */
   public static void main(String[] args) {
+    Locale.setDefault(new Locale("en", "US"));
     Game.getInfo().setVersion("v0.0.1");
     Game.getInfo().setName("GO IN");
     Game.getInfo().setSubTitle("Behave or GET LOST!");
