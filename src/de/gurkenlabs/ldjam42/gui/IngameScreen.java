@@ -16,6 +16,7 @@ import de.gurkenlabs.litiengine.gui.ImageComponent;
 import de.gurkenlabs.litiengine.gui.Menu;
 import de.gurkenlabs.litiengine.gui.screens.Screen;
 import de.gurkenlabs.litiengine.input.Input;
+import de.gurkenlabs.litiengine.sound.Sound;
 
 public class IngameScreen extends Screen {
   private static final Color COLOR_MONEY = new Color(77, 125, 10);
@@ -25,6 +26,8 @@ public class IngameScreen extends Screen {
   private static final BufferedImage pauseOverlay = Resources.getImage("pause-overlay.png");
   private static IngameScreen instance;
   private ImageComponent restartButton;
+
+  public static Sound INGAME_MUSIC = Sound.get("ingame-music.ogg");
 
   private Hud hud;
   private Menu ingameMenu;
@@ -123,7 +126,7 @@ public class IngameScreen extends Screen {
     });
 
     Game.getLoop().setTimeScale(1);
-  }
+    Game.getSoundEngine().playMusic(INGAME_MUSIC);  }
 
   private void hideIngameMenu() {
     this.ingameMenu.setVisible(false);

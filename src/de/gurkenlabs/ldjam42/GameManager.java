@@ -19,6 +19,7 @@ import de.gurkenlabs.ldjam42.entities.Gender;
 import de.gurkenlabs.ldjam42.entities.PartyGuest;
 import de.gurkenlabs.ldjam42.entities.PartyGuestController;
 import de.gurkenlabs.ldjam42.entities.PartyGuestSpawner;
+import de.gurkenlabs.ldjam42.graphics.DismissEmitter;
 import de.gurkenlabs.ldjam42.gui.IngameScreen;
 import de.gurkenlabs.ldjam42.util.IntCombinator;
 import de.gurkenlabs.litiengine.Direction;
@@ -175,6 +176,7 @@ public final class GameManager {
       return;
     }
 
+    Game.getEnvironment().add(new DismissEmitter(currentFocus));
     Game.getEnvironment().remove(currentFocus);
     kickedPartyGuests.add(currentFocus);
     setCurrentFocus(null);
