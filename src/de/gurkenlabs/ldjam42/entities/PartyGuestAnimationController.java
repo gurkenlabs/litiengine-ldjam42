@@ -14,16 +14,19 @@ public class PartyGuestAnimationController extends CreatureAnimationController<P
     super(entity, new Animation(Spritesheet.find("dummy"), true));
     for (String state : states) {
       for (Direction dir : Direction.values()) {
-        String spritePath = String.format("%s-%d_%d_%d_%d-%s-%s", entity.getGender().toString().toLowerCase(), entity.getFeatures()[0], entity.getFeatures()[1], entity.getFeatures()[2], entity.getFeatures()[3], state, dir.toString().toLowerCase());
+        String spritePath = String.format("%s-%s-%s", entity.getSpritePrefix(), state, dir.toString().toLowerCase());
         Spritesheet sprite = Spritesheet.find(spritePath);
+        String nakedSpritePath = String.format("%s-%d_%d_%d_%d-%s-%s", entity.getGender().toString().toLowerCase(), 0, 0, entity.getFeatures()[2], entity.getFeatures()[3], state, dir.toString().toLowerCase());
+        Spritesheet nakedSprite = Spritesheet.find(nakedSpritePath);
 
-        if (sprite == null) {
+        if (sprite == null || nakedSprite == null) {
           continue;
         }
         this.add(new Animation(sprite, true, 200, 200));
+        this.add(new Animation(nakedSprite, true, 200, 200));
       }
     }
-    
+
     this.add(new FocusImageEffect(entity));
   }
 

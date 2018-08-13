@@ -35,6 +35,7 @@ import de.gurkenlabs.litiengine.environment.IEnvironment;
 import de.gurkenlabs.litiengine.graphics.Spritesheet;
 import de.gurkenlabs.litiengine.input.Input;
 import de.gurkenlabs.litiengine.pathfinding.astar.AStarGrid;
+import de.gurkenlabs.litiengine.util.ArrayUtilities;
 import de.gurkenlabs.litiengine.util.ImageProcessing;
 
 public final class GameManager {
@@ -48,6 +49,8 @@ public final class GameManager {
 
   private static IEnvironment goin;
   private static long startedTicks;
+  private static long lastFlash;
+  private static int flashInterval = 30000;
   private static EntitySpawner<PartyGuest> spawner;
 
   private static EnumMap<ClubArea, Collection<MapArea>> areas = new EnumMap<>(ClubArea.class);
@@ -71,6 +74,7 @@ public final class GameManager {
 
   public static void init() {
     featurePermutations = new IntCombinator(4);
+    lastFlash = 0;
     generateGuestSpritesheets();
 
     Input.mouse().onPressed(e -> {
@@ -205,6 +209,15 @@ public final class GameManager {
 
     if (getGameState() != GameState.ENDSCREEN && getCurrentGameTime().getTime() >= getEndTime().getTime()) {
       setGameState(GameState.ENDSCREEN);
+    }
+
+//let someone flash after a certain time period
+    if (Game.getLoop().convertToMs(Game.getLoop().getTicks()) - lastFlash > flashInterval) {
+      PartyGuest flasher = (PartyGuest) ArrayUtilities.getRandom(Game.getEnvironment().getByType(PartyGuest.class).toArray());
+      if (!flasher.isFlashing()) {
+        flasher.flash();
+        lastFlash = Game.getLoop().convertToMs(Game.getLoop().getTicks());
+      }
     }
   }
 
