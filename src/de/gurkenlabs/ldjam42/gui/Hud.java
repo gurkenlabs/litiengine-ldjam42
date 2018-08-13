@@ -270,11 +270,14 @@ public final class Hud extends GuiComponent {
   }
 
   private void renderSatisfaction(final Graphics2D g, final PartyGuest guest) {
+    RenderingHints old = g.getRenderingHints();
+    g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
     if (guest.isNaked()) {
       final Point2D location = new Point2D.Double(
           Game.getCamera().getViewPortDimensionCenter(guest).getX() - WARNING.getWidth() * 0.25 / 2.0 - 4,
           Game.getCamera().getViewPortDimensionCenter(guest).getY() - guest.getHeight() * 3 / 4);
       ImageRenderer.renderScaled(g, WARNING, location, 0.25);
+      g.setRenderingHints(old);
       return;
     }
 
@@ -284,14 +287,17 @@ public final class Hud extends GuiComponent {
 
     if (guest.getSatisfaction() > .7) {
       ImageRenderer.renderScaled(g, SMILEY_GOOD, location, 0.25);
+      g.setRenderingHints(old);
       return;
     }
 
     if (guest.getSatisfaction() > .25) {
       ImageRenderer.renderScaled(g, SMILEY_AVG, location, 0.25);
+      g.setRenderingHints(old);
       return;
     }
 
     ImageRenderer.renderScaled(g, SMILEY_BAD, location, 0.25);
+    g.setRenderingHints(old);
   }
 }
