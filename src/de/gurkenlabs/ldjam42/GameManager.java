@@ -180,6 +180,12 @@ public final class GameManager {
       return;
     }
 
+    if (currentFocus.getGender() == Gender.MALE) {
+      Game.getSoundEngine().playSound(PartyGuest.DISMISS_MALE);
+    } else {
+      Game.getSoundEngine().playSound(PartyGuest.DISMISS_FEMALE);
+    }
+
     Game.getEnvironment().add(new DismissEmitter(currentFocus));
     Game.getEnvironment().remove(currentFocus);
     kickedPartyGuests.add(currentFocus);

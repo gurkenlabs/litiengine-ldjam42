@@ -23,6 +23,7 @@ import de.gurkenlabs.litiengine.entities.MapArea;
 import de.gurkenlabs.litiengine.graphics.DebugRenderer;
 import de.gurkenlabs.litiengine.graphics.animation.EntityAnimationController;
 import de.gurkenlabs.litiengine.physics.MovementController;
+import de.gurkenlabs.litiengine.sound.Sound;
 import de.gurkenlabs.litiengine.util.ArrayUtilities;
 import de.gurkenlabs.litiengine.util.MathUtilities;
 import de.gurkenlabs.litiengine.util.geom.GeometricUtilities;
@@ -31,6 +32,10 @@ import de.gurkenlabs.litiengine.util.geom.GeometricUtilities;
 @EntityInfo(width = 11, height = 22)
 @CollisionInfo(collision = true, collisionBoxWidth = 11, collisionBoxHeight = 11, align = Align.CENTER, valign = Valign.MIDDLE)
 public class PartyGuest extends Creature {
+
+  public static Sound DISMISS_MALE = Sound.get("dismiss-male.ogg");
+  public static Sound DISMISS_FEMALE = Sound.get("dismiss-female.ogg");
+
   public static final double OCCUPATION = 16;
   private static final int WEALTH_DEFAULT = 1;
   private static final int WEALTH_VIP = 10;
