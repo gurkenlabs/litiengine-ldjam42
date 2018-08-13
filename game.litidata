@@ -301,7 +301,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
    </layer>
-   <objectgroup name="lights">
+   <objectgroup name="lights" visible="0">
     <properties>
      <property name="layerOrder" value="8"/>
     </properties>
@@ -724,19 +724,19 @@
      <polyline points=""/>
     </object>
    </objectgroup>
-   <objectgroup name="props">
+   <objectgroup name="props" visible="1">
     <properties>
      <property name="layerOrder" value="9"/>
     </properties>
     <object id="4019" name="" type="PROP" x="160" y="76" width="18" height="36">
      <properties>
-      <property name="addShadow" type="addShadow" value="true"/>
-      <property name="collision" type="collision" value="true"/>
-      <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
-      <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="18.0"/>
-      <property name="indestructible" type="indestructible" value="false"/>
+      <property name="addShadow" value="true"/>
+      <property name="collision" value="true"/>
+      <property name="collisionboxHeightFactor" value="16.0"/>
+      <property name="collisionboxWidthFactor" value="18.0"/>
+      <property name="indestructible" value="false"/>
       <property name="isObstacle" value="true"/>
-      <property name="spritesheetName" type="spritesheetName" value="speakers"/>
+      <property name="spritesheetName" value="speakers"/>
      </properties>
      <polyline/>
     </object>
@@ -776,8 +776,95 @@
      </properties>
      <polyline/>
     </object>
+    <object id="4101" name="" type="PROP" x="192" y="14" width="16" height="10">
+     <properties>
+      <property name="addShadow" value="true"/>
+      <property name="collision" value="true"/>
+      <property name="collisionboxHeightFactor" value="16.0"/>
+      <property name="collisionboxWidthFactor" value="16.0"/>
+      <property name="indestructible" value="false"/>
+      <property name="spritesheetName" value="couch"/>
+     </properties>
+    </object>
+    <object id="4134" name="" type="PROP" x="208" y="14" width="16" height="10">
+     <properties>
+      <property name="addShadow" type="addShadow" value="true"/>
+      <property name="collision" type="collision" value="true"/>
+      <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
+      <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="16.0"/>
+      <property name="indestructible" type="indestructible" value="false"/>
+      <property name="spritesheetName" type="spritesheetName" value="couch"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4137" name="" type="PROP" x="288" y="14" width="16" height="10">
+     <properties>
+      <property name="addShadow" type="addShadow" value="true"/>
+      <property name="collision" type="collision" value="true"/>
+      <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
+      <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="16.0"/>
+      <property name="indestructible" type="indestructible" value="false"/>
+      <property name="spritesheetName" type="spritesheetName" value="couch"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4140" name="" type="PROP" x="352" y="14" width="16" height="10">
+     <properties>
+      <property name="addShadow" type="addShadow" value="true"/>
+      <property name="collision" type="collision" value="true"/>
+      <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
+      <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="16.0"/>
+      <property name="indestructible" type="indestructible" value="false"/>
+      <property name="spritesheetName" type="spritesheetName" value="couch"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4143" name="" type="PROP" x="112" y="14" width="16" height="10">
+     <properties>
+      <property name="addShadow" type="addShadow" value="true"/>
+      <property name="collision" type="collision" value="true"/>
+      <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
+      <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="16.0"/>
+      <property name="indestructible" type="indestructible" value="false"/>
+      <property name="spritesheetName" type="spritesheetName" value="couch"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4146" name="" type="PROP" x="48" y="14" width="16" height="10">
+     <properties>
+      <property name="addShadow" type="addShadow" value="true"/>
+      <property name="collision" type="collision" value="true"/>
+      <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
+      <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="16.0"/>
+      <property name="indestructible" type="indestructible" value="false"/>
+      <property name="spritesheetName" type="spritesheetName" value="couch"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4149" name="" type="PROP" x="128" y="14" width="16" height="10">
+     <properties>
+      <property name="addShadow" type="addShadow" value="true"/>
+      <property name="collision" type="collision" value="true"/>
+      <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
+      <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="16.0"/>
+      <property name="indestructible" type="indestructible" value="false"/>
+      <property name="spritesheetName" type="spritesheetName" value="couch"/>
+     </properties>
+     <polyline/>
+    </object>
+    <object id="4152" name="" type="PROP" x="272" y="14" width="16" height="10">
+     <properties>
+      <property name="addShadow" type="addShadow" value="true"/>
+      <property name="collision" type="collision" value="true"/>
+      <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
+      <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="16.0"/>
+      <property name="indestructible" type="indestructible" value="false"/>
+      <property name="spritesheetName" type="spritesheetName" value="couch"/>
+     </properties>
+     <polyline/>
+    </object>
    </objectgroup>
-   <objectgroup color="#00ffcc" name="areas">
+   <objectgroup color="#00ffcc" name="areas" visible="0">
     <properties>
      <property name="layerOrder" value="1"/>
     </properties>
@@ -859,7 +946,7 @@
      <polyline points=""/>
     </object>
    </objectgroup>
-   <objectgroup name="collision">
+   <objectgroup name="collision" visible="0">
     <properties>
      <property name="layerOrder" value="2"/>
     </properties>
@@ -959,7 +1046,7 @@
      <polyline points=""/>
     </object>
    </objectgroup>
-   <objectgroup name="spawnpoints">
+   <objectgroup name="spawnpoints" visible="0">
     <properties>
      <property name="layerOrder" value="12"/>
     </properties>
@@ -1546,6 +1633,12 @@
   </sprite>
   <sprite width="18" height="36" name="prop-speakers">
    <image>iVBORw0KGgoAAAANSUhEUgAAADYAAAAkCAYAAADCW8lNAAABOElEQVR42u2YwQ3CMAwAswv8KvgwAQzAEkgswBZ8+HcFxIwgEEGOsVPHTYSxUsmfSj75TOKkhPB+lsNw10RAjynO88VivVIFhFnjdLEu1sW6mF5sTljlvECb3VYVuKCWnNN4SWKK8wFhYA4Ec1pzYt7+eEgC8igO2SEOVNrpuRyYj5ccxcuKRRgFojrekgMZVDPEYrgYmDAFqs3JSXFyIrHSDtXmdLFSsV8vxap7zOrwqDIVLY176TkmFtOc9NY4f3OlKuWYu+M1/8XmFATzuL0hnYpaTrXNis+fGOfbNQlqkLTgsOOVA+U6HfNxLheR14Lz1SEpRCqGzx+tWCmHFeNAnFiuGHzzoIqqzSE7NAWiOsQVRA0cjVgphxXLgbqYh6Xodni4HvduD2jXVyrXl2Azny3e/rt/AI95mf1OYlMwAAAAAElFTkSuQmCC</image>
+  </sprite>
+  <sprite width="16" height="10" name="prop-couch">
+   <image>iVBORw0KGgoAAAANSUhEUgAAABAAAAAKCAYAAAC9vt6cAAAAcElEQVR42mNgQAKzGBj+E4MZsIEqoMQ+ZmaC+CITE3ZD4ok0AIQxDAAJgAxYyMZGEIMMqEL2yiyozaQaAHcJiFMFdUEVkRjmYhCGh3wViWEAj5FZSLaTYkA8zIAqEpyODcNjgouL6z8sPRDSAFMLAgAfL90qEXj14gAAAABJRU5ErkJggg==</image>
+  </sprite>
+  <sprite width="6" height="8" name="note">
+   <image>iVBORw0KGgoAAAANSUhEUgAAAAwAAAAICAYAAADN5B7xAAAAMElEQVR42mNgIAB4BAT+Ey0J4uPUAJNAponSQJQ4PpMwbCJkNbI8WA3JGggGHZqTAUjZJoz1ccwRAAAAAElFTkSuQmCC</image>
   </sprite>
  </spriteSheets>
  <tilesets>

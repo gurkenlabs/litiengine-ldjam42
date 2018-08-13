@@ -7,11 +7,13 @@ import java.awt.event.KeyEvent;
 import java.util.Locale;
 
 import de.gurkenlabs.ldjam42.entities.ClubLightsourceMapObjectLoader;
+import de.gurkenlabs.ldjam42.entities.Speaker;
 import de.gurkenlabs.ldjam42.gui.IngameScreen;
 import de.gurkenlabs.ldjam42.gui.MenuScreen;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.Resources;
 import de.gurkenlabs.litiengine.environment.Environment;
+import de.gurkenlabs.litiengine.environment.PropMapObjectLoader;
 import de.gurkenlabs.litiengine.gui.GuiProperties;
 import de.gurkenlabs.litiengine.input.Input;
 import de.gurkenlabs.litiengine.util.ImageProcessing;
@@ -63,6 +65,7 @@ public class Program {
     Game.getRenderEngine().setBaseRenderScale(4);
 
     Environment.registerMapObjectLoader(new ClubLightsourceMapObjectLoader());
+    PropMapObjectLoader.registerCustomPropType(Speaker.class);
 
     GameManager.init();
   }
