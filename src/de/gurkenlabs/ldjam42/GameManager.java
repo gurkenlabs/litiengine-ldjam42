@@ -1,6 +1,7 @@
 package de.gurkenlabs.ldjam42;
 
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.sql.Time;
 import java.util.ArrayList;
@@ -62,6 +63,8 @@ public final class GameManager {
 
   private static GameState gameState;
 
+  private static boolean isRestarting;
+
   private GameManager() {
   }
 
@@ -85,6 +88,13 @@ public final class GameManager {
     Input.mouse().onReleased(p -> {
       Game.getScreenManager().getRenderComponent().setCursor(Program.CURSOR_STANDARD);
       Game.getScreenManager().getRenderComponent().setCursorOffset(0, 0);
+    });
+
+    // debug option to test the end screen
+    Input.keyboard().onKeyTyped(KeyEvent.VK_F5, e -> {
+      if (Game.getConfiguration().debug().isDebugEnabled()) {
+        setGameState(GameState.ENDSCREEN);
+      }
     });
 
     goin = new Environment(Game.getMap("club1"));
@@ -139,20 +149,25 @@ public final class GameManager {
   }
 
   public static void restart() {
-    goin = new Environment(Game.getMap("club1"));
-    addListeners(goin);
-    space.clear();
-    remaining.clear();
-    guestsInArea.clear();
-    kickedPartyGuests.clear();
-    areas.clear();
-    totalGuestsInMainAreas = 0;
-    PartyGuestController.currentTargets.clear();
+    isRestarting = true;
+    try {
+      goin = new Environment(Game.getMap("club1"));
+      addListeners(goin);
+      space.clear();
+      remaining.clear();
+      guestsInArea.clear();
+      kickedPartyGuests.clear();
+      areas.clear();
+      totalGuestsInMainAreas = 0;
+      PartyGuestController.currentTargets.clear();
 
-    currentFocus = null;
-    currentMoney = 0;
-    Game.loadEnvironment(GameManager.getGoin());
-    startedTicks = Game.getLoop().getTicks();
+      currentFocus = null;
+      currentMoney = 0;
+      Game.loadEnvironment(GameManager.getGoin());
+      startedTicks = Game.getLoop().getTicks();
+    } finally {
+      isRestarting = false;
+    }
   }
 
   public static void dismiss() {
@@ -165,7 +180,15 @@ public final class GameManager {
     setCurrentFocus(null);
   }
 
+  public static List<PartyGuest> getKickedGuests() {
+    return kickedPartyGuests;
+  }
+
   public static void update() {
+    if (isRestarting) {
+      return;
+    }
+
     for (ClubArea area : ClubArea.values()) {
       double totalSpace = space.get(area);
 
@@ -177,6 +200,10 @@ public final class GameManager {
     }
 
     totalGuestsInMainAreas = (int) Game.getEnvironment().getByType(PartyGuest.class).stream().filter(x -> areas.get(ClubArea.LOBBY).stream().noneMatch(a -> a.getBoundingBox().intersects(x.getCollisionBox()))).count();
+
+    if (getGameState() != GameState.ENDSCREEN && getCurrentGameTime().getTime() >= getEndTime().getTime()) {
+      setGameState(GameState.ENDSCREEN);
+    }
   }
 
   public static void start() {
@@ -212,6 +239,10 @@ public final class GameManager {
   }
 
   public static Time getCurrentGameTime() {
+    if (getGameState() == GameState.ENDSCREEN) {
+      return getEndTime();
+    }
+
     // 1 minute of playtime is 1 second in real time
     return new Time(START_TIME + Game.getLoop().getDeltaTime(startedTicks) * 60);
   }
@@ -231,15 +262,26 @@ public final class GameManager {
   }
 
   public static double getTotalSpace(ClubArea area) {
-    return space.get(area);
+    if (space.containsKey(area)) {
+      return space.get(area);
+    }
+
+    return 0;
   }
 
   public static double getRemainingSpace(ClubArea area) {
-    return remaining.get(area);
+    if (remaining.containsKey(area)) {
+      return remaining.get(area);
+    }
+
+    return 0;
   }
 
   public static Collection<MapArea> getMapAreas(ClubArea area) {
-    return areas.get(area);
+    if (areas.containsKey(area)) {
+      return areas.get(area);
+    }
+    return new ArrayList<>();
   }
 
   public static int getTotalGuestsInMainAreas() {
@@ -274,7 +316,10 @@ public final class GameManager {
   }
 
   private static int getGuestsInAreas(ClubArea area) {
-    return areas.get(area).stream().mapToInt(GameManager::countGuestsInArea).sum();
+    if (areas.containsKey(area)) {
+      return areas.get(area).stream().mapToInt(GameManager::countGuestsInArea).sum();
+    }
+    return 0;
   }
 
   private static void generateGuestSpritesheets() {

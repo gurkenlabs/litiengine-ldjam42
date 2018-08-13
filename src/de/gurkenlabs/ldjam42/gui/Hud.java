@@ -34,7 +34,7 @@ import de.gurkenlabs.litiengine.util.ImageProcessing;
 import de.gurkenlabs.litiengine.util.MathUtilities;
 
 public final class Hud extends GuiComponent {
-  private static final Color COLOR_OUTLINE = new Color(0, 0, 0, 180);
+  public static final Color COLOR_OUTLINE = new Color(0, 0, 0, 180);
   private static final Color COLOR_BG = new Color(0, 0, 0, 150);
   private static final Color COLOR_BAD = new Color(238, 28, 37, 220);
   private static final Color COLOR_AVG = new Color(238, 160, 36, 220);
@@ -198,7 +198,6 @@ public final class Hud extends GuiComponent {
             Direction.DOWN.toString().toLowerCase());
     BufferedImage image = guest.getAnimationController().getAnimation(animationName).getSpritesheet().getSprite(guest.getAnimationController().getCurrentAnimation().getCurrentKeyFrame().getSpriteIndex());
     // BEWARE!!! THAT'S UGLY JAM CODE 
-    
     double factor = 150 / image.getWidth();
     double imgWidth = factor * image.getWidth();
     double imgHeight = factor * image.getHeight();
