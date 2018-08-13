@@ -78,7 +78,7 @@ public class PartyGuest extends Creature {
     this.features = new int[4];
     this.setLocation(location);
     // TODO: evaluate random apperance
-    this.setVelocity((short) MathUtilities.randomInRange(20, 50));
+    this.setVelocity((short) MathUtilities.randomInRange(20, 40));
     this.setController(MovementController.class, new PartyGuestController(this));
     this.initialize();
   }

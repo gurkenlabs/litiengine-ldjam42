@@ -308,12 +308,10 @@ public final class GameManager {
   }
 
   private static List<Spawnpoint> getSpawnPoints() {
-    ArrayList<Spawnpoint> points = new ArrayList<>();
-    Spawnpoint point = Game.getEnvironment().getSpawnpoint("party-spawn");
-    if (point == null) {
+    Collection<Spawnpoint> points = Game.getEnvironment().getByTag(Spawnpoint.class, "entry");
+    if (points.isEmpty()) {
       throw new IllegalArgumentException("No party guest spawnpoint found on the map.");
     }
-    points.add(point);
-    return points;
+    return new ArrayList<>(points);
   }
 }

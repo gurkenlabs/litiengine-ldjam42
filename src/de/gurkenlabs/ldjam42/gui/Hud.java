@@ -1,6 +1,7 @@
 package de.gurkenlabs.ldjam42.gui;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.geom.Point2D;
@@ -58,6 +59,8 @@ public final class Hud extends GuiComponent {
       GameManager.dismiss();
       e.getEvent().consume();
     });
+
+    hideDismissButton();
   }
 
   @Override
@@ -68,10 +71,11 @@ public final class Hud extends GuiComponent {
     double height = Game.getScreenManager().getResolution().getHeight() / 10;
     this.kickButton = new ImageComponent(Game.getScreenManager().getResolution().getWidth() / 2.0 - width / 2.0, Game.getScreenManager().getResolution().getHeight() / 2 + height, width, height);
     this.kickButton.setText("DISMISS");
-    this.kickButton.getAppearance().setForeColor(new Color(0, 0, 0, 220));
+    this.kickButton.setFont(Program.GUI_FONT.deriveFont(Font.BOLD));
+    this.kickButton.getAppearance().setForeColor(new Color(68, 13, 13, 220));
     this.kickButton.getAppearance().setBackgroundColor1(new Color(255, 0, 0, 150));
     this.kickButton.getAppearance().setTransparentBackground(false);
-    this.kickButton.getAppearanceHovered().setForeColor(new Color(0, 0, 0, 255));
+    this.kickButton.getAppearanceHovered().setForeColor(new Color(68, 13, 13, 255));
     this.kickButton.getAppearanceHovered().setBackgroundColor1(new Color(255, 0, 0, 190));
     this.kickButton.getAppearanceHovered().setTransparentBackground(false);
 
