@@ -1,4 +1,4 @@
-#MALE-IDLE
+#MALE-IDLE-DOWN
 male-idle-down.png, 20, 22;250,250
 
 male-pants0-idle-down.png, 20, 22;250,250
@@ -21,7 +21,7 @@ male-top3-idle-down.png, 20, 22;250,250
 male-hair3-idle-down.png, 20, 22;250,250
 male-face3-idle-down.png, 20, 22;250,250
 
-#MALE-WALK
+#MALE-WALK-DOWN
 male-walk-down.png, 20, 22;250,250
 
 male-pants0-walk-down.png, 20, 22;250,250
@@ -44,7 +44,7 @@ male-top3-walk-down.png, 20, 22;250,250
 male-hair3-walk-down.png, 20, 22;250,250
 male-face3-walk-down.png, 20, 22;250,250
 
-#FEMALE-IDLE
+#FEMALE-IDLE-DOWN
 female-idle-down.png, 20, 22;250,250
 
 female-pants0-idle-down.png, 20, 22;250,250
@@ -67,7 +67,7 @@ female-top3-idle-down.png, 20, 22;250,250
 female-hair3-idle-down.png, 20, 22;250,250
 female-face3-idle-down.png, 20, 22;250,250
 
-#FEMALE-WALK
+#FEMALE-WALK-DOWN
 female-walk-down.png, 20, 22;250,250
 
 female-pants0-walk-down.png, 20, 22;250,250
@@ -89,3 +89,95 @@ female-pants3-walk-down.png, 20, 22;250,250
 female-top3-walk-down.png, 20, 22;250,250
 female-hair3-walk-down.png, 20, 22;250,250
 female-face3-walk-down.png, 20, 22;250,250
+
+#MALE-IDLE-UP
+male-idle-up.png, 20, 22;250,250
+
+male-pants0-idle-up.png, 20, 22;250,250
+male-top0-idle-up.png, 20, 22;250,250
+male-hair0-idle-up.png, 20, 22;250,250
+male-face0-idle-up.png, 20, 22;250,250
+
+male-pants1-idle-up.png, 20, 22;250,250
+male-top1-idle-up.png, 20, 20;250,250
+male-hair1-idle-up.png, 20, 22;250,250
+male-face1-idle-up.png, 20, 22;250,250
+
+male-pants2-idle-up.png, 20, 22;250,250
+male-top2-idle-up.png, 20, 22;250,250
+male-hair2-idle-up.png, 20, 22;250,250
+male-face2-idle-up.png, 20, 22;250,250
+
+male-pants3-idle-up.png, 20, 22;250,250
+male-top3-idle-up.png, 20, 22;250,250
+male-hair3-idle-up.png, 20, 22;250,250
+male-face3-idle-up.png, 20, 22;250,250
+
+#MALE-WALK-UP
+male-walk-up.png, 20, 22;250,250
+
+male-pants0-walk-up.png, 20, 22;250,250
+male-top0-walk-up.png, 20, 22;250,250
+male-hair0-walk-up.png, 20, 22;250,250
+male-face0-walk-up.png, 20, 22;250,250
+
+male-pants1-walk-up.png, 20, 22;250,250
+male-top1-walk-up.png, 20, 20;250,250
+male-hair1-walk-up.png, 20, 22;250,250
+male-face1-walk-up.png, 20, 22;250,250
+
+male-pants2-walk-up.png, 20, 22;250,250
+male-top2-walk-up.png, 20, 22;250,250
+male-hair2-walk-up.png, 20, 22;250,250
+male-face2-walk-up.png, 20, 22;250,250
+
+male-pants3-walk-up.png, 20, 22;250,250
+male-top3-walk-up.png, 20, 22;250,250
+male-hair3-walk-up.png, 20, 22;250,250
+male-face3-walk-up.png, 20, 22;250,250
+
+#FEMALE-IDLE-UP
+female-idle-up.png, 20, 22;250,250
+
+female-pants0-idle-up.png, 20, 22;250,250
+female-top0-idle-up.png, 20, 22;250,250
+female-hair0-idle-up.png, 20, 22;250,250
+female-face0-idle-up.png, 20, 22;250,250
+
+female-pants1-idle-up.png, 20, 22;250,250
+female-top1-idle-up.png, 20, 20;250,250
+female-hair1-idle-up.png, 20, 22;250,250
+female-face1-idle-up.png, 20, 22;250,250
+
+female-pants2-idle-up.png, 20, 22;250,250
+female-top2-idle-up.png, 20, 22;250,250
+female-hair2-idle-up.png, 20, 22;250,250
+female-face2-idle-up.png, 20, 22;250,250
+
+female-pants3-idle-up.png, 20, 22;250,250
+female-top3-idle-up.png, 20, 22;250,250
+female-hair3-idle-up.png, 20, 22;250,250
+female-face3-idle-up.png, 20, 22;250,250
+
+#FEMALE-WALK-UP
+female-walk-up.png, 20, 22;250,250
+
+female-pants0-walk-up.png, 20, 22;250,250
+female-top0-walk-up.png, 20, 22;250,250
+female-hair0-walk-up.png, 20, 22;250,250
+female-face0-walk-up.png, 20, 22;250,250
+
+female-pants1-walk-up.png, 20, 22;250,250
+female-top1-walk-up.png, 20, 20;250,250
+female-hair1-walk-up.png, 20, 22;250,250
+female-face1-walk-up.png, 20, 22;250,250
+
+female-pants2-walk-up.png, 20, 22;250,250
+female-top2-walk-up.png, 20, 22;250,250
+female-hair2-walk-up.png, 20, 22;250,250
+female-face2-walk-up.png, 20, 22;250,250
+
+female-pants3-walk-up.png, 20, 22;250,250
+female-top3-walk-up.png, 20, 22;250,250
+female-hair3-walk-up.png, 20, 22;250,250
+female-face3-walk-up.png, 20, 22;250,250
