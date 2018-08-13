@@ -86,7 +86,7 @@ public final class GameManager {
       Game.getScreenManager().getRenderComponent().setCursorOffset(0, 0);
     });
 
-    goin = new Environment(Game.getMap("test"));
+    goin = new Environment(Game.getMap("club1"));
     goin.addListener(new EnvironmentAdapter() {
       @Override
       public void environmentLoaded(IEnvironment environment) {

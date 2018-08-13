@@ -2,6 +2,10 @@
 <litidata version="1.0">
  <maps>
   <map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="26" height="22" tilewidth="16" tileheight="16" nextobjectid="1" name="club1">
+   <properties>
+    <property name="AMBIENTALPHA" value="60"/>
+    <property name="AMBIENTLIGHT" value="#006666"/>
+   </properties>
    <tileset firstgid="1" source="tiles-club.tsx"/>
    <layer name="ground" width="26" height="22">
     <properties>
@@ -179,8 +183,8 @@
    </layer>
    <layer name="wall-overlay" width="26" height="22">
     <properties>
+     <property name="RENDERTYPE" value="OVERLAY"/>
      <property name="layerOrder" value="0"/>
-     <property name="rendertype" value="OVERLAY"/>
     </properties>
     <data encoding="csv">
 87,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,87,
@@ -209,8 +213,8 @@
    </layer>
    <layer name="overlay" width="26" height="22">
     <properties>
+     <property name="RENDERTYPE" value="OVERLAY"/>
      <property name="layerOrder" value="0"/>
-     <property name="rendertype" value="OVERLAY"/>
     </properties>
     <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -241,7 +245,7 @@
     <properties>
      <property name="layerOrder" value="8"/>
     </properties>
-    <object id="314" name="" type="LIGHTSOURCE" x="119" y="112" width="48" height="48">
+    <object id="314" type="LIGHTSOURCE" x="119" y="112" width="48" height="48">
      <properties>
       <property name="lightActive" value="true"/>
       <property name="lightBrightness" value="255"/>
@@ -252,187 +256,187 @@
       <property name="lightShape" value="ellipse"/>
      </properties>
     </object>
-    <object id="2972" name="" type="LIGHTSOURCE" x="119" y="149" width="48" height="48">
+    <object id="2972" type="LIGHTSOURCE" x="119" y="149" width="48" height="48">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#6666ff"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="150"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#6666ff"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" value="150"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="2975" name="" type="LIGHTSOURCE" x="119" y="192" width="48" height="48">
+    <object id="2975" type="LIGHTSOURCE" x="119" y="192" width="48" height="48">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#6666ff"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="150"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#6666ff"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" value="150"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="2983" name="" type="LIGHTSOURCE" x="182" y="112" width="48" height="48">
+    <object id="2983" type="LIGHTSOURCE" x="182" y="112" width="48" height="48">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#cc00cc"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="150"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#cc00cc"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" value="150"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="2994" name="" type="LIGHTSOURCE" x="182" y="155" width="48" height="48">
+    <object id="2994" type="LIGHTSOURCE" x="182" y="155" width="48" height="48">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#cc00cc"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="150"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#cc00cc"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" value="150"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="2997" name="" type="LIGHTSOURCE" x="182" y="192" width="48" height="48">
+    <object id="2997" type="LIGHTSOURCE" x="182" y="192" width="48" height="48">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#cc00cc"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="150"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#cc00cc"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" value="150"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3003" name="" type="LIGHTSOURCE" x="246" y="112" width="48" height="48">
+    <object id="3003" type="LIGHTSOURCE" x="246" y="112" width="48" height="48">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#ffcc00"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="150"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" value="150"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3007" name="" type="LIGHTSOURCE" x="246" y="155" width="48" height="48">
+    <object id="3007" type="LIGHTSOURCE" x="246" y="155" width="48" height="48">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#ffcc00"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="150"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" value="150"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3010" name="" type="LIGHTSOURCE" x="246" y="192" width="48" height="48">
+    <object id="3010" type="LIGHTSOURCE" x="246" y="192" width="48" height="48">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#ffcc00"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="150"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" value="150"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3013" name="" type="LIGHTSOURCE" x="153" y="133" width="48" height="48">
+    <object id="3013" type="LIGHTSOURCE" x="153" y="133" width="48" height="48">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#ffffcc"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="100"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#ffffcc"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" value="100"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3020" name="" type="LIGHTSOURCE" x="153" y="181" width="48" height="48">
+    <object id="3020" type="LIGHTSOURCE" x="153" y="181" width="48" height="48">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#ffffcc"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="100"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#ffffcc"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" value="100"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3023" name="" type="LIGHTSOURCE" x="213" y="133" width="48" height="48">
+    <object id="3023" type="LIGHTSOURCE" x="213" y="133" width="48" height="48">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#ffffcc"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="100"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#ffffcc"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" value="100"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3028" name="" type="LIGHTSOURCE" x="213" y="181" width="48" height="48">
+    <object id="3028" type="LIGHTSOURCE" x="213" y="181" width="48" height="48">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#ffffcc"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="100"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#ffffcc"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="0.0"/>
+      <property name="lightIntensity" value="100"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3032" name="" type="LIGHTSOURCE" x="159" y="64" width="43" height="45">
+    <object id="3032" type="LIGHTSOURCE" x="159" y="64" width="43" height="45">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#ff3333"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="100"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#ff3333"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" value="100"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3136" name="" type="LIGHTSOURCE" x="189" y="64" width="43" height="45">
+    <object id="3136" type="LIGHTSOURCE" x="189" y="64" width="43" height="45">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#00ff33"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="100"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#00ff33"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" value="100"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3139" name="" type="LIGHTSOURCE" x="217" y="64" width="43" height="45">
+    <object id="3139" type="LIGHTSOURCE" x="217" y="64" width="43" height="45">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#3333ff"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="100"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#3333ff"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" value="100"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3142" name="" type="LIGHTSOURCE" x="16" y="0" width="384" height="64">
+    <object id="3142" type="LIGHTSOURCE" x="16" y="0" width="384" height="64">
      <properties>
       <property name="lightActive" value="true"/>
       <property name="lightBrightness" value="150"/>
@@ -441,113 +445,113 @@
       <property name="lightShape" value="rectangle"/>
      </properties>
     </object>
-    <object id="3164" name="" type="LIGHTSOURCE" x="34" y="0" width="43" height="45">
+    <object id="3164" type="LIGHTSOURCE" x="34" y="0" width="43" height="45">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#ffcc00"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="150"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" value="150"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3177" name="" type="LIGHTSOURCE" x="105" y="0" width="43" height="45">
+    <object id="3177" type="LIGHTSOURCE" x="105" y="0" width="43" height="45">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#ffcc00"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="150"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" value="150"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3180" name="" type="LIGHTSOURCE" x="183" y="0" width="43" height="45">
+    <object id="3180" type="LIGHTSOURCE" x="183" y="0" width="43" height="45">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#ffcc00"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="150"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" value="150"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3183" name="" type="LIGHTSOURCE" x="268" y="0" width="43" height="45">
+    <object id="3183" type="LIGHTSOURCE" x="268" y="0" width="43" height="45">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#ffcc00"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="150"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" value="150"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3186" name="" type="LIGHTSOURCE" x="350" y="0" width="43" height="45">
+    <object id="3186" type="LIGHTSOURCE" x="350" y="0" width="43" height="45">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#ffcc00"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="150"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#ffcc00"/>
+      <property name="lightFocusOffsetX" value="0.0"/>
+      <property name="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" value="150"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3189" name="" type="LIGHTSOURCE" x="112" y="240" width="48" height="96">
+    <object id="3189" type="LIGHTSOURCE" x="112" y="240" width="48" height="96">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#000000"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="-1.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="100"/>
-      <property name="lightShape" type="lightShape" value="rectangle"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#000000"/>
+      <property name="lightFocusOffsetX" value="-1.0"/>
+      <property name="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" value="100"/>
+      <property name="lightShape" value="rectangle"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3618" name="" type="LIGHTSOURCE" x="160" y="256" width="96" height="80">
+    <object id="3618" type="LIGHTSOURCE" x="160" y="256" width="96" height="80">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#000000"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="-1.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="100"/>
-      <property name="lightShape" type="lightShape" value="rectangle"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#000000"/>
+      <property name="lightFocusOffsetX" value="-1.0"/>
+      <property name="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" value="100"/>
+      <property name="lightShape" value="rectangle"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3626" name="" type="LIGHTSOURCE" x="256" y="240" width="48" height="96">
+    <object id="3626" type="LIGHTSOURCE" x="256" y="240" width="48" height="96">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#000000"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="-1.0"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="100"/>
-      <property name="lightShape" type="lightShape" value="rectangle"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#000000"/>
+      <property name="lightFocusOffsetX" value="-1.0"/>
+      <property name="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" value="100"/>
+      <property name="lightShape" value="rectangle"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3637" name="" type="LIGHTSOURCE" x="160" y="240" width="96" height="32">
+    <object id="3637" type="LIGHTSOURCE" x="160" y="240" width="96" height="32">
      <properties>
-      <property name="lightActive" type="lightActive" value="true"/>
-      <property name="lightBrightness" type="lightBrightness" value="255"/>
-      <property name="lightColor" type="lightColor" value="#cc00cc"/>
-      <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.02"/>
-      <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
-      <property name="lightIntensity" type="lightIntensity" value="100"/>
-      <property name="lightShape" type="lightShape" value="ellipse"/>
+      <property name="lightActive" value="true"/>
+      <property name="lightBrightness" value="255"/>
+      <property name="lightColor" value="#cc00cc"/>
+      <property name="lightFocusOffsetX" value="0.02"/>
+      <property name="lightFocusOffsetY" value="-1.0"/>
+      <property name="lightIntensity" value="100"/>
+      <property name="lightShape" value="ellipse"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
    </objectgroup>
    <objectgroup name="props">
@@ -564,7 +568,7 @@
       <property name="tags" value="area_entry"/>
      </properties>
     </object>
-    <object id="75" type="AREA" x="112" y="96" width="192" height="160">
+    <object id="75" type="AREA" x="112" y="96" width="192" height="144">
      <properties>
       <property name="tags" value="area_dance"/>
      </properties>
@@ -632,9 +636,9 @@
     </object>
     <object id="259" type="AREA" x="256" y="64" width="32" height="32">
      <properties>
-      <property name="tags" type="tags" value="area_chill,transition"/>
+      <property name="tags" value="area_chill,transition"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
    </objectgroup>
    <objectgroup name="collision">
@@ -642,81 +646,99 @@
      <property name="layerOrder" value="2"/>
     </properties>
     <object id="188" type="COLLISIONBOX" x="400" y="16" width="16" height="320">
-     <polyline/>
+     <polyline points=""/>
     </object>
     <object id="165" type="COLLISIONBOX" x="0" y="0" width="416" height="16">
-     <polyline/>
+     <polyline points=""/>
     </object>
     <object id="174" type="COLLISIONBOX" x="0" y="16" width="16" height="320">
-     <polyline/>
+     <polyline points=""/>
     </object>
     <object id="171" type="COLLISIONBOX" x="0" y="336" width="416" height="16">
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3944" name="" type="COLLISIONBOX" x="96" y="320" width="16" height="16">
+    <object id="3944" type="COLLISIONBOX" x="96" y="320" width="16" height="16">
      <properties>
       <property name="isObstacle" value="true"/>
      </properties>
     </object>
-    <object id="3949" name="" type="COLLISIONBOX" x="304" y="320" width="16" height="16">
+    <object id="3949" type="COLLISIONBOX" x="304" y="320" width="16" height="16">
      <properties>
-      <property name="isObstacle" type="isObstacle" value="true"/>
+      <property name="isObstacle" value="true"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3952" name="" type="COLLISIONBOX" x="304" y="208" width="16" height="80">
+    <object id="3952" type="COLLISIONBOX" x="304" y="208" width="16" height="80">
      <properties>
-      <property name="isObstacle" type="isObstacle" value="true"/>
+      <property name="isObstacle" value="true"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3960" name="" type="COLLISIONBOX" x="96" y="208" width="16" height="80">
+    <object id="3960" type="COLLISIONBOX" x="96" y="208" width="16" height="80">
      <properties>
-      <property name="isObstacle" type="isObstacle" value="true"/>
+      <property name="isObstacle" value="true"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3963" name="" type="COLLISIONBOX" x="96" y="96" width="16" height="64">
+    <object id="3963" type="COLLISIONBOX" x="96" y="96" width="16" height="64">
      <properties>
-      <property name="isObstacle" type="isObstacle" value="true"/>
+      <property name="isObstacle" value="true"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3975" name="" type="COLLISIONBOX" x="304" y="96" width="16" height="64">
+    <object id="3975" type="COLLISIONBOX" x="304" y="96" width="16" height="64">
      <properties>
-      <property name="isObstacle" type="isObstacle" value="true"/>
+      <property name="isObstacle" value="true"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3978" name="" type="COLLISIONBOX" x="16" y="64" width="16" height="32">
+    <object id="3978" type="COLLISIONBOX" x="16" y="64" width="16" height="32">
      <properties>
-      <property name="isObstacle" type="isObstacle" value="true"/>
+      <property name="isObstacle" value="true"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3983" name="" type="COLLISIONBOX" x="64" y="64" width="64" height="32">
+    <object id="3983" type="COLLISIONBOX" x="64" y="64" width="64" height="32">
      <properties>
-      <property name="isObstacle" type="isObstacle" value="true"/>
+      <property name="isObstacle" value="true"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3991" name="" type="COLLISIONBOX" x="160" y="64" width="96" height="32">
+    <object id="3991" type="COLLISIONBOX" x="160" y="64" width="96" height="32">
      <properties>
-      <property name="isObstacle" type="isObstacle" value="true"/>
+      <property name="isObstacle" value="true"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="3996" name="" type="COLLISIONBOX" x="288" y="64" width="64" height="32">
+    <object id="3996" type="COLLISIONBOX" x="288" y="64" width="64" height="32">
      <properties>
-      <property name="isObstacle" type="isObstacle" value="true"/>
+      <property name="isObstacle" value="true"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
-    <object id="4000" name="" type="COLLISIONBOX" x="384" y="64" width="16" height="32">
+    <object id="4000" type="COLLISIONBOX" x="384" y="64" width="16" height="32">
      <properties>
-      <property name="isObstacle" type="isObstacle" value="true"/>
+      <property name="isObstacle" value="true"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
+    </object>
+    <object id="4002" type="COLLISIONBOX" x="256" y="240" width="48" height="16">
+     <properties>
+      <property name="isObstacle" value="true"/>
+     </properties>
+     <polyline points=""/>
+    </object>
+    <object id="4010" type="COLLISIONBOX" x="112" y="240" width="48" height="16">
+     <properties>
+      <property name="isObstacle" value="true"/>
+     </properties>
+     <polyline points=""/>
+    </object>
+    <object id="4018" type="AREA" x="160" y="240" width="96" height="16">
+     <properties>
+      <property name="tags" value="area_dance"/>
+     </properties>
+     <polyline points=""/>
     </object>
    </objectgroup>
    <objectgroup name="spawnpoints">
@@ -725,11 +747,11 @@
     </properties>
     <object id="163" name="party-spawn" type="SPAWNPOINT" x="192" y="288" width="32" height="32">
      <properties>
-      <property name="spawnDirection" type="spawnDirection" value="UNDEFINED"/>
-      <property name="spawnType" type="spawnType" value=""/>
-      <property name="tags" type="tags" value="entry"/>
+      <property name="spawnDirection" value="UNDEFINED"/>
+      <property name="spawnType" value=""/>
+      <property name="tags" value="entry"/>
      </properties>
-     <polyline/>
+     <polyline points=""/>
     </object>
    </objectgroup>
   </map>
@@ -1019,12 +1041,12 @@
   <sprite width="9" height="8" name="marker">
    <image>iVBORw0KGgoAAAANSUhEUgAAAAkAAAAICAYAAAArzdW1AAAAL0lEQVR42mO4yOf0nxBmABH/GVxwYrAiEMClEK6AaEXYFGIoQFeIUwHRimAK0cUAgAdgbYFo2hQAAAAASUVORK5CYII=</image>
   </sprite>
-  <sprite width="16" height="16" name="tiles-club">
-   <image>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</image>
-  </sprite>
   <sprite width="73" height="73" name="Logo_anim">
    <image>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</image>
    <keyframes>500,200,200,2000,200</keyframes>
+  </sprite>
+  <sprite width="16" height="16" name="tiles-club">
+   <image>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</image>
   </sprite>
  </spriteSheets>
  <tilesets>
