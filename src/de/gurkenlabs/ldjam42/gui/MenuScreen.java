@@ -2,9 +2,12 @@ package de.gurkenlabs.ldjam42.gui;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.RenderingHints.Key;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
 import de.gurkenlabs.ldjam42.GameManager;
+import de.gurkenlabs.ldjam42.GameState;
 import de.gurkenlabs.ldjam42.Program;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.Resources;
@@ -15,6 +18,7 @@ import de.gurkenlabs.litiengine.graphics.TextRenderer;
 import de.gurkenlabs.litiengine.graphics.animation.AnimationController;
 import de.gurkenlabs.litiengine.gui.ImageComponent;
 import de.gurkenlabs.litiengine.gui.screens.Screen;
+import de.gurkenlabs.litiengine.input.Input;
 import de.gurkenlabs.litiengine.sound.Sound;
 
 public class MenuScreen extends Screen {
@@ -73,6 +77,14 @@ public class MenuScreen extends Screen {
     this.logoAnimationController = new AnimationController(Spritesheet.find("Logo_anim"));
     Game.getSoundEngine().playMusic(MENU_MUSIC);
     Game.getLoop().attach(this.logoAnimationController);
+
+    GameManager.setGameState(GameState.MAINMENU);
+
+    Input.keyboard().onKeyPressed(KeyEvent.VK_ESCAPE, e -> {
+      if (this.isVisible()) {
+        System.exit(0);
+      }
+    });
   }
 
   @Override

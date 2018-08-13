@@ -1,19 +1,27 @@
 package de.gurkenlabs.ldjam42.gui;
 
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 
 import de.gurkenlabs.ldjam42.GameManager;
+import de.gurkenlabs.ldjam42.GameState;
 import de.gurkenlabs.litiengine.Game;
+import de.gurkenlabs.litiengine.Resources;
+import de.gurkenlabs.litiengine.gui.Menu;
 import de.gurkenlabs.litiengine.gui.screens.Screen;
+import de.gurkenlabs.litiengine.input.Input;
 import de.gurkenlabs.litiengine.sound.Sound;
 
 public class IngameScreen extends Screen {
   public static final String NAME = "INGAME";
+  private static final BufferedImage pauseOverlay = Resources.getImage("pause-overlay.png");
+  private static IngameScreen instance;
+
   public static Sound INGAME_MUSIC = Sound.get("ingame-music.ogg");
 
   private Hud hud;
-
-  private static IngameScreen instance;
+  private Menu ingameMenu;
 
   private IngameScreen() {
     super(NAME);
@@ -37,6 +45,14 @@ public class IngameScreen extends Screen {
       // GameManager.getGrid().render(g);
     }
 
+    if (GameManager.getGameState() == GameState.PAUSED) {
+      g.drawImage(pauseOverlay, 0, 0, (int) Game.getScreenManager().getResolution().getWidth(),
+          (int) Game.getScreenManager().getResolution().getHeight(), null);
+    }
+
+    if (Game.getConfiguration().debug().isDebug()) {
+      // Game.getLoop().setTimeScale(4);
+    }
     super.render(g);
   }
 
@@ -47,12 +63,49 @@ public class IngameScreen extends Screen {
   @Override
   public void prepare() {
     super.prepare();
+    GameManager.setGameState(GameState.INGAME);
+    this.ingameMenu.setVisible(false);
+
+    Input.keyboard().onKeyTyped(KeyEvent.VK_ESCAPE, e -> {
+      toggleIngameMenu();
+    });
     Game.getSoundEngine().playMusic(INGAME_MUSIC);
+  }
+
+  private void toggleIngameMenu() {
+    this.ingameMenu.setVisible(!this.ingameMenu.isVisible());
+
+    GameManager.setGameState(this.ingameMenu.isVisible() ? GameState.PAUSED : GameState.INGAME);
+
+    if (GameManager.getGameState() == GameState.PAUSED) {
+      Game.getLoop().setTimeScale(0);
+    } else {
+      Game.getLoop().setTimeScale(1);
+    }
   }
 
   @Override
   protected void initializeComponents() {
     this.hud = new Hud();
     this.getComponents().add(this.hud);
+
+    double width = Game.getScreenManager().getResolution().getWidth() / 4;
+    double height = Game.getScreenManager().getResolution().getHeight() / 6;
+    double x = Game.getScreenManager().getCenter().getX() - width / 2.0;
+    double y = Game.getScreenManager().getCenter().getY() - height / 2.0;
+    this.ingameMenu = new Menu(x, y, width, height, "Restart Party", "End Night");
+    this.ingameMenu.onChange(i -> {
+      if (i == 0) {
+        GameManager.restart();
+        this.toggleIngameMenu();
+        return;
+      }
+
+      if (i == 1) {
+        System.exit(0);
+      }
+    });
+
+    this.getComponents().add(this.ingameMenu);
   }
 }

@@ -22,7 +22,7 @@ import de.gurkenlabs.litiengine.util.ArrayUtilities;
 import de.gurkenlabs.litiengine.util.MathUtilities;
 
 public class PartyGuestController extends MovementController<PartyGuest> {
-  private static Map<PartyGuest, Point2D> currentTargets = new ConcurrentHashMap<>();
+  public static Map<PartyGuest, Point2D> currentTargets = new ConcurrentHashMap<>();
 
   // STATE MONEY
   private static final int PAY_MIN_SPEND = 5;
@@ -166,7 +166,7 @@ public class PartyGuestController extends MovementController<PartyGuest> {
       return false;
     }
 
-    Point2D current = currentTargets.get(this.getEntity());
+    final Point2D current = currentTargets.get(this.getEntity());
     for (PartyGuest guest : currentTargets.keySet()) {
       if (guest.equals(this.getEntity())) {
         continue;
