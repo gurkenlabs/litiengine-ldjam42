@@ -1,6 +1,5 @@
 package de.gurkenlabs.ldjam42;
 
-import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.RenderingHints;

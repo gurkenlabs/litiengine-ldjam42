@@ -15,6 +15,7 @@ import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.entities.MapArea;
 import de.gurkenlabs.litiengine.environment.tilemap.MapUtilities;
 import de.gurkenlabs.litiengine.pathfinding.EntityNavigator;
+import de.gurkenlabs.litiengine.pathfinding.IEntityNavigator;
 import de.gurkenlabs.litiengine.pathfinding.astar.AStarPathFinder;
 import de.gurkenlabs.litiengine.physics.MovementController;
 import de.gurkenlabs.litiengine.util.ArrayUtilities;
@@ -73,6 +74,14 @@ public class PartyGuestController extends MovementController<PartyGuest> {
     }
 
     return false;
+  }
+
+  public static void remove(PartyGuest guest) {
+    currentTargets.remove(guest);
+  }
+
+  public IEntityNavigator getNavigator() {
+    return this.nav;
   }
 
   private void changeArea() {
