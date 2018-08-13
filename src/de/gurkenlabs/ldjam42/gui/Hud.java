@@ -52,6 +52,7 @@ public final class Hud extends GuiComponent {
     this.kickButton.setVisible(true);
     this.kickButton.onMousePressed(e -> {
       GameManager.dismiss();
+      e.getEvent().consume();
     });
   }
 

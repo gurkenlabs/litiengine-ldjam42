@@ -8,11 +8,15 @@ import java.util.Collection;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.CopyOnWriteArrayList;
+
+import javax.swing.SwingUtilities;
 
 import de.gurkenlabs.ldjam42.entities.Feature;
 import de.gurkenlabs.ldjam42.entities.Gender;
 import de.gurkenlabs.ldjam42.entities.PartyGuest;
+import de.gurkenlabs.ldjam42.entities.PartyGuestController;
 import de.gurkenlabs.ldjam42.entities.PartyGuestSpawner;
 import de.gurkenlabs.ldjam42.gui.IngameScreen;
 import de.gurkenlabs.ldjam42.util.IntCombinator;
@@ -64,9 +68,17 @@ public final class GameManager {
     featurePermutations = new IntCombinator(4);
     generateGuestSpritesheets();
 
-    Input.mouse().onPressed(p -> {
+    Input.mouse().onPressed(e -> {
       Game.getScreenManager().getRenderComponent().setCursor(Program.CURSOR_CLICK);
       Game.getScreenManager().getRenderComponent().setCursorOffset(0, 0);
+
+      if (e.isConsumed()) {
+        return;
+      }
+
+      if (SwingUtilities.isLeftMouseButton(e)) {
+        GameManager.setCurrentFocus(getFocusedGuest());
+      }
     });
 
     Input.mouse().onReleased(p -> {
@@ -115,6 +127,7 @@ public final class GameManager {
         // remember kicked party guests
         if (entity instanceof PartyGuest) {
           kickedPartyGuests.add((PartyGuest) entity);
+          PartyGuestController.remove((PartyGuest) entity);
         }
       }
     });
@@ -222,6 +235,20 @@ public final class GameManager {
     } else {
       IngameScreen.instance().getHud().showDismissButton();
     }
+  }
+
+  private static PartyGuest getFocusedGuest() {
+    if (Game.getEnvironment() == null) {
+      return null;
+    }
+
+    Collection<PartyGuest> guests = Game.getEnvironment().getByType(PartyGuest.class);
+    Optional<PartyGuest> guest = guests.stream().filter(x -> x.getHitBox().contains(Input.mouse().getMapLocation())).findFirst();
+    if (guest.isPresent()) {
+      return guest.get();
+    }
+
+    return null;
   }
 
   private static int getGuestsInAreas(ClubArea area) {

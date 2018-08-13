@@ -50,27 +50,11 @@ public class IngameScreen extends Screen {
   @Override
   public void prepare() {
     super.prepare();
-
-    Input.mouse().onPressed(e -> {
-      if (SwingUtilities.isLeftMouseButton(e)) {
-        GameManager.setCurrentFocus(getFocusedGuest());
-      }
-    });
   }
 
   @Override
   protected void initializeComponents() {
     this.hud = new Hud();
     this.getComponents().add(this.hud);
-  }
-
-  private static PartyGuest getFocusedGuest() {
-    Collection<PartyGuest> guests = Game.getEnvironment().getByType(PartyGuest.class);
-    Optional<PartyGuest> guest = guests.stream().filter(x -> x.getHitBox().contains(Input.mouse().getMapLocation())).findFirst();
-    if (guest.isPresent()) {
-      return guest.get();
-    }
-
-    return null;
   }
 }

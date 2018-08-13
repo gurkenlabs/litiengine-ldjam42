@@ -75,6 +75,10 @@ public class PartyGuestController extends MovementController<PartyGuest> {
     return false;
   }
 
+  public static void remove(PartyGuest guest) {
+    currentTargets.remove(guest);
+  }
+
   private void changeArea() {
     if (this.nav != null && this.nav.isNavigating()) {
       // still navigating
