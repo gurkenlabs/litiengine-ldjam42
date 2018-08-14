@@ -13,6 +13,7 @@ import de.gurkenlabs.ldjam42.GameState;
 import de.gurkenlabs.ldjam42.Program;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.Resources;
+import de.gurkenlabs.litiengine.graphics.ImageRenderer;
 import de.gurkenlabs.litiengine.graphics.TextRenderer;
 import de.gurkenlabs.litiengine.gui.ImageComponent;
 import de.gurkenlabs.litiengine.gui.Menu;
@@ -28,6 +29,7 @@ public class IngameScreen extends Screen {
 
   public static final String NAME = "INGAME";
   private static final BufferedImage pauseOverlay = Resources.getImage("pause-overlay.png");
+  private static final BufferedImage controls = Resources.getImage("controls.png");
   private static IngameScreen instance;
   private ImageComponent restartButton;
 
@@ -85,6 +87,7 @@ public class IngameScreen extends Screen {
     if (GameManager.getGameState() == GameState.PAUSED) {
       g.drawImage(pauseOverlay, 0, 0, (int) Game.getScreenManager().getResolution().getWidth(),
           (int) Game.getScreenManager().getResolution().getHeight(), null);
+      MenuScreen.renderGameLogo(g);
     }
 
     this.renderTutorial(g);
@@ -110,12 +113,13 @@ public class IngameScreen extends Screen {
       FontMetrics fm = g.getFontMetrics();
       final String tut1 = "Give your guests the space they need.";
       TextRenderer.renderWithOutline(g, tut1, Game.getScreenManager().getResolution().getWidth() / 2d - fm.stringWidth(tut1) / 2.0, Game.getScreenManager().getCenter().getY(), Hud.COLOR_OUTLINE, RenderingHints.VALUE_ANTIALIAS_ON);
-      final String tut2 = "You earn more $$$ from satisfied customers! Keep them happy and ...";
-      TextRenderer.renderWithOutline(g, tut2, Game.getScreenManager().getResolution().getWidth() / 2d - fm.stringWidth(tut2) / 2.0, Game.getScreenManager().getCenter().getY() + fm.getHeight(), Hud.COLOR_OUTLINE, RenderingHints.VALUE_ANTIALIAS_ON);
+      final String tut2 = "You earn more $$$ from satisfied customers! Keep them happy and PARTY HARD!";
+      double partyY = Game.getScreenManager().getCenter().getY() + fm.getHeight();
+      TextRenderer.renderWithOutline(g, tut2, Game.getScreenManager().getResolution().getWidth() / 2d - fm.stringWidth(tut2) / 2.0, partyY, Hud.COLOR_OUTLINE, RenderingHints.VALUE_ANTIALIAS_ON);
 
-      g.setFont(Program.GUI_FONT.deriveFont(80f));
-      final String tut3 = "PARTY HARD!";
-      TextRenderer.renderWithOutline(g, tut3, Game.getScreenManager().getResolution().getWidth() / 2d - g.getFontMetrics().stringWidth(tut3) / 2.0, Game.getScreenManager().getCenter().getY() + g.getFontMetrics().getHeight() * 2, Hud.COLOR_OUTLINE, RenderingHints.VALUE_ANTIALIAS_ON);
+      double imageX = Game.getScreenManager().getCenter().getX() - controls.getWidth() / 2.0;
+      double imageY = partyY + g.getFontMetrics().getHeight();
+      ImageRenderer.render(g, controls, imageX, imageY);
       g.setFont(old);
     }
   }
@@ -156,6 +160,11 @@ public class IngameScreen extends Screen {
         return;
       }
 
+      long deltaTime = Game.getLoop().getDeltaTime(this.tutorialTick);
+      if (this.tutorialTick != 0 && deltaTime <= TUTORIAL_DURATION) {
+        return;
+      }
+
       toggleIngameMenu();
     });
 
@@ -189,7 +198,7 @@ public class IngameScreen extends Screen {
     double width = Game.getScreenManager().getResolution().getWidth() / 4;
     double height = Game.getScreenManager().getResolution().getHeight() / 6;
     double x = Game.getScreenManager().getCenter().getX() - width / 2.0;
-    double y = Game.getScreenManager().getCenter().getY() - height / 2.0;
+    double y = Game.getScreenManager().getCenter().getY() - height / 2.0 + height;
     this.ingameMenu = new Menu(x, y, width, height, "Restart Party", "End Night");
     this.ingameMenu.onChange(i -> {
       if (i == 0) {
