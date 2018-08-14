@@ -243,7 +243,7 @@ public final class GameManager {
     //let someone flash after a certain time period
     if (Game.getLoop().convertToMs(Game.getLoop().getTicks()) - lastFlash > flashInterval) {
       PartyGuest flasher = (PartyGuest) ArrayUtilities.getRandom(Game.getEnvironment().getByType(PartyGuest.class).toArray());
-      if (flasher != null && !flasher.isFlashing()) {
+      if (flasher != null && !flasher.isCompletelyNaked()) {
         flasher.flash();
         lastFlash = Game.getLoop().convertToMs(Game.getLoop().getTicks());
       }

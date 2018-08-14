@@ -35,6 +35,7 @@ public class PartyGuest extends Creature {
 
   public static Sound DISMISS_MALE = Sound.get("dismiss-male.ogg");
   public static Sound DISMISS_FEMALE = Sound.get("dismiss-female.ogg");
+  public static Sound UNDRESS = Sound.get("undress.ogg");
 
   public static final double OCCUPATION = 16;
   private static final int WEALTH_DEFAULT = 1;
@@ -198,11 +199,8 @@ public class PartyGuest extends Creature {
     this.features[0] = 0;
     this.features[1] = 0;
     this.setVelocity((short) MathUtilities.randomInRange(30, 50));
+    Game.getSoundEngine().playSound(UNDRESS);
 //    System.out.println(String.format("Someone named %s (%s) is showing what they've got.", this.getName(), this.getSpritePrefix()));
-  }
-
-  public boolean isFlashing() {
-    return (this.getFeatures()[0] == 0 && this.getFeatures()[1] == 0);
   }
 
   @Override
