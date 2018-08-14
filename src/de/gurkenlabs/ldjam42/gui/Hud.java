@@ -36,8 +36,8 @@ import de.gurkenlabs.litiengine.util.MathUtilities;
 public final class Hud extends GuiComponent {
   public static final Color COLOR_OUTLINE = new Color(0, 0, 0, 180);
   private static final Color COLOR_BG = new Color(0, 0, 0, 150);
-  private static final Color COLOR_BAD = new Color(238, 28, 37, 220);
-  private static final Color COLOR_AVG = new Color(238, 160, 36, 220);
+  private static final Color COLOR_BAD = new Color(247, 152, 0, 220);
+  private static final Color COLOR_AVG = new Color(252, 248, 118, 220);
   private static final Color COLOR_GOOD = new Color(143, 212, 61, 220);
   private static final int PADDING = 10;
   private static final BufferedImage MARKER = ImageProcessing.scaleImage(Spritesheet.find("marker").getImage(), 4f);
