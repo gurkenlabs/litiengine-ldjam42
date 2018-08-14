@@ -7,7 +7,6 @@ import java.util.Optional;
 import de.gurkenlabs.ldjam42.BadBehavior;
 import de.gurkenlabs.ldjam42.ClubArea;
 import de.gurkenlabs.ldjam42.GameManager;
-import de.gurkenlabs.ldjam42.graphics.DismissEmitter;
 import de.gurkenlabs.ldjam42.graphics.FlashEmitter;
 import de.gurkenlabs.litiengine.Align;
 import de.gurkenlabs.litiengine.Direction;

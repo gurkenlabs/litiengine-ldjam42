@@ -71,6 +71,7 @@ public final class GameManager {
   private static GameState gameState;
 
   private static boolean isRestarting;
+  private static boolean tutorialShown;
 
   private GameManager() {
   }
@@ -113,7 +114,10 @@ public final class GameManager {
     env.addListener(new EnvironmentAdapter() {
       @Override
       public void environmentLoaded(IEnvironment environment) {
-        Game.getLoop().execute(IngameScreen.TUTORIAL_DURATION, () -> {
+        int initialSpawnDelay = tutorialShown ? 1000 : IngameScreen.TUTORIAL_DURATION;
+        tutorialShown = true;
+
+        Game.getLoop().execute(initialSpawnDelay, () -> {
           spawner = new PartyGuestSpawner(getSpawnPoints(), 1000, 5);
           Game.getLoop().execute(10500, () -> {
             spawner.setInterval(11000);

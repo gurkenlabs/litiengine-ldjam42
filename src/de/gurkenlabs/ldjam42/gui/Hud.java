@@ -144,32 +144,35 @@ public final class Hud extends GuiComponent {
     double clubbingWidth = g.getFontMetrics().stringWidth(time);
     g.setColor(Color.WHITE);
     TextRenderer.renderWithOutline(g, time, Game.getScreenManager().getResolution().getWidth() / 2.0 - clubbingWidth / 2, clubbingY, COLOR_OUTLINE, RenderingHints.VALUE_ANTIALIAS_ON);
-
-    // render satisfaction bar 
+    
     final double satisfactionBarHeight = 20;
-    double barWidth = guest.getSatisfaction() * clubbingBgWidth;
-    double barBgX = Game.getScreenManager().getResolution().getWidth() / 2.0 - barWidth / 2.0;
-    double barY = clubbingBgY - PADDING - satisfactionBarHeight;
-    Rectangle2D satisfaction = new Rectangle2D.Double(barBgX, barY, barWidth, satisfactionBarHeight);
-    Color color = COLOR_BAD;
-    if (guest.getSatisfaction() > 0.25) {
-      color = COLOR_AVG;
+    
+    // render satisfaction bar 
+    if (!guest.isNaked()) {
+      double barWidth = guest.getSatisfaction() * clubbingBgWidth;
+      double barBgX = Game.getScreenManager().getResolution().getWidth() / 2.0 - barWidth / 2.0;
+      double barY = clubbingBgY - PADDING - satisfactionBarHeight;
+      Rectangle2D satisfaction = new Rectangle2D.Double(barBgX, barY, barWidth, satisfactionBarHeight);
+      Color color = COLOR_BAD;
+      if (guest.getSatisfaction() > 0.25) {
+        color = COLOR_AVG;
+      }
+
+      if (guest.getSatisfaction() > 0.5) {
+        color = COLOR_GOOD;
+      }
+
+      g.setColor(color);
+      ShapeRenderer.render(g, satisfaction);
+
+      g.setFont(new JPanel().getFont().deriveFont(16f));
+      g.setColor(Color.WHITE);
+      String satText = (int) (guest.getSatisfaction() * 100) + "%";
+      double satTextX = Game.getScreenManager().getResolution().getWidth() / 2.0 - g.getFontMetrics().stringWidth(satText) / 2.0;
+      double satTextY = barY + g.getFontMetrics().getHeight() * 0.75;
+      TextRenderer.renderWithOutline(g, satText, satTextX, satTextY, COLOR_OUTLINE, RenderingHints.VALUE_ANTIALIAS_ON);
     }
-
-    if (guest.getSatisfaction() > 0.7) {
-      color = COLOR_GOOD;
-    }
-
-    g.setColor(color);
-    ShapeRenderer.render(g, satisfaction);
-
-    g.setFont(new JPanel().getFont().deriveFont(16f));
-    g.setColor(Color.WHITE);
-    String satText = (int) (guest.getSatisfaction() * 100) + "%";
-    double satTextX = Game.getScreenManager().getResolution().getWidth() / 2.0 - g.getFontMetrics().stringWidth(satText) / 2.0;
-    double satTextY = barY + g.getFontMetrics().getHeight() * 0.75;
-    TextRenderer.renderWithOutline(g, satText, satTextX, satTextY, COLOR_OUTLINE, RenderingHints.VALUE_ANTIALIAS_ON);
-
+    
     // render name bg
     g.setFont(Program.GUI_FONT_SMALL.deriveFont(36f));
     fm = g.getFontMetrics();
@@ -282,10 +285,10 @@ public final class Hud extends GuiComponent {
     }
 
     final Point2D location = new Point2D.Double(
-        Game.getCamera().getViewPortDimensionCenter(guest).getX() - SMILEY_AVG.getWidth() * 0.25 / 2.0 - 4,
+        Game.getCamera().getViewPortDimensionCenter(guest).getX() - SMILEY_GOOD.getWidth() * 0.25 / 2.0 - 4,
         Game.getCamera().getViewPortDimensionCenter(guest).getY() - guest.getHeight() * 3 / 4);
 
-    if (guest.getSatisfaction() > .7) {
+    if (guest.getSatisfaction() > .5) {
       ImageRenderer.renderScaled(g, SMILEY_GOOD, location, 0.25);
       g.setRenderingHints(old);
       return;
