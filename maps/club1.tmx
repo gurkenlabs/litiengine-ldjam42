@@ -299,7 +299,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup name="lights">
+ <objectgroup name="lights" visible="0">
   <properties>
    <property name="layerOrder" value="8"/>
   </properties>
@@ -727,6 +727,12 @@
     <property name="spritesheetName" value="dj"/>
    </properties>
   </object>
+  <object id="4445" type="COLLISIONBOX" x="192" y="16" width="32" height="16">
+   <properties>
+    <property name="isObstacle" type="isObstacle" value="true"/>
+   </properties>
+   <polyline/>
+  </object>
  </objectgroup>
  <objectgroup name="props" visible="0">
   <properties>
@@ -950,7 +956,7 @@
    <polyline points=""/>
   </object>
  </objectgroup>
- <objectgroup name="collision" visible="0">
+ <objectgroup name="collision" visible="1">
   <properties>
    <property name="layerOrder" value="2"/>
   </properties>
@@ -1056,6 +1062,36 @@
     <property name="tags" value="area_dance"/>
    </properties>
    <polyline points=""/>
+  </object>
+  <object id="4454" type="COLLISIONBOX" x="192" y="16" width="32" height="16">
+   <properties>
+    <property name="isObstacle" type="isObstacle" value="true"/>
+   </properties>
+   <polyline/>
+  </object>
+  <object id="4457" type="COLLISIONBOX" x="272" y="16" width="32" height="16">
+   <properties>
+    <property name="isObstacle" type="isObstacle" value="true"/>
+   </properties>
+   <polyline/>
+  </object>
+  <object id="4460" type="COLLISIONBOX" x="112" y="16" width="32" height="16">
+   <properties>
+    <property name="isObstacle" type="isObstacle" value="true"/>
+   </properties>
+   <polyline/>
+  </object>
+  <object id="4463" type="COLLISIONBOX" x="48" y="16" width="16" height="16">
+   <properties>
+    <property name="isObstacle" type="isObstacle" value="true"/>
+   </properties>
+   <polyline/>
+  </object>
+  <object id="4471" type="COLLISIONBOX" x="352" y="16" width="16" height="16">
+   <properties>
+    <property name="isObstacle" type="isObstacle" value="true"/>
+   </properties>
+   <polyline/>
   </object>
  </objectgroup>
  <objectgroup name="spawnpoints" visible="0">

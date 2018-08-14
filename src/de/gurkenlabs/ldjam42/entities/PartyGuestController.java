@@ -11,7 +11,6 @@ import de.gurkenlabs.ldjam42.ClubArea;
 import de.gurkenlabs.ldjam42.GameManager;
 import de.gurkenlabs.ldjam42.GameState;
 import de.gurkenlabs.ldjam42.TileUtilities;
-import de.gurkenlabs.ldjam42.graphics.CoinEmitter;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.entities.MapArea;
 import de.gurkenlabs.litiengine.environment.tilemap.MapUtilities;
