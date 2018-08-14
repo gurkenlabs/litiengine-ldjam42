@@ -4,5 +4,6 @@ public enum GameState {
   MAINMENU,
   INGAME,
   PAUSED,
-  ENDSCREEN
+  ENDSCREEN,
+  TUTORIAL
 }
