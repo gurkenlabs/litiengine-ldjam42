@@ -46,6 +46,8 @@ public final class GameManager {
   // 06:00 am the next day
   public static long END_TIME = 104400000;
 
+  private static int FLASH_INTERVAL_START = 30000;
+
   private static final Sound SELECT = Sound.get("select.ogg");
 
   private static IntCombinator featurePermutations;
@@ -53,7 +55,7 @@ public final class GameManager {
   private static IEnvironment goin;
   private static long startedTicks;
   private static long lastFlash;
-  private static int flashInterval = 30000;
+  private static int flashInterval;
   private static EntitySpawner<PartyGuest> spawner;
 
   private static EnumMap<ClubArea, Collection<MapArea>> areas = new EnumMap<>(ClubArea.class);
@@ -115,6 +117,7 @@ public final class GameManager {
       @Override
       public void environmentLoaded(IEnvironment environment) {
         int initialSpawnDelay = tutorialShown ? 1000 : IngameScreen.TUTORIAL_DURATION;
+        flashInterval = FLASH_INTERVAL_START;
         tutorialShown = true;
 
         Game.getLoop().execute(initialSpawnDelay, () -> {
