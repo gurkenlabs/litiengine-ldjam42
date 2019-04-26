@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="26" height="22" tilewidth="16" tileheight="16" nextobjectid="1" name="club1">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="26" height="22" tilewidth="16" tileheight="16" infinite="0" nextobjectid="1" nextlayerid="0" name="club1">
  <properties>
   <property name="AMBIENTALPHA" value="60"/>
-  <property name="AMBIENTLIGHT" value="#006666"/>
+  <property name="AMBIENTLIGHT" value="#64006666"/>
+  <property name="GRAVITY" type="int" value="0"/>
+  <property name="SHADOWCOLOR" value="#ffffff"/>
  </properties>
  <tileset firstgid="1" source="tiles-club.tsx"/>
- <layer name="ground" width="26" height="22">
+ <layer id="0" name="ground" width="26" height="22">
   <properties>
    <property name="layerOrder" value="0"/>
   </properties>
@@ -34,7 +36,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer name="ground-detail1" width="26" height="22">
+ <layer id="0" name="ground-detail1" width="26" height="22">
   <properties>
    <property name="layerOrder" value="1"/>
   </properties>
@@ -63,7 +65,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer name="ground-detail2" width="26" height="22">
+ <layer id="0" name="ground-detail2" width="26" height="22">
   <properties>
    <property name="layerOrder" value="2"/>
   </properties>
@@ -92,7 +94,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer name="wall" width="26" height="22">
+ <layer id="0" name="wall" width="26" height="22">
   <properties>
    <property name="layerOrder" value="0"/>
   </properties>
@@ -121,7 +123,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer name="wall-detail1" width="26" height="22">
+ <layer id="0" name="wall-detail1" width="26" height="22">
   <properties>
    <property name="layerOrder" value="0"/>
   </properties>
@@ -150,7 +152,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer name="wall-detail2" width="26" height="22">
+ <layer id="0" name="wall-detail2" width="26" height="22">
   <properties>
    <property name="layerOrder" value="0"/>
   </properties>
@@ -179,7 +181,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,45,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer name="wall-overlay" width="26" height="22">
+ <layer id="0" name="wall-overlay" width="26" height="22">
   <properties>
    <property name="RENDERTYPE" value="OVERLAY"/>
    <property name="layerOrder" value="0"/>
@@ -209,7 +211,7 @@
 54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54
 </data>
  </layer>
- <layer name="wall-overlay1" width="26" height="22">
+ <layer id="0" name="wall-overlay1" width="26" height="22">
   <properties>
    <property name="RENDERTYPE" value="OVERLAY"/>
    <property name="layerOrder" value="0"/>
@@ -239,7 +241,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,45,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer name="wall-overlay2" width="26" height="22">
+ <layer id="0" name="wall-overlay2" width="26" height="22">
   <properties>
    <property name="RENDERTYPE" value="OVERLAY"/>
    <property name="layerOrder" value="0"/>
@@ -269,7 +271,7 @@
 89,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,91
 </data>
  </layer>
- <layer name="overlay" width="26" height="22">
+ <layer id="0" name="overlay" width="26" height="22">
   <properties>
    <property name="RENDERTYPE" value="OVERLAY"/>
    <property name="layerOrder" value="0"/>
@@ -299,11 +301,11 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup name="lights" visible="0">
+ <objectgroup id="0" name="lights" visible="1">
   <properties>
    <property name="layerOrder" value="8"/>
   </properties>
-  <object id="314" type="LIGHTSOURCE" x="119" y="112" width="48" height="48">
+  <object id="1" type="LIGHTSOURCE" x="119" y="112" width="48" height="48">
    <properties>
     <property name="lightActive" value="true"/>
     <property name="lightBrightness" value="255"/>
@@ -319,7 +321,7 @@
     <property name="pulseDuration" value="0"/>
    </properties>
   </object>
-  <object id="2983" type="LIGHTSOURCE" x="182" y="112" width="48" height="48">
+  <object id="2" type="LIGHTSOURCE" x="182" y="112" width="48" height="48">
    <properties>
     <property name="lightActive" value="true"/>
     <property name="lightBrightness" value="255"/>
@@ -334,9 +336,8 @@
     <property name="minTimeOn" value="0"/>
     <property name="pulseDuration" value="0"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="3013" type="LIGHTSOURCE" x="153" y="133" width="48" height="48">
+  <object id="3" type="LIGHTSOURCE" x="153" y="133" width="48" height="48">
    <properties>
     <property name="lightActive" value="true"/>
     <property name="lightBrightness" value="255"/>
@@ -351,9 +352,8 @@
     <property name="minTimeOn" value="200"/>
     <property name="pulseDuration" value="0"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="3032" type="LIGHTSOURCE" x="159" y="64" width="43" height="45">
+  <object id="4" type="LIGHTSOURCE" x="159" y="64" width="43" height="45">
    <properties>
     <property name="lightActive" value="true"/>
     <property name="lightBrightness" value="255"/>
@@ -368,9 +368,8 @@
     <property name="minTimeOn" value="200"/>
     <property name="pulseDuration" value="200"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="3136" type="LIGHTSOURCE" x="221" y="64" width="43" height="45">
+  <object id="5" type="LIGHTSOURCE" x="221" y="64" width="43" height="45">
    <properties>
     <property name="lightActive" value="true"/>
     <property name="lightBrightness" value="255"/>
@@ -385,9 +384,8 @@
     <property name="minTimeOn" value="200"/>
     <property name="pulseDuration" value="200"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="3139" type="LIGHTSOURCE" x="190" y="64" width="43" height="45">
+  <object id="6" type="LIGHTSOURCE" x="190" y="64" width="43" height="45">
    <properties>
     <property name="lightActive" value="true"/>
     <property name="lightBrightness" value="255"/>
@@ -397,9 +395,8 @@
     <property name="lightIntensity" value="100"/>
     <property name="lightShape" value="ellipse"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="3142" type="LIGHTSOURCE" x="16" y="0" width="384" height="64">
+  <object id="7" type="LIGHTSOURCE" x="16" y="0" width="384" height="64">
    <properties>
     <property name="lightActive" value="true"/>
     <property name="lightBrightness" value="150"/>
@@ -408,7 +405,7 @@
     <property name="lightShape" value="rectangle"/>
    </properties>
   </object>
-  <object id="3180" type="LIGHTSOURCE" x="185" y="0" width="43" height="45">
+  <object id="8" type="LIGHTSOURCE" x="185" y="0" width="43" height="45">
    <properties>
     <property name="lightActive" value="true"/>
     <property name="lightBrightness" value="255"/>
@@ -423,9 +420,8 @@
     <property name="minTimeOn" value="1000"/>
     <property name="pulseDuration" value="2000"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="3189" type="LIGHTSOURCE" x="112" y="240" width="48" height="96">
+  <object id="9" type="LIGHTSOURCE" x="112" y="240" width="48" height="96">
    <properties>
     <property name="lightActive" value="true"/>
     <property name="lightBrightness" value="255"/>
@@ -435,9 +431,8 @@
     <property name="lightIntensity" value="100"/>
     <property name="lightShape" value="rectangle"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="3618" type="LIGHTSOURCE" x="160" y="256" width="96" height="80">
+  <object id="10" type="LIGHTSOURCE" x="160" y="256" width="96" height="80">
    <properties>
     <property name="lightActive" value="true"/>
     <property name="lightBrightness" value="255"/>
@@ -447,9 +442,8 @@
     <property name="lightIntensity" value="100"/>
     <property name="lightShape" value="rectangle"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="3626" type="LIGHTSOURCE" x="256" y="240" width="48" height="96">
+  <object id="11" type="LIGHTSOURCE" x="256" y="240" width="48" height="96">
    <properties>
     <property name="lightActive" value="true"/>
     <property name="lightBrightness" value="255"/>
@@ -459,9 +453,8 @@
     <property name="lightIntensity" value="100"/>
     <property name="lightShape" value="rectangle"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="3637" type="LIGHTSOURCE" x="160" y="240" width="96" height="32">
+  <object id="12" type="LIGHTSOURCE" x="160" y="240" width="96" height="32">
    <properties>
     <property name="lightActive" value="true"/>
     <property name="lightBrightness" value="255"/>
@@ -476,247 +469,232 @@
     <property name="minTimeOn" value="200"/>
     <property name="pulseDuration" value="1000"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="4166" type="LIGHTSOURCE" x="153" y="178" width="48" height="48">
+  <object id="13" type="LIGHTSOURCE" x="153" y="178" width="48" height="48">
    <properties>
-    <property name="lightActive" type="lightActive" value="true"/>
-    <property name="lightBrightness" type="lightBrightness" value="255"/>
-    <property name="lightColor" type="lightColor" value="#ffffcc"/>
-    <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-    <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-    <property name="lightIntensity" type="lightIntensity" value="100"/>
-    <property name="lightShape" type="lightShape" value="ellipse"/>
-    <property name="maxTimeOff" type="maxTimeOff" value="200"/>
-    <property name="maxTimeOn" type="maxTimeOn" value="500"/>
-    <property name="minTimeOff" type="minTimeOff" value="100"/>
-    <property name="minTimeOn" type="minTimeOn" value="200"/>
-    <property name="pulseDuration" type="pulseDuration" value="0"/>
+    <property name="lightActive" value="true"/>
+    <property name="lightBrightness" value="255"/>
+    <property name="lightColor" value="#ffffcc"/>
+    <property name="lightFocusOffsetX" value="0.0"/>
+    <property name="lightFocusOffsetY" value="0.0"/>
+    <property name="lightIntensity" value="100"/>
+    <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="500"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="0"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4171" type="LIGHTSOURCE" x="212" y="178" width="48" height="48">
+  <object id="14" type="LIGHTSOURCE" x="212" y="178" width="48" height="48">
    <properties>
-    <property name="lightActive" type="lightActive" value="true"/>
-    <property name="lightBrightness" type="lightBrightness" value="255"/>
-    <property name="lightColor" type="lightColor" value="#ffffcc"/>
-    <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-    <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-    <property name="lightIntensity" type="lightIntensity" value="100"/>
-    <property name="lightShape" type="lightShape" value="ellipse"/>
-    <property name="maxTimeOff" type="maxTimeOff" value="200"/>
-    <property name="maxTimeOn" type="maxTimeOn" value="500"/>
-    <property name="minTimeOff" type="minTimeOff" value="100"/>
-    <property name="minTimeOn" type="minTimeOn" value="200"/>
-    <property name="pulseDuration" type="pulseDuration" value="0"/>
+    <property name="lightActive" value="true"/>
+    <property name="lightBrightness" value="255"/>
+    <property name="lightColor" value="#ffffcc"/>
+    <property name="lightFocusOffsetX" value="0.0"/>
+    <property name="lightFocusOffsetY" value="0.0"/>
+    <property name="lightIntensity" value="100"/>
+    <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="500"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="0"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4176" type="LIGHTSOURCE" x="212" y="133" width="48" height="48">
+  <object id="15" type="LIGHTSOURCE" x="212" y="133" width="48" height="48">
    <properties>
-    <property name="lightActive" type="lightActive" value="true"/>
-    <property name="lightBrightness" type="lightBrightness" value="255"/>
-    <property name="lightColor" type="lightColor" value="#ffffcc"/>
-    <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-    <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-    <property name="lightIntensity" type="lightIntensity" value="100"/>
-    <property name="lightShape" type="lightShape" value="ellipse"/>
-    <property name="maxTimeOff" type="maxTimeOff" value="200"/>
-    <property name="maxTimeOn" type="maxTimeOn" value="500"/>
-    <property name="minTimeOff" type="minTimeOff" value="100"/>
-    <property name="minTimeOn" type="minTimeOn" value="200"/>
-    <property name="pulseDuration" type="pulseDuration" value="0"/>
+    <property name="lightActive" value="true"/>
+    <property name="lightBrightness" value="255"/>
+    <property name="lightColor" value="#ffffcc"/>
+    <property name="lightFocusOffsetX" value="0.0"/>
+    <property name="lightFocusOffsetY" value="0.0"/>
+    <property name="lightIntensity" value="100"/>
+    <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="200"/>
+    <property name="maxTimeOn" value="500"/>
+    <property name="minTimeOff" value="100"/>
+    <property name="minTimeOn" value="200"/>
+    <property name="pulseDuration" value="0"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4292" type="LIGHTSOURCE" x="107" y="0" width="43" height="45">
+  <object id="16" type="LIGHTSOURCE" x="107" y="0" width="43" height="45">
    <properties>
-    <property name="lightActive" type="lightActive" value="true"/>
-    <property name="lightBrightness" type="lightBrightness" value="255"/>
-    <property name="lightColor" type="lightColor" value="#ffcc00"/>
-    <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-    <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
-    <property name="lightIntensity" type="lightIntensity" value="150"/>
-    <property name="lightShape" type="lightShape" value="ellipse"/>
-    <property name="maxTimeOff" type="maxTimeOff" value="0"/>
-    <property name="maxTimeOn" type="maxTimeOn" value="2000"/>
-    <property name="minTimeOff" type="minTimeOff" value="0"/>
-    <property name="minTimeOn" type="minTimeOn" value="1000"/>
-    <property name="pulseDuration" type="pulseDuration" value="2000"/>
+    <property name="lightActive" value="true"/>
+    <property name="lightBrightness" value="255"/>
+    <property name="lightColor" value="#ffcc00"/>
+    <property name="lightFocusOffsetX" value="0.0"/>
+    <property name="lightFocusOffsetY" value="-1.0"/>
+    <property name="lightIntensity" value="150"/>
+    <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="0"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="0"/>
+    <property name="minTimeOn" value="1000"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4295" type="LIGHTSOURCE" x="35" y="0" width="43" height="45">
+  <object id="17" type="LIGHTSOURCE" x="35" y="0" width="43" height="45">
    <properties>
-    <property name="lightActive" type="lightActive" value="true"/>
-    <property name="lightBrightness" type="lightBrightness" value="255"/>
-    <property name="lightColor" type="lightColor" value="#ffcc00"/>
-    <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-    <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
-    <property name="lightIntensity" type="lightIntensity" value="150"/>
-    <property name="lightShape" type="lightShape" value="ellipse"/>
-    <property name="maxTimeOff" type="maxTimeOff" value="0"/>
-    <property name="maxTimeOn" type="maxTimeOn" value="2000"/>
-    <property name="minTimeOff" type="minTimeOff" value="0"/>
-    <property name="minTimeOn" type="minTimeOn" value="1000"/>
-    <property name="pulseDuration" type="pulseDuration" value="2000"/>
+    <property name="lightActive" value="true"/>
+    <property name="lightBrightness" value="255"/>
+    <property name="lightColor" value="#ffcc00"/>
+    <property name="lightFocusOffsetX" value="0.0"/>
+    <property name="lightFocusOffsetY" value="-1.0"/>
+    <property name="lightIntensity" value="150"/>
+    <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="0"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="0"/>
+    <property name="minTimeOn" value="1000"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4300" type="LIGHTSOURCE" x="265" y="0" width="43" height="45">
+  <object id="18" type="LIGHTSOURCE" x="265" y="0" width="43" height="45">
    <properties>
-    <property name="lightActive" type="lightActive" value="true"/>
-    <property name="lightBrightness" type="lightBrightness" value="255"/>
-    <property name="lightColor" type="lightColor" value="#ffcc00"/>
-    <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-    <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
-    <property name="lightIntensity" type="lightIntensity" value="150"/>
-    <property name="lightShape" type="lightShape" value="ellipse"/>
-    <property name="maxTimeOff" type="maxTimeOff" value="0"/>
-    <property name="maxTimeOn" type="maxTimeOn" value="2000"/>
-    <property name="minTimeOff" type="minTimeOff" value="0"/>
-    <property name="minTimeOn" type="minTimeOn" value="1000"/>
-    <property name="pulseDuration" type="pulseDuration" value="2000"/>
+    <property name="lightActive" value="true"/>
+    <property name="lightBrightness" value="255"/>
+    <property name="lightColor" value="#ffcc00"/>
+    <property name="lightFocusOffsetX" value="0.0"/>
+    <property name="lightFocusOffsetY" value="-1.0"/>
+    <property name="lightIntensity" value="150"/>
+    <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="0"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="0"/>
+    <property name="minTimeOn" value="1000"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4303" type="LIGHTSOURCE" x="338" y="0" width="43" height="45">
+  <object id="19" type="LIGHTSOURCE" x="338" y="0" width="43" height="45">
    <properties>
-    <property name="lightActive" type="lightActive" value="true"/>
-    <property name="lightBrightness" type="lightBrightness" value="255"/>
-    <property name="lightColor" type="lightColor" value="#ffcc00"/>
-    <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-    <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="-1.0"/>
-    <property name="lightIntensity" type="lightIntensity" value="150"/>
-    <property name="lightShape" type="lightShape" value="ellipse"/>
-    <property name="maxTimeOff" type="maxTimeOff" value="0"/>
-    <property name="maxTimeOn" type="maxTimeOn" value="2000"/>
-    <property name="minTimeOff" type="minTimeOff" value="0"/>
-    <property name="minTimeOn" type="minTimeOn" value="1000"/>
-    <property name="pulseDuration" type="pulseDuration" value="2000"/>
+    <property name="lightActive" value="true"/>
+    <property name="lightBrightness" value="255"/>
+    <property name="lightColor" value="#ffcc00"/>
+    <property name="lightFocusOffsetX" value="0.0"/>
+    <property name="lightFocusOffsetY" value="-1.0"/>
+    <property name="lightIntensity" value="150"/>
+    <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="0"/>
+    <property name="maxTimeOn" value="2000"/>
+    <property name="minTimeOff" value="0"/>
+    <property name="minTimeOn" value="1000"/>
+    <property name="pulseDuration" value="2000"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4190" type="LIGHTSOURCE" x="250" y="111" width="48" height="48">
+  <object id="20" type="LIGHTSOURCE" x="250" y="111" width="48" height="48">
    <properties>
-    <property name="lightActive" type="lightActive" value="true"/>
-    <property name="lightBrightness" type="lightBrightness" value="255"/>
-    <property name="lightColor" type="lightColor" value="#ffff00"/>
-    <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-    <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-    <property name="lightIntensity" type="lightIntensity" value="150"/>
-    <property name="lightShape" type="lightShape" value="ellipse"/>
-    <property name="maxTimeOff" type="maxTimeOff" value="0"/>
-    <property name="maxTimeOn" type="maxTimeOn" value="0"/>
-    <property name="minTimeOff" type="minTimeOff" value="0"/>
-    <property name="minTimeOn" type="minTimeOn" value="0"/>
-    <property name="pulseDuration" type="pulseDuration" value="0"/>
+    <property name="lightActive" value="true"/>
+    <property name="lightBrightness" value="255"/>
+    <property name="lightColor" value="#ffff00"/>
+    <property name="lightFocusOffsetX" value="0.0"/>
+    <property name="lightFocusOffsetY" value="0.0"/>
+    <property name="lightIntensity" value="150"/>
+    <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="0"/>
+    <property name="maxTimeOn" value="0"/>
+    <property name="minTimeOff" value="0"/>
+    <property name="minTimeOn" value="0"/>
+    <property name="pulseDuration" value="0"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4424" type="LIGHTSOURCE" x="119" y="193" width="48" height="48">
+  <object id="21" type="LIGHTSOURCE" x="119" y="193" width="48" height="48">
    <properties>
-    <property name="lightActive" type="lightActive" value="true"/>
-    <property name="lightBrightness" type="lightBrightness" value="255"/>
-    <property name="lightColor" type="lightColor" value="#6666ff"/>
-    <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-    <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-    <property name="lightIntensity" type="lightIntensity" value="150"/>
-    <property name="lightShape" type="lightShape" value="ellipse"/>
-    <property name="maxTimeOff" type="maxTimeOff" value="0"/>
-    <property name="maxTimeOn" type="maxTimeOn" value="0"/>
-    <property name="minTimeOff" type="minTimeOff" value="0"/>
-    <property name="minTimeOn" type="minTimeOn" value="0"/>
-    <property name="pulseDuration" type="pulseDuration" value="0"/>
+    <property name="lightActive" value="true"/>
+    <property name="lightBrightness" value="255"/>
+    <property name="lightColor" value="#6666ff"/>
+    <property name="lightFocusOffsetX" value="0.0"/>
+    <property name="lightFocusOffsetY" value="0.0"/>
+    <property name="lightIntensity" value="150"/>
+    <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="0"/>
+    <property name="maxTimeOn" value="0"/>
+    <property name="minTimeOff" value="0"/>
+    <property name="minTimeOn" value="0"/>
+    <property name="pulseDuration" value="0"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4425" type="LIGHTSOURCE" x="182" y="193" width="48" height="48">
+  <object id="22" type="LIGHTSOURCE" x="182" y="193" width="48" height="48">
    <properties>
-    <property name="lightActive" type="lightActive" value="true"/>
-    <property name="lightBrightness" type="lightBrightness" value="255"/>
-    <property name="lightColor" type="lightColor" value="#cc00cc"/>
-    <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-    <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-    <property name="lightIntensity" type="lightIntensity" value="150"/>
-    <property name="lightShape" type="lightShape" value="ellipse"/>
-    <property name="maxTimeOff" type="maxTimeOff" value="0"/>
-    <property name="maxTimeOn" type="maxTimeOn" value="0"/>
-    <property name="minTimeOff" type="minTimeOff" value="0"/>
-    <property name="minTimeOn" type="minTimeOn" value="0"/>
-    <property name="pulseDuration" type="pulseDuration" value="0"/>
+    <property name="lightActive" value="true"/>
+    <property name="lightBrightness" value="255"/>
+    <property name="lightColor" value="#cc00cc"/>
+    <property name="lightFocusOffsetX" value="0.0"/>
+    <property name="lightFocusOffsetY" value="0.0"/>
+    <property name="lightIntensity" value="150"/>
+    <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="0"/>
+    <property name="maxTimeOn" value="0"/>
+    <property name="minTimeOff" value="0"/>
+    <property name="minTimeOn" value="0"/>
+    <property name="pulseDuration" value="0"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4426" type="LIGHTSOURCE" x="250" y="192" width="48" height="48">
+  <object id="23" type="LIGHTSOURCE" x="250" y="192" width="48" height="48">
    <properties>
-    <property name="lightActive" type="lightActive" value="true"/>
-    <property name="lightBrightness" type="lightBrightness" value="255"/>
-    <property name="lightColor" type="lightColor" value="#ffff00"/>
-    <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-    <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-    <property name="lightIntensity" type="lightIntensity" value="150"/>
-    <property name="lightShape" type="lightShape" value="ellipse"/>
-    <property name="maxTimeOff" type="maxTimeOff" value="0"/>
-    <property name="maxTimeOn" type="maxTimeOn" value="0"/>
-    <property name="minTimeOff" type="minTimeOff" value="0"/>
-    <property name="minTimeOn" type="minTimeOn" value="0"/>
-    <property name="pulseDuration" type="pulseDuration" value="0"/>
+    <property name="lightActive" value="true"/>
+    <property name="lightBrightness" value="255"/>
+    <property name="lightColor" value="#ffff00"/>
+    <property name="lightFocusOffsetX" value="0.0"/>
+    <property name="lightFocusOffsetY" value="0.0"/>
+    <property name="lightIntensity" value="150"/>
+    <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="0"/>
+    <property name="maxTimeOn" value="0"/>
+    <property name="minTimeOff" value="0"/>
+    <property name="minTimeOn" value="0"/>
+    <property name="pulseDuration" value="0"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4439" type="LIGHTSOURCE" x="119" y="150" width="48" height="48">
+  <object id="24" type="LIGHTSOURCE" x="119" y="150" width="48" height="48">
    <properties>
-    <property name="lightActive" type="lightActive" value="true"/>
-    <property name="lightBrightness" type="lightBrightness" value="255"/>
-    <property name="lightColor" type="lightColor" value="#6666ff"/>
-    <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-    <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-    <property name="lightIntensity" type="lightIntensity" value="150"/>
-    <property name="lightShape" type="lightShape" value="ellipse"/>
-    <property name="maxTimeOff" type="maxTimeOff" value="0"/>
-    <property name="maxTimeOn" type="maxTimeOn" value="0"/>
-    <property name="minTimeOff" type="minTimeOff" value="0"/>
-    <property name="minTimeOn" type="minTimeOn" value="0"/>
-    <property name="pulseDuration" type="pulseDuration" value="0"/>
+    <property name="lightActive" value="true"/>
+    <property name="lightBrightness" value="255"/>
+    <property name="lightColor" value="#6666ff"/>
+    <property name="lightFocusOffsetX" value="0.0"/>
+    <property name="lightFocusOffsetY" value="0.0"/>
+    <property name="lightIntensity" value="150"/>
+    <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="0"/>
+    <property name="maxTimeOn" value="0"/>
+    <property name="minTimeOff" value="0"/>
+    <property name="minTimeOn" value="0"/>
+    <property name="pulseDuration" value="0"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4440" type="LIGHTSOURCE" x="182" y="150" width="48" height="48">
+  <object id="25" type="LIGHTSOURCE" x="182" y="150" width="48" height="48">
    <properties>
-    <property name="lightActive" type="lightActive" value="true"/>
-    <property name="lightBrightness" type="lightBrightness" value="255"/>
-    <property name="lightColor" type="lightColor" value="#cc00cc"/>
-    <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-    <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-    <property name="lightIntensity" type="lightIntensity" value="150"/>
-    <property name="lightShape" type="lightShape" value="ellipse"/>
-    <property name="maxTimeOff" type="maxTimeOff" value="0"/>
-    <property name="maxTimeOn" type="maxTimeOn" value="0"/>
-    <property name="minTimeOff" type="minTimeOff" value="0"/>
-    <property name="minTimeOn" type="minTimeOn" value="0"/>
-    <property name="pulseDuration" type="pulseDuration" value="0"/>
+    <property name="lightActive" value="true"/>
+    <property name="lightBrightness" value="255"/>
+    <property name="lightColor" value="#cc00cc"/>
+    <property name="lightFocusOffsetX" value="0.0"/>
+    <property name="lightFocusOffsetY" value="0.0"/>
+    <property name="lightIntensity" value="150"/>
+    <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="0"/>
+    <property name="maxTimeOn" value="0"/>
+    <property name="minTimeOff" value="0"/>
+    <property name="minTimeOn" value="0"/>
+    <property name="pulseDuration" value="0"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4441" type="LIGHTSOURCE" x="250" y="149" width="48" height="48">
+  <object id="26" type="LIGHTSOURCE" x="250" y="149" width="48" height="48">
    <properties>
-    <property name="lightActive" type="lightActive" value="true"/>
-    <property name="lightBrightness" type="lightBrightness" value="255"/>
-    <property name="lightColor" type="lightColor" value="#ffff00"/>
-    <property name="lightFocusOffsetX" type="lightFocusOffsetX" value="0.0"/>
-    <property name="lightFocusOffsetY" type="lightFocusOffsetY" value="0.0"/>
-    <property name="lightIntensity" type="lightIntensity" value="150"/>
-    <property name="lightShape" type="lightShape" value="ellipse"/>
-    <property name="maxTimeOff" type="maxTimeOff" value="0"/>
-    <property name="maxTimeOn" type="maxTimeOn" value="0"/>
-    <property name="minTimeOff" type="minTimeOff" value="0"/>
-    <property name="minTimeOn" type="minTimeOn" value="0"/>
-    <property name="pulseDuration" type="pulseDuration" value="0"/>
+    <property name="lightActive" value="true"/>
+    <property name="lightBrightness" value="255"/>
+    <property name="lightColor" value="#ffff00"/>
+    <property name="lightFocusOffsetX" value="0.0"/>
+    <property name="lightFocusOffsetY" value="0.0"/>
+    <property name="lightIntensity" value="150"/>
+    <property name="lightShape" value="ellipse"/>
+    <property name="maxTimeOff" value="0"/>
+    <property name="maxTimeOn" value="0"/>
+    <property name="minTimeOff" value="0"/>
+    <property name="minTimeOn" value="0"/>
+    <property name="pulseDuration" value="0"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4442" name="" type="PROP" x="177" y="77" width="62" height="35">
+  <object id="27" type="PROP" x="177" y="77" width="62" height="35">
    <properties>
     <property name="addShadow" value="true"/>
     <property name="collision" value="true"/>
@@ -727,18 +705,17 @@
     <property name="spritesheetName" value="dj"/>
    </properties>
   </object>
-  <object id="4445" type="COLLISIONBOX" x="192" y="16" width="32" height="16">
+  <object id="28" type="COLLISIONBOX" x="192" y="16" width="32" height="16">
    <properties>
-    <property name="isObstacle" type="isObstacle" value="true"/>
+    <property name="isObstacle" value="true"/>
    </properties>
-   <polyline/>
   </object>
  </objectgroup>
- <objectgroup name="props" visible="0">
+ <objectgroup id="0" name="props" visible="1">
   <properties>
    <property name="layerOrder" value="9"/>
   </properties>
-  <object id="4019" name="" type="PROP" x="160" y="76" width="18" height="36">
+  <object id="29" type="PROP" x="160" y="76" width="18" height="36">
    <properties>
     <property name="addShadow" value="true"/>
     <property name="collision" value="true"/>
@@ -748,45 +725,41 @@
     <property name="isObstacle" value="true"/>
     <property name="spritesheetName" value="speakers"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4042" name="" type="PROP" x="238" y="76" width="18" height="36">
+  <object id="30" type="PROP" x="238" y="76" width="18" height="36">
    <properties>
-    <property name="addShadow" type="addShadow" value="true"/>
-    <property name="collision" type="collision" value="true"/>
-    <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
-    <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="18.0"/>
-    <property name="indestructible" type="indestructible" value="false"/>
-    <property name="isObstacle" type="isObstacle" value="true"/>
-    <property name="spritesheetName" type="spritesheetName" value="speakers"/>
+    <property name="addShadow" value="true"/>
+    <property name="collision" value="true"/>
+    <property name="collisionboxHeightFactor" value="16.0"/>
+    <property name="collisionboxWidthFactor" value="18.0"/>
+    <property name="indestructible" value="false"/>
+    <property name="isObstacle" value="true"/>
+    <property name="spritesheetName" value="speakers"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4094" name="" type="PROP" x="78" y="76" width="18" height="36">
+  <object id="31" type="PROP" x="78" y="76" width="18" height="36">
    <properties>
-    <property name="addShadow" type="addShadow" value="true"/>
-    <property name="collision" type="collision" value="true"/>
-    <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
-    <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="18.0"/>
-    <property name="indestructible" type="indestructible" value="false"/>
-    <property name="isObstacle" type="isObstacle" value="true"/>
-    <property name="spritesheetName" type="spritesheetName" value="speakers"/>
+    <property name="addShadow" value="true"/>
+    <property name="collision" value="true"/>
+    <property name="collisionboxHeightFactor" value="16.0"/>
+    <property name="collisionboxWidthFactor" value="18.0"/>
+    <property name="indestructible" value="false"/>
+    <property name="isObstacle" value="true"/>
+    <property name="spritesheetName" value="speakers"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4098" name="" type="PROP" x="320" y="76" width="18" height="36">
+  <object id="32" type="PROP" x="320" y="76" width="18" height="36">
    <properties>
-    <property name="addShadow" type="addShadow" value="true"/>
-    <property name="collision" type="collision" value="true"/>
-    <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
-    <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="18.0"/>
-    <property name="indestructible" type="indestructible" value="false"/>
-    <property name="isObstacle" type="isObstacle" value="true"/>
-    <property name="spritesheetName" type="spritesheetName" value="speakers"/>
+    <property name="addShadow" value="true"/>
+    <property name="collision" value="true"/>
+    <property name="collisionboxHeightFactor" value="16.0"/>
+    <property name="collisionboxWidthFactor" value="18.0"/>
+    <property name="indestructible" value="false"/>
+    <property name="isObstacle" value="true"/>
+    <property name="spritesheetName" value="speakers"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4101" name="" type="PROP" x="192" y="14" width="16" height="10">
+  <object id="33" type="PROP" x="192" y="14" width="16" height="10">
    <properties>
     <property name="addShadow" value="true"/>
     <property name="collision" value="true"/>
@@ -796,315 +769,268 @@
     <property name="spritesheetName" value="couch"/>
    </properties>
   </object>
-  <object id="4134" name="" type="PROP" x="208" y="14" width="16" height="10">
+  <object id="34" type="PROP" x="208" y="14" width="16" height="10">
    <properties>
-    <property name="addShadow" type="addShadow" value="true"/>
-    <property name="collision" type="collision" value="true"/>
-    <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
-    <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="16.0"/>
-    <property name="indestructible" type="indestructible" value="false"/>
-    <property name="spritesheetName" type="spritesheetName" value="couch"/>
+    <property name="addShadow" value="true"/>
+    <property name="collision" value="true"/>
+    <property name="collisionboxHeightFactor" value="16.0"/>
+    <property name="collisionboxWidthFactor" value="16.0"/>
+    <property name="indestructible" value="false"/>
+    <property name="spritesheetName" value="couch"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4137" name="" type="PROP" x="288" y="14" width="16" height="10">
+  <object id="35" type="PROP" x="288" y="14" width="16" height="10">
    <properties>
-    <property name="addShadow" type="addShadow" value="true"/>
-    <property name="collision" type="collision" value="true"/>
-    <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
-    <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="16.0"/>
-    <property name="indestructible" type="indestructible" value="false"/>
-    <property name="spritesheetName" type="spritesheetName" value="couch"/>
+    <property name="addShadow" value="true"/>
+    <property name="collision" value="true"/>
+    <property name="collisionboxHeightFactor" value="16.0"/>
+    <property name="collisionboxWidthFactor" value="16.0"/>
+    <property name="indestructible" value="false"/>
+    <property name="spritesheetName" value="couch"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4140" name="" type="PROP" x="352" y="14" width="16" height="10">
+  <object id="36" type="PROP" x="352" y="14" width="16" height="10">
    <properties>
-    <property name="addShadow" type="addShadow" value="true"/>
-    <property name="collision" type="collision" value="true"/>
-    <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
-    <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="16.0"/>
-    <property name="indestructible" type="indestructible" value="false"/>
-    <property name="spritesheetName" type="spritesheetName" value="couch"/>
+    <property name="addShadow" value="true"/>
+    <property name="collision" value="true"/>
+    <property name="collisionboxHeightFactor" value="16.0"/>
+    <property name="collisionboxWidthFactor" value="16.0"/>
+    <property name="indestructible" value="false"/>
+    <property name="spritesheetName" value="couch"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4143" name="" type="PROP" x="112" y="14" width="16" height="10">
+  <object id="37" type="PROP" x="112" y="14" width="16" height="10">
    <properties>
-    <property name="addShadow" type="addShadow" value="true"/>
-    <property name="collision" type="collision" value="true"/>
-    <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
-    <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="16.0"/>
-    <property name="indestructible" type="indestructible" value="false"/>
-    <property name="spritesheetName" type="spritesheetName" value="couch"/>
+    <property name="addShadow" value="true"/>
+    <property name="collision" value="true"/>
+    <property name="collisionboxHeightFactor" value="16.0"/>
+    <property name="collisionboxWidthFactor" value="16.0"/>
+    <property name="indestructible" value="false"/>
+    <property name="spritesheetName" value="couch"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4146" name="" type="PROP" x="48" y="14" width="16" height="10">
+  <object id="38" type="PROP" x="48" y="14" width="16" height="10">
    <properties>
-    <property name="addShadow" type="addShadow" value="true"/>
-    <property name="collision" type="collision" value="true"/>
-    <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
-    <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="16.0"/>
-    <property name="indestructible" type="indestructible" value="false"/>
-    <property name="spritesheetName" type="spritesheetName" value="couch"/>
+    <property name="addShadow" value="true"/>
+    <property name="collision" value="true"/>
+    <property name="collisionboxHeightFactor" value="16.0"/>
+    <property name="collisionboxWidthFactor" value="16.0"/>
+    <property name="indestructible" value="false"/>
+    <property name="spritesheetName" value="couch"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4149" name="" type="PROP" x="128" y="14" width="16" height="10">
+  <object id="39" type="PROP" x="128" y="14" width="16" height="10">
    <properties>
-    <property name="addShadow" type="addShadow" value="true"/>
-    <property name="collision" type="collision" value="true"/>
-    <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
-    <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="16.0"/>
-    <property name="indestructible" type="indestructible" value="false"/>
-    <property name="spritesheetName" type="spritesheetName" value="couch"/>
+    <property name="addShadow" value="true"/>
+    <property name="collision" value="true"/>
+    <property name="collisionboxHeightFactor" value="16.0"/>
+    <property name="collisionboxWidthFactor" value="16.0"/>
+    <property name="indestructible" value="false"/>
+    <property name="spritesheetName" value="couch"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4152" name="" type="PROP" x="272" y="14" width="16" height="10">
+  <object id="40" type="PROP" x="272" y="14" width="16" height="10">
    <properties>
-    <property name="addShadow" type="addShadow" value="true"/>
-    <property name="collision" type="collision" value="true"/>
-    <property name="collisionboxHeightFactor" type="collisionboxHeightFactor" value="16.0"/>
-    <property name="collisionboxWidthFactor" type="collisionboxWidthFactor" value="16.0"/>
-    <property name="indestructible" type="indestructible" value="false"/>
-    <property name="spritesheetName" type="spritesheetName" value="couch"/>
+    <property name="addShadow" value="true"/>
+    <property name="collision" value="true"/>
+    <property name="collisionboxHeightFactor" value="16.0"/>
+    <property name="collisionboxWidthFactor" value="16.0"/>
+    <property name="indestructible" value="false"/>
+    <property name="spritesheetName" value="couch"/>
    </properties>
-   <polyline/>
   </object>
  </objectgroup>
- <objectgroup color="#00ffcc" name="areas" visible="0">
+ <objectgroup color="#00ffcc" id="0" name="areas" visible="1">
   <properties>
    <property name="layerOrder" value="1"/>
   </properties>
-  <object id="67" type="AREA" x="112" y="256" width="192" height="80">
+  <object id="41" type="AREA" x="112" y="256" width="192" height="80">
    <properties>
     <property name="tags" value="area_entry"/>
    </properties>
   </object>
-  <object id="75" type="AREA" x="112" y="96" width="192" height="144">
+  <object id="42" type="AREA" x="112" y="96" width="192" height="144">
    <properties>
     <property name="tags" value="area_dance"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="102" type="AREA" x="16" y="16" width="384" height="48">
+  <object id="43" type="AREA" x="16" y="16" width="384" height="48">
    <properties>
     <property name="tags" value="area_chill"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="118" type="AREA" x="16" y="96" width="80" height="240">
+  <object id="44" type="AREA" x="16" y="96" width="80" height="240">
    <properties>
     <property name="tags" value="area_drink"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="152" type="AREA" x="320" y="96" width="80" height="240">
+  <object id="45" type="AREA" x="320" y="96" width="80" height="240">
    <properties>
     <property name="tags" value="area_food"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="200" type="AREA" x="304" y="160" width="16" height="48">
+  <object id="46" type="AREA" x="304" y="160" width="16" height="48">
    <properties>
     <property name="tags" value="area_food,transition"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="204" type="AREA" x="96" y="288" width="16" height="32">
+  <object id="47" type="AREA" x="96" y="288" width="16" height="32">
    <properties>
     <property name="tags" value="area_entry"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="210" type="AREA" x="96" y="160" width="16" height="48">
+  <object id="48" type="AREA" x="96" y="160" width="16" height="48">
    <properties>
     <property name="tags" value="area_drink,transition"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="214" type="AREA" x="128" y="64" width="32" height="32">
+  <object id="49" type="AREA" x="128" y="64" width="32" height="32">
    <properties>
     <property name="tags" value="area_chill,transition"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="224" type="AREA" x="352" y="80" width="32" height="16">
+  <object id="50" type="AREA" x="352" y="80" width="32" height="16">
    <properties>
     <property name="tags" value="area_food,transition"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="232" type="AREA" x="32" y="64" width="32" height="16">
+  <object id="51" type="AREA" x="32" y="64" width="32" height="16">
    <properties>
     <property name="tags" value="area_drink,transition"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="240" type="AREA" x="304" y="288" width="16" height="32">
+  <object id="52" type="AREA" x="304" y="288" width="16" height="32">
    <properties>
     <property name="tags" value="area_entry"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="259" type="AREA" x="256" y="64" width="32" height="32">
+  <object id="53" type="AREA" x="256" y="64" width="32" height="32">
    <properties>
     <property name="tags" value="area_chill,transition"/>
    </properties>
-   <polyline points=""/>
   </object>
  </objectgroup>
- <objectgroup name="collision" visible="1">
+ <objectgroup id="0" name="collision">
   <properties>
    <property name="layerOrder" value="2"/>
   </properties>
-  <object id="188" type="COLLISIONBOX" x="400" y="16" width="16" height="320">
-   <polyline points=""/>
-  </object>
-  <object id="165" type="COLLISIONBOX" x="0" y="0" width="416" height="16">
-   <polyline points=""/>
-  </object>
-  <object id="174" type="COLLISIONBOX" x="0" y="16" width="16" height="320">
-   <polyline points=""/>
-  </object>
-  <object id="171" name="" type="COLLISIONBOX" x="0" y="336" width="416" height="16">
-   <polyline points=""/>
-  </object>
-  <object id="3944" type="COLLISIONBOX" x="96" y="320" width="16" height="16">
+  <object id="54" type="COLLISIONBOX" x="400" y="16" width="16" height="320"/>
+  <object id="55" type="COLLISIONBOX" x="0" y="0" width="416" height="16"/>
+  <object id="56" type="COLLISIONBOX" x="0" y="16" width="16" height="320"/>
+  <object id="57" type="COLLISIONBOX" x="0" y="336" width="416" height="16"/>
+  <object id="58" type="COLLISIONBOX" x="96" y="320" width="16" height="16">
    <properties>
     <property name="isObstacle" value="true"/>
     <property name="isObstructingLight" value="true"/>
    </properties>
   </object>
-  <object id="3949" type="COLLISIONBOX" x="304" y="320" width="16" height="16">
+  <object id="59" type="COLLISIONBOX" x="304" y="320" width="16" height="16">
    <properties>
     <property name="isObstacle" value="true"/>
     <property name="isObstructingLight" value="true"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="3952" type="COLLISIONBOX" x="304" y="208" width="16" height="80">
+  <object id="60" type="COLLISIONBOX" x="304" y="208" width="16" height="80">
    <properties>
     <property name="isObstacle" value="true"/>
     <property name="isObstructingLight" value="true"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="3960" type="COLLISIONBOX" x="96" y="208" width="16" height="80">
+  <object id="61" type="COLLISIONBOX" x="96" y="208" width="16" height="80">
    <properties>
     <property name="isObstacle" value="true"/>
     <property name="isObstructingLight" value="true"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="3963" type="COLLISIONBOX" x="96" y="96" width="16" height="64">
+  <object id="62" type="COLLISIONBOX" x="96" y="96" width="16" height="64">
    <properties>
     <property name="isObstacle" value="true"/>
     <property name="isObstructingLight" value="true"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="3975" type="COLLISIONBOX" x="304" y="96" width="16" height="64">
+  <object id="63" type="COLLISIONBOX" x="304" y="96" width="16" height="64">
    <properties>
     <property name="isObstacle" value="true"/>
     <property name="isObstructingLight" value="true"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="3978" type="COLLISIONBOX" x="16" y="64" width="16" height="32">
+  <object id="64" type="COLLISIONBOX" x="16" y="64" width="16" height="32">
    <properties>
     <property name="isObstacle" value="true"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="3983" type="COLLISIONBOX" x="64" y="64" width="64" height="32">
+  <object id="65" type="COLLISIONBOX" x="64" y="64" width="64" height="32">
    <properties>
     <property name="isObstacle" value="true"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="3991" type="COLLISIONBOX" x="160" y="64" width="96" height="32">
+  <object id="66" type="COLLISIONBOX" x="160" y="64" width="96" height="32">
    <properties>
     <property name="isObstacle" value="true"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="3996" type="COLLISIONBOX" x="288" y="64" width="64" height="32">
+  <object id="67" type="COLLISIONBOX" x="288" y="64" width="64" height="32">
    <properties>
     <property name="isObstacle" value="true"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="4000" type="COLLISIONBOX" x="384" y="64" width="16" height="32">
+  <object id="68" type="COLLISIONBOX" x="384" y="64" width="16" height="32">
    <properties>
     <property name="isObstacle" value="true"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="4002" type="COLLISIONBOX" x="256" y="240" width="48" height="16">
+  <object id="69" type="COLLISIONBOX" x="256" y="240" width="48" height="16">
    <properties>
     <property name="isObstacle" value="true"/>
     <property name="isObstructingLight" value="true"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="4010" type="COLLISIONBOX" x="112" y="240" width="48" height="16">
+  <object id="70" type="COLLISIONBOX" x="112" y="240" width="48" height="16">
    <properties>
     <property name="isObstacle" value="true"/>
     <property name="isObstructingLight" value="true"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="4018" type="AREA" x="160" y="240" width="96" height="16">
+  <object id="71" type="AREA" x="160" y="240" width="96" height="16">
    <properties>
     <property name="tags" value="area_dance"/>
    </properties>
-   <polyline points=""/>
   </object>
-  <object id="4454" type="COLLISIONBOX" x="192" y="16" width="32" height="16">
+  <object id="72" type="COLLISIONBOX" x="192" y="16" width="32" height="16">
    <properties>
-    <property name="isObstacle" type="isObstacle" value="true"/>
+    <property name="isObstacle" value="true"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4457" type="COLLISIONBOX" x="272" y="16" width="32" height="16">
+  <object id="73" type="COLLISIONBOX" x="272" y="16" width="32" height="16">
    <properties>
-    <property name="isObstacle" type="isObstacle" value="true"/>
+    <property name="isObstacle" value="true"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4460" type="COLLISIONBOX" x="112" y="16" width="32" height="16">
+  <object id="74" type="COLLISIONBOX" x="112" y="16" width="32" height="16">
    <properties>
-    <property name="isObstacle" type="isObstacle" value="true"/>
+    <property name="isObstacle" value="true"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4463" type="COLLISIONBOX" x="48" y="16" width="16" height="16">
+  <object id="75" type="COLLISIONBOX" x="48" y="16" width="16" height="16">
    <properties>
-    <property name="isObstacle" type="isObstacle" value="true"/>
+    <property name="isObstacle" value="true"/>
    </properties>
-   <polyline/>
   </object>
-  <object id="4471" type="COLLISIONBOX" x="352" y="16" width="16" height="16">
+  <object id="76" type="COLLISIONBOX" x="352" y="16" width="16" height="16">
    <properties>
-    <property name="isObstacle" type="isObstacle" value="true"/>
+    <property name="isObstacle" value="true"/>
    </properties>
-   <polyline/>
   </object>
  </objectgroup>
- <objectgroup name="spawnpoints" visible="0">
+ <objectgroup id="0" name="spawnpoints" visible="1">
   <properties>
    <property name="layerOrder" value="12"/>
   </properties>
-  <object id="163" name="party-spawn" type="SPAWNPOINT" x="192" y="288" width="32" height="32">
+  <object id="77" name="party-spawn" type="SPAWNPOINT" x="192" y="288" width="32" height="32">
    <properties>
     <property name="spawnDirection" value="UNDEFINED"/>
-    <property name="spawnType" value=""/>
     <property name="tags" value="entry"/>
    </properties>
-   <polyline points=""/>
   </object>
  </objectgroup>
 </map>
